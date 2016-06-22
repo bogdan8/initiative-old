@@ -2,12 +2,24 @@
 <html>
 <head>
   <title>Initiatives</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if user_signed_in? %>
+    <%= current_user.email %>
+    <% if can? :manage, :all %>
+        <h4><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||
+    <% end %>
+    <%= link_to 'Вийти', destroy_user_session_path, method: :delete %></h4>
+    <br/>
+<% else %>
+    <%= link_to 'Ввійти', new_user_session_path %>
+    <%= link_to 'Зареєстуватись', new_user_registration_path %>
+<% end %>
 <p class="notice"><%= notice %></p>
+
 <p class="alert"><%= alert %></p>
 <%= yield %>
 

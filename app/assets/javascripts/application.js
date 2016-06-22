@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery
+//= require bootstrap
+//= require adminlte
 //= require_tree .

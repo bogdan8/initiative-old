@@ -1,0 +1,24 @@
+AllCops:
+  DisplayStyleGuide: true
+  DisplayCopNames: true
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+  Exclude:
+    - '**/bin/spring'
+    - '**/bin/setup'
+    - '**/bin/rake'
+    - '**/bin/rails'
+    - '**/db/schema.rb'
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 10
+
+Style/Documentation:
+  Enabled: false
