@@ -10,6 +10,12 @@ AllCops:
     - '**/bin/rake'
     - '**/bin/rails'
     - '**/db/schema.rb'
+    - '**/app/helpers/nav_helper.rb'
+    - '**/db/migrate/20160617062322_rolify_create_roles.rb'
+    - '**/db/migrate/20160617061505_devise_create_users.rb'
+    - '**/config/initializers/devise.rb'
+    - '**/config/initializers/rolify.rb'
+    - '**/test/test_helper.rb'
 
 Rails:
   Enabled: true

@@ -1,1 +1,5 @@
-<h2>Welcome</h2>
+<% if current_user.has_role? :admin %>
+<p class="btn btn-default"><%= link_to 'Сторінка адміна' , 'admin' %></p>
+<% end %>
+
+

@@ -1,22 +1,13 @@
 class AdminController < ApplicationController
-  before_action :authenticate_user!
-
-  include FindUser
+  load_and_authorize_resource class: User
 
   def index
-    unless @user.has_role? :admin
-      render text: CanCan::AccessDenied.new('Ви не адміністратор!', :read, User)
-    end
-    @admin = User.all
   end
 
   def show
   end
 
   def new
-    unless @user.has_role? :admin
-      render text: CanCan::AccessDenied.new('Ви не адміністратор!', :read, User)
-    end
   end
 
   def create
@@ -26,6 +17,25 @@ class AdminController < ApplicationController
       redirect_to '/admin'
     else
       render action: 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @admin.update(user_params)
+      redirect_to '/admin'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    if @admin.destroy
+      redirect_to '/admin'
+    else
+      render action: 'destroy'
     end
   end
 

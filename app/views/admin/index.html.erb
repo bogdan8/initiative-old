@@ -1,6 +1,17 @@
 <h2>Список адміністраторів:</h2>
-<% @admin.each do |items| %>
+<% @admins.each do |items| %>
 
-    <h3>Емайл: <%= items.email %></h3>
+    <% if items.has_role? :admin %>
+        <h3>Емайл: <%= items.email %> <b style="color: green;">Адміністратор</b></h3>
+    <% else %>
+        <h3>Емайл: <%= items.email %> <b style="color: red;">Не адміністратор</b></h3>
+    <% end %>
+    <p>
+      <%= link_to 'Показати', admin_path(items), class: 'btn btn-default' %> |
+
+      <%= link_to 'Редагувати', edit_admin_path(items), class: 'btn btn-warning' %> |
+
+      <%= link_to 'Видалити', admin_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+    </p>
 
 <% end %>
