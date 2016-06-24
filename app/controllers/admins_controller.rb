@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
   end
 
   def index
+    @admins = User.with_role(:admin)
   end
 
   def show
@@ -16,7 +17,7 @@ class AdminsController < ApplicationController
 
   def create
     @admin = User.new user_params
-    @admin.add_role 'admins'
+    @admin.add_role 'admin'
     if @admin.save
       redirect_to '/admins'
     else
@@ -28,7 +29,7 @@ class AdminsController < ApplicationController
   end
 
   def update
-    if @admin.update(user_params)
+    if @admin.update user_params
       redirect_to '/admins'
     else
       render action: 'edit'
