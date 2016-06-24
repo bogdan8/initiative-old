@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminsController < ApplicationController
   load_and_authorize_resource class: User
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -16,9 +16,9 @@ class AdminController < ApplicationController
 
   def create
     @admin = User.new user_params
-    @admin.add_role 'admin'
+    @admin.add_role 'admins'
     if @admin.save
-      redirect_to '/admin'
+      redirect_to '/admins'
     else
       render action: 'new'
     end
@@ -29,7 +29,7 @@ class AdminController < ApplicationController
 
   def update
     if @admin.update(user_params)
-      redirect_to '/admin'
+      redirect_to '/admins'
     else
       render action: 'edit'
     end
@@ -37,7 +37,7 @@ class AdminController < ApplicationController
 
   def destroy
     if @admin.destroy
-      redirect_to '/admin'
+      redirect_to '/admins'
     else
       render action: 'destroy'
     end
