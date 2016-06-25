@@ -1,4 +1,7 @@
 <p>Назва: <%= @initiative.title %></p>
+<p>Фото повний розмір: <%= image_tag @initiative.main_picture.url %></p>
+<p>Фото середнє: <%= image_tag @initiative.main_picture.url(:medium) %></p>
+<p>Фото мале: <%= image_tag @initiative.main_picture.url(:thumb) %></p>
 <p>Відео: <%== @initiative.main_video %></p>
 <p>Короткий опис: <%= @initiative.short_description %></p>
 <p>Довгий опис: <%= @initiative.long_description %></p>

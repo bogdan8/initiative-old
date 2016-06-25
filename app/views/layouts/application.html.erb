@@ -18,9 +18,14 @@
     <%= link_to 'Ввійти', new_user_session_path %>
     <%= link_to 'Зареєстуватись', new_user_registration_path %>
 <% end %>
-<p class="notice"><%= notice %></p>
-
-<p class="alert"><%= alert %></p>
+<% flash.each do |name, msg| %>
+    <div class="pad margin no-print">
+      <%= content_tag :div, :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+          <%= msg %>
+      <% end %>
+    </div>
+<% end %>
 <%= yield %>
 
 </body>

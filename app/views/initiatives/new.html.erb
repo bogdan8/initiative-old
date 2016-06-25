@@ -1,8 +1,12 @@
 <h2>Редагувати</h2>
-<%= form_for :initiative, url: '/initiatives', method: :post do |f| %>
+<%= form_for :initiative, url: '/initiatives', html: {multipart: true}, method: :post do |f| %>
     <p>
       <%= f.label 'Назва' %>
       <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label 'Фото' %>
+      <%= f.file_field :main_picture %>
     </p>
     <p>
       <%= f.label 'Відео' %>

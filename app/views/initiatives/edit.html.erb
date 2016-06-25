@@ -1,8 +1,12 @@
 <h2>Редагувати</h2>
-<%= form_for :initiative, url: initiative_path(@initiative), method: :put do |f| %>
+<%= form_for :initiative, url: initiative_path(@initiative), html: {multipart: true}, method: :put do |f| %>
     <p>
       <%= f.label 'Назва' %>
       <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label 'Фото' %>
+      <%= f.file_field :main_picture %>
     </p>
     <p>
       <%= f.label 'Відео' %>
@@ -21,11 +25,11 @@
       <%= f.text_field :sum %>
     </p>
     <p>
-      <%= f.label 'Термін збору коштів' %>
+      <%= f.label 'Термін збору коштів(30 або 60) днів' %>
       <%= f.text_field :term_fundraiser %>
     </p>
     <p>
-      <%= f.label 'Термін після якого буде надано звіт' %>
+      <%= f.label 'Термін після якого буде надано звіт(15 або 30) днів' %>
       <%= f.text_field :term_report %>
     </p>
     <p>

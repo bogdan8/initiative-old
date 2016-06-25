@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625103809) do
+ActiveRecord::Schema.define(version: 20160625120147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,12 @@ ActiveRecord::Schema.define(version: 20160625103809) do
     t.integer  "sum"
     t.integer  "term_fundraiser"
     t.integer  "term_report"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "main_picture_file_name"
+    t.string   "main_picture_content_type"
+    t.integer  "main_picture_file_size"
+    t.datetime "main_picture_updated_at"
   end
 
   create_table "roles", force: :cascade do |t|
