@@ -20,8 +20,10 @@ class AdminsController < ApplicationController
     @admin.add_role 'admin'
     if @admin.save
       redirect_to '/admins'
+      flash[:success] = 'Адміністратора додано'
     else
       render action: 'new'
+      flash[:error] = @admin.errors.full_messages.to_sentence
     end
   end
 
@@ -31,16 +33,20 @@ class AdminsController < ApplicationController
   def update
     if @admin.update user_params
       redirect_to '/admins'
+      flash[:success] = 'Дані успішно відредаговані'
     else
       render action: 'edit'
+      flash[:error] = @admin.errors.full_messages.to_sentence
     end
   end
 
   def destroy
     if @admin.destroy
       redirect_to '/admins'
+      flash[:success] = 'Адміністратора видалено'
     else
       render action: 'destroy'
+      flash[:error] = @admin.errors.full_messages.to_sentence
     end
   end
 
