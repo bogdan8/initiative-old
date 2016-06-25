@@ -1,0 +1,34 @@
+<h2>Редагувати</h2>
+<%= form_for :initiative, url: initiative_path(@initiative), method: :put do |f| %>
+    <p>
+      <%= f.label 'Назва' %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label 'Відео' %>
+      <%= f.text_area :main_video %>
+    </p>
+    <p>
+      <%= f.label 'Короткий опис' %>
+      <%= f.text_field :short_description %>
+    </p>
+    <p>
+      <%= f.label 'Довгий опис' %>
+      <%= f.text_field :long_description %>
+    </p>
+    <p>
+      <%= f.label 'Необхідна сума для виконання(від 100 до 50000)' %>
+      <%= f.text_field :sum %>
+    </p>
+    <p>
+      <%= f.label 'Термін збору коштів' %>
+      <%= f.text_field :term_fundraiser %>
+    </p>
+    <p>
+      <%= f.label 'Термін після якого буде надано звіт' %>
+      <%= f.text_field :term_report %>
+    </p>
+    <p>
+      <%= f.submit 'Редагувати' %>
+    </p>
+<% end %>
