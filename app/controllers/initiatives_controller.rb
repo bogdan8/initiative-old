@@ -1,8 +1,8 @@
 class InitiativesController < ApplicationController
-  before_action :find_initiative, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource class: Initiative, except: [:create]
+  layout :initiative_layout
 
   def index
-    @initiatives = Initiative.all
   end
 
   def show
@@ -47,12 +47,16 @@ class InitiativesController < ApplicationController
 
   private
 
-  def find_initiative
-    @initiative = Initiative.find(params[:id])
-  end
-
   def initiative_params
     arr = [:title, :main_video, :short_description, :long_description, :sum, :term_fundraiser, :term_report, :main_picture]
     params.require(:initiative).permit(*arr)
+  end
+
+  def initiative_layout
+    if @current_user.has_role? :admin
+      'admins'
+    else
+      'application'
+    end
   end
 end
