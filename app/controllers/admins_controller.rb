@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  load_and_authorize_resource class: User
+  load_and_authorize_resource class: User, except: [:create]
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, alert: exception.message
