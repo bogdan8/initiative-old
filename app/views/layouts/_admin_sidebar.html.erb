@@ -35,5 +35,15 @@
         Додати адміністратора
       <% end %>
     <% end %>
+    <%= treeview_link 'Ініціативи' do %>
+        <%= nav_link '/initiatives' do %>
+            <i class="fa fa-angle-double-right"></i>
+            Список ініціатив
+        <% end %>
+        <%= nav_link '/initiatives/new' do %>
+            <i class="fa fa-angle-double-right"></i>
+            Додати ініціативу
+        <% end %>
+    <% end %>
   </ul>
 </section>

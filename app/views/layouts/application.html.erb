@@ -10,9 +10,11 @@
 <% if user_signed_in? %>
     <%= current_user.email %>
     <% if can? :manage, :all %>
-        <h4><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||
+        <h3><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||
     <% end %>
-    <%= link_to 'Вийти', destroy_user_session_path, method: :delete %></h4>
+    <%= link_to 'Головна', root_path %>||
+    <%= link_to 'Ініціативи', '/initiatives' %>||
+    <%= link_to 'Вийти', destroy_user_session_path, method: :delete %></h3>
     <br/>
 <% else %>
     <%= link_to 'Ввійти', new_user_session_path %>
