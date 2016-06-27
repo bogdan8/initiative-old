@@ -7,5 +7,5 @@ class Initiative < ActiveRecord::Base
   validates :term_report, format: { with: /\A15\b|\A30\b/ }
 
   has_attached_file :main_picture, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
-  validates_attachment_content_type :main_picture, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :main_picture, content_type: %r{\Aimage\/.*\Z/}
 end

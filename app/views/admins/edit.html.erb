@@ -2,7 +2,7 @@
 <%= form_for :user, url: admin_path(@admin), method: :put do |f| %>
     <p>
       <%= f.label 'Email' %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, value: @admin.email %>
     </p>
     <p>
       <%= f.label 'Пароль' %>

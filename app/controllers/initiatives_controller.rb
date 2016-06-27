@@ -53,7 +53,7 @@ class InitiativesController < ApplicationController
   end
 
   def initiative_layout
-    if @current_user.has_role? :admin
+    if current_user.has_role? :admin
       'admins'
     else
       'application'
