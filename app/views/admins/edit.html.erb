@@ -1,13 +1,32 @@
 <h2>Редагувати</h2>
 <%= form_for :user, url: admin_path(@admin), method: :put do |f| %>
-    <p>
+    <div class="field">
+      <%= f.label 'Імя' %><br/>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Пошта' %><br/>
+      <%= f.text_field :post %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Телефон' %><br/>
+      <%= f.number_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Фото' %>
+      <%= f.file_field :avatar %>
+    </div>
+    <div class="field">
       <%= f.label 'Email' %>
-      <%= f.text_field :email, value: @admin.email %>
-    </p>
-    <p>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
       <%= f.label 'Пароль' %>
       <%= f.text_field :password %>
-    </p>
+    </div>
     <p>
       <%= f.submit 'редагувати' %>
     </p>

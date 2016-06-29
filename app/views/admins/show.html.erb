@@ -1,5 +1,11 @@
 <h2>Інформація</h2>
 <br />
+<p>Імя: <%= @admin.name %></p>
+<p>Пошта: <%= @admin.post %></p>
+<p>Телефон: <%= @admin.phone %></p>
 <p>Емайл: <%= @admin.email %></p>
 <p>Скільки разів заходив: <%= @admin.sign_in_count %></p>
 <p>Коли останій раз заходив: <%= @admin.last_sign_in_at %></p>
+<p>Фото повний розмір: <%= image_tag @admin.avatar.url %></p>
+<p>Фото середнє: <%= image_tag @admin.avatar.url(:medium) %></p>
+<p>Фото мале: <%= image_tag @admin.avatar.url(:thumb) %></p>
