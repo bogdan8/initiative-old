@@ -6,18 +6,18 @@ class Initiative < ActiveRecord::Base
   validate :validate_term_fundraiser
   validate :validate_term_report
 
-  has_attached_file :main_picture, styles: {medium: '300x300>', thumb: '100x100>'}, default_url: '/images/:style/missing.png'
+  has_attached_file :main_picture, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
   validates_attachment_content_type :main_picture, content_type: %r{\Aimage\/.*\Z}
 
   def validate_sum
-    errors.add(:sum, 'Число має бути більше чим 100 і менше чим 50000') unless self.sum >= 100 && self.sum <= 50_000
+    errors.add(:sum, 'Число має бути більше чим 100 і менше чим 50000') unless sum >= 100 && sum <= 50_000
   end
 
   def validate_term_fundraiser
-    errors.add(:term_fundraiser, 'Ви вели невірне число') unless self.term_fundraiser == 30 || self.term_fundraiser == 60
+    errors.add(:term_fundraiser, 'Ви вели невірне число') unless term_fundraiser == 30 || term_fundraiser == 60
   end
 
   def validate_term_report
-    errors.add(:term_report, 'Ви вели невірне число') unless self.term_report == 15 || self.term_report == 30
+    errors.add(:term_report, 'Ви вели невірне число') unless term_report == 15 || term_report == 30
   end
 end
