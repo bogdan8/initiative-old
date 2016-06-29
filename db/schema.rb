@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627101810) do
+ActiveRecord::Schema.define(version: 20160629102615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160627101810) do
     t.string   "main_picture_content_type"
     t.integer  "main_picture_file_size"
     t.datetime "main_picture_updated_at"
+    t.string   "aasm_state"
   end
 
   create_table "roles", force: :cascade do |t|

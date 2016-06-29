@@ -1,4 +1,26 @@
 class Initiative < ActiveRecord::Base
+  belongs_to :user
+  has_one :timeline
+
+  include AASM
+
+  scope :open_initiatives, -> { where(aasm_state: 'open') }
+
+  aasm do
+    state :fundraiser, initial: true
+    state :launched
+    state :implemented
+    state :unrealized
+
+    event :fundraiser do
+      transitions from: :fundraiser, to: :launched
+    end
+
+    event :launched do
+      transitions from: :launched, to: [:implemented, :uncached]
+    end
+  end
+
   validates :title, presence: true
   validates :long_description, presence: true
   validates :short_description, length: { maximum: 200 }
