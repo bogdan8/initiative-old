@@ -1,11 +1,6 @@
 class AdminsController < ApplicationController
   load_and_authorize_resource class: User, except: [:create]
 
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = exception.message
-    redirect_to main_app.root_url
-  end
-
   def index
     @admins = User.with_role(:admin)
   end
@@ -23,8 +18,8 @@ class AdminsController < ApplicationController
       redirect_to '/admins'
       flash[:success] = 'Адміністратора додано'
     else
-      render action: 'new'
       flash[:error] = @admin.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -36,8 +31,8 @@ class AdminsController < ApplicationController
       redirect_to '/admins'
       flash[:success] = 'Дані успішно відредаговані'
     else
-      render action: 'edit'
       flash[:error] = @admin.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
@@ -46,7 +41,6 @@ class AdminsController < ApplicationController
       redirect_to '/admins'
       flash[:success] = 'Адміністратора видалено'
     else
-      render action: 'destroy'
       flash[:error] = @admin.errors.full_messages.to_sentence
     end
   end

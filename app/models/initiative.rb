@@ -1,4 +1,6 @@
 class Initiative < ActiveRecord::Base
+  size_main_picture = { medium: '300x300>', thumb: '100x100>' }
+
   belongs_to :user
   has_one :timeline
 
@@ -28,8 +30,10 @@ class Initiative < ActiveRecord::Base
   validate :validate_term_fundraiser
   validate :validate_term_report
 
-  has_attached_file :main_picture, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
+  has_attached_file :main_picture, styles: size_main_picture, default_url: '/images/:style/missing.png'
   validates_attachment_content_type :main_picture, content_type: %r{\Aimage\/.*\Z}
+
+  private
 
   def validate_sum
     errors.add(:sum, 'Число має бути більше чим 100 і менше чим 50000') unless sum >= 100 && sum <= 50_000

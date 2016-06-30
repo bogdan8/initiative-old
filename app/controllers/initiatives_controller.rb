@@ -1,5 +1,5 @@
 class InitiativesController < ApplicationController
-  load_and_authorize_resource class: Initiative, except: [:create]
+  load_and_authorize_resource
   layout :initiative_layout
 
   def index
@@ -17,7 +17,7 @@ class InitiativesController < ApplicationController
       redirect_to @initiative
       flash[:success] = 'Ініціативу додано'
     else
-      render action: 'new'
+      render :new
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
   end
@@ -30,7 +30,7 @@ class InitiativesController < ApplicationController
       redirect_to @initiative
       flash[:success] = 'Ініціативу відредаговано'
     else
-      render action: 'edit'
+      render :edit
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
   end
@@ -40,7 +40,6 @@ class InitiativesController < ApplicationController
       redirect_to @initiative
       flash[:success] = 'Ініціативу видалено'
     else
-      render action: 'destroy'
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
   end
@@ -48,8 +47,9 @@ class InitiativesController < ApplicationController
   private
 
   def initiative_params
-    arr = [:title, :main_video, :short_description, :long_description, :sum, :term_fundraiser, :term_report, :main_picture]
-    params.require(:initiative).permit(*arr)
+    one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
+    all_params = [:title, :main_video, :short_description, *one_params]
+    params.require(:initiative).permit(*all_params)
   end
 
   def initiative_layout
