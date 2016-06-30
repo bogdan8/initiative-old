@@ -2,7 +2,7 @@
 <%= form_for :initiative, url: '/initiatives', html: {multipart: true}, method: :post do |f| %>
     <p>
       <%= f.label 'Назва' %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, required: :required %>
     </p>
     <p>
       <%= f.label 'Фото' %>
@@ -14,23 +14,23 @@
     </p>
     <p>
       <%= f.label 'Короткий опис' %>
-      <%= f.text_field :short_description %>
+      <%= f.text_field :short_description, required: :required %>
     </p>
     <p>
       <%= f.label 'Довгий опис' %>
-      <%= f.text_field :long_description %>
+      <%= f.text_field :long_description, required: :required %>
     </p>
     <p>
       <%= f.label 'Необхідна сума для виконання(від 100 до 50000)' %>
-      <%= f.text_field :sum %>
+      <%= f.text_field :sum, required: :required %>
     </p>
     <p>
       <%= f.label 'Термін збору коштів(30 або 60) днів' %>
-      <%= f.text_field :term_fundraiser %>
+      <%= f.text_field :term_fundraiser, required: :required %>
     </p>
     <p>
       <%= f.label 'Термін після якого буде надано звіт(15 або 30) днів' %>
-      <%= f.text_field :term_report %>
+      <%= f.text_field :term_report, required: :required %>
     </p>
     <p>
       <%= f.submit 'Додати' %>
