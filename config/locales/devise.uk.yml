@@ -59,3 +59,12 @@ uk:
         few: "%{resource}: не вдалося зберегти через %{count} помилок"
         many: "%{resource}: не вдалося зберегти через %{count} помилок"
         other: "%{resource}: не вдалося зберегти через %{count} помилку"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Ви неввели емайл"
+            password:
+              blank: "Ви неввели емайл"

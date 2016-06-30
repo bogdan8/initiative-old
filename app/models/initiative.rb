@@ -36,14 +36,17 @@ class Initiative < ActiveRecord::Base
   private
 
   def validate_sum
-    errors.add(:sum, 'Число має бути більше чим 100 і менше чим 50000') unless sum >= 100 && sum <= 50_000
+    trans_error_sum = I18n.t('initiative.activerecord.errors.models.attributes.sum.correct_number')
+    errors.add(:sum, trans_error_sum) unless sum >= 100 && sum <= 50_000
   end
 
   def validate_term_fundraiser
-    errors.add(:term_fundraiser, 'Ви вели невірне число') unless term_fundraiser == 30 || term_fundraiser == 60
+    trans_error_term_fundraiser = I18n.t('initiative.activerecord.errors.models.attributes.term_fundraiser')
+    errors.add(:term_fundraiser, trans_error_term_fundraiser) unless term_fundraiser == 30 || term_fundraiser == 60
   end
 
   def validate_term_report
-    errors.add(:term_report, 'Ви вели невірне число') unless term_report == 15 || term_report == 30
+    trans_error_term_report = I18n.t('initiative.activerecord.errors.models.attributes.term_report')
+    errors.add(:term_report, trans_error_term_report) unless term_report == 15 || term_report == 30
   end
 end

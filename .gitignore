@@ -23,5 +23,6 @@
 /.idea/vcs.xml
 /.idea/workspace.xml
 /log/.keep
-/public/system/*/.idea/inspectionProfiles/profiles_settings.xml
+/public/system/
+/.idea/inspectionProfiles/profiles_settings.xml
 /.idea/inspectionProfiles/Project_Default.xml
