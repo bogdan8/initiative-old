@@ -1,6 +1,5 @@
 class InitiativesController < ApplicationController
   load_and_authorize_resource
-  layout :initiative_layout
 
   def index
   end
@@ -50,13 +49,5 @@ class InitiativesController < ApplicationController
     one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
     all_params = [:title, :main_video, :short_description, *one_params]
     params.require(:initiative).permit(*all_params)
-  end
-
-  def initiative_layout
-    if current_user.has_role? :admin
-      'admins'
-    else
-      'application'
-    end
   end
 end

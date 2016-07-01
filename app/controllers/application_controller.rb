@@ -7,4 +7,15 @@ class ApplicationController < ActionController::Base
     flash[:error] = exception.message
     redirect_to main_app.root_url
   end
+  layout :layout
+
+  private
+
+  def layout
+    if current_user.has_role? :admin
+      'admins'
+    else
+      'application'
+    end
+  end
 end
