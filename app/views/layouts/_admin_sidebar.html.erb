@@ -45,5 +45,15 @@
             Додати ініціативу
         <% end %>
     <% end %>
+    <%= treeview_link 'Категорії' do %>
+        <%= nav_link '/categories' do %>
+            <i class="fa fa-angle-double-right"></i>
+            Список категорій
+        <% end %>
+        <%= nav_link '/categories/new' do %>
+            <i class="fa fa-angle-double-right"></i>
+            Додати категорію
+        <% end %>
+    <% end %>
   </ul>
 </section>

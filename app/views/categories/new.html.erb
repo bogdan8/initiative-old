@@ -1,0 +1,10 @@
+<h2>Додати</h2>
+<%= form_for :category, url: '/categories', method: :post do |f| %>
+    <div class="field">
+      <%= f.label 'Імя' %><br/>
+      <%= f.text_field :name %>
+    </div>
+    <p>
+      <%= f.submit 'Додати' %>
+    </p>
+<% end %>
