@@ -1,3 +1,14 @@
-<h2>Інформація</h2>
+<h2><%= @category.name %></h2>
 <br />
-<p>Імя: <%= @category.name %></p>
+
+<% @category.initiatives.each do |items| %>
+    <h4>Назва: <%= items.title %></h4>
+    <p>
+      <%= link_to 'Показати', initiative_path(items), class: 'btn btn-default' %> |
+
+      <%= link_to 'Редагувати', edit_initiative_path(items), class: 'btn btn-warning' %> |
+
+      <%= link_to 'Видалити', initiative_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+    </p>
+
+<% end %>

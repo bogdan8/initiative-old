@@ -32,6 +32,20 @@
       <%= f.label 'Термін після якого буде надано звіт(15 або 30) днів' %>
       <%= f.text_field :term_report, required: :required %>
     </p>
+    <%= f.label 'Категорії' %>
+    <br/>
+    <span class="ul">
+
+	<% Category.all.each do |category| %>
+	  <label class="li">
+        <%= check_box :category_ids, category.id %>
+        <%= category.name %>
+      </label>
+          <br/>
+	<% end %>
+
+    </span>
+
     <p>
       <%= f.submit 'Додати' %>
     </p>

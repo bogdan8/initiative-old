@@ -13,11 +13,14 @@ class InitiativesController < ApplicationController
   def create
     @initiative = Initiative.new initiative_params
     if @initiative.save
+      params[:category_ids].each_key do |key|
+        InitiativeCategory.create(initiative_id: @initiative.id, category_id: key)
+      end
       redirect_to @initiative
       flash[:success] = 'Ініціативу додано'
     else
-      render :new
       flash[:error] = @initiative.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -29,8 +32,8 @@ class InitiativesController < ApplicationController
       redirect_to @initiative
       flash[:success] = 'Ініціативу відредаговано'
     else
-      render :edit
       flash[:error] = @initiative.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
