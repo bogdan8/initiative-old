@@ -8,3 +8,8 @@
 <p>Сума: <%= @initiative.sum %></p>
 <p>Термін збору коштів: <%= @initiative.term_fundraiser %></p>
 <p>Термін після якого буде надано звіт: <%= @initiative.term_report %></p>
+<p>Список категорій:
+  <% @initiative.categories.each do |category| %>
+    <p><%= category.name %></p>
+  <% end %>
+</p>

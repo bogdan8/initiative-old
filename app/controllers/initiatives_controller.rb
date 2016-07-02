@@ -13,9 +13,7 @@ class InitiativesController < ApplicationController
   def create
     @initiative = Initiative.new initiative_params
     if @initiative.save
-      params[:category_ids].each_key do |key|
-        InitiativeCategory.create(initiative_id: @initiative.id, category_id: key)
-      end
+      add_initiative_with_categories
       redirect_to @initiative
       flash[:success] = 'Ініціативу додано'
     else
@@ -52,5 +50,11 @@ class InitiativesController < ApplicationController
     one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
     all_params = [:title, :main_video, :short_description, *one_params]
     params.require(:initiative).permit(*all_params)
+  end
+
+  def add_initiative_with_categories
+    params[:category_ids].each do |id|
+      InitiativeCategory.create(initiative_id: @initiative.id, category_id: id)
+    end
   end
 end

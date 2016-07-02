@@ -34,11 +34,12 @@
     </p>
     <%= f.label 'Категорії' %>
     <br/>
-    <span class="ul">
+
+    <span>
 
 	<% Category.all.each do |category| %>
-	  <label class="li">
-        <%= check_box :category_ids, category.id %>
+	  <label>
+        <%= check_box_tag :category_ids, category.id, @initiative.category_ids.include?(category), name:'category_ids[]' %>
         <%= category.name %>
       </label>
           <br/>
