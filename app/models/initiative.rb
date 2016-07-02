@@ -39,7 +39,7 @@ class Initiative < ActiveRecord::Base
 
   def validate_sum
     trans_error_sum = I18n.t('initiative.activerecord.errors.models.attributes.sum.correct_number')
-    errors.add(:sum, trans_error_sum) unless sum >= 100 && sum <= 50_000
+    errors.add(:sum, trans_error_sum) unless sum.between?(100, 50_000)
   end
 
   def validate_term_fundraiser

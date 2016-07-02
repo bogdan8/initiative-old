@@ -12,7 +12,9 @@ class ApplicationController < ActionController::Base
   private
 
   def layout
-    if current_user.has_role? :admin
+    if current_user.nil?
+      'application'
+    elsif current_user.has_role? :admin
       'admins'
     else
       'application'
