@@ -1,5 +1,6 @@
 class Initiative < ActiveRecord::Base
   size_main_picture = { medium: '300x300>', thumb: '100x100>' }
+  path_main_picture = ':rails_root/public/images/:attachment/:id/:style/:filename'
 
   belongs_to :user
   has_one :timeline
@@ -32,7 +33,11 @@ class Initiative < ActiveRecord::Base
   validate :validate_term_fundraiser
   validate :validate_term_report
 
-  has_attached_file :main_picture, styles: size_main_picture, default_url: '/images/:style/missing.png'
+  has_attached_file :main_picture,
+                    styles: size_main_picture,
+                    path: path_main_picture,
+                    url: '/images/:attachment/:id/:style/:filename',
+                    default_url: '/images/:style/missing.png'
   validates_attachment_content_type :main_picture, content_type: %r{\Aimage\/.*\Z}
 
   private
