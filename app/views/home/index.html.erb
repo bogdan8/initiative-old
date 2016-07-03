@@ -2,4 +2,11 @@
     <p class="btn btn-default"><%= link_to 'Сторінка адміна', '/admins' %></p>
     <p class="btn btn-default"><%= link_to 'Сторінка категорій', '/categories' %></p>
 <% end %>
-<%= link_to 'Список ініціатив', '/initiatives' , class: 'btn btn-default' %>
+<%= link_to 'Список ініціатив', '/initiatives', class: 'btn btn-default' %>
+<% @initiatives.each do |items| %>
+    <h4>Назва: <%= items.title %></h4>
+    <p>Дата: <%= items.created_at %></p>
+    <p>
+      <%= link_to 'Показати', initiative_path(items), class: 'btn btn-default' %>
+    </p>
+<% end %>
