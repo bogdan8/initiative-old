@@ -8,6 +8,11 @@
 </head>
 <body>
 <% if user_signed_in? %>
+    <%= form_tag('/search', method: 'get') do %>
+        <%= label_tag(:search, 'Пошук ініціатив:') %>
+        <%= text_field_tag(:search) %>
+        <%= submit_tag('Пошук') %>
+    <% end %>
     <%= current_user.email %>
     <% if can? :manage, :all %>
         <h3><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||

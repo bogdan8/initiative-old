@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :admins
   resources :initiatives
   resources :categories
+  get 'search', to: 'search#index'
 end
