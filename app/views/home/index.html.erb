@@ -1,4 +1,5 @@
 <% if current_user.has_role? :admin %>
     <p class="btn btn-default"><%= link_to 'Сторінка адміна', '/admins' %></p>
+    <p class="btn btn-default"><%= link_to 'Сторінка категорій', '/categories' %></p>
 <% end %>
 <%= link_to 'Список ініціатив', '/initiatives' , class: 'btn btn-default' %>
