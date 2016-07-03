@@ -53,8 +53,10 @@ class InitiativesController < ApplicationController
   end
 
   def add_initiative_with_categories
-    params[:category_ids].each do |id|
-      InitiativeCategory.create(initiative_id: @initiative.id, category_id: id)
+    unless params[:category_ids].nil?
+      params[:category_ids].each do |id|
+        InitiativeCategory.create(initiative_id: @initiative.id, category_id: id)
+      end
     end
   end
 end
