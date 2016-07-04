@@ -10,3 +10,9 @@ uk:
             term_report: "Ви вели невірне число, число має бути 15 або 30"
             password:
               blank: "Ви неввели емайл"
+  views:
+    pagination:
+      previous: "&lt; Назад"
+      next: "Вперед &gt;"
+      first: "Перше"
+      last: "Останє"
