@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :initiatives
   resources :categories
   get 'search', to: 'search#index'
+  get 'search/sort', to: 'search#sort'
 end

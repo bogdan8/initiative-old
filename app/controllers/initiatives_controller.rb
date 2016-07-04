@@ -49,7 +49,7 @@ class InitiativesController < ApplicationController
   def initiative_params
     one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
     all_params = [:title, :main_video, :short_description, *one_params]
-    params.require(:initiative).permit(*all_params)
+    params.require(:initiative).permit(*all_params).merge(user_id: current_user.id)
   end
 
   def add_initiative_with_categories

@@ -1,0 +1,8 @@
+<% @array_initiative_categories.each do |initiative_categories| %>
+    <% initiative_categories.each do |items| %>
+        <h4>Назва: <%= items.initiative.title %></h4>
+        <p>
+          <%= link_to 'Показати', initiative_path(items.initiative), class: 'btn btn-default' %>
+        </p>
+    <% end %>
+<% end %>

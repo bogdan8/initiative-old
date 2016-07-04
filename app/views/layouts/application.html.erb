@@ -7,33 +7,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-    <%= form_tag('/search', method: 'get') do %>
-        <%= label_tag(:search, 'Пошук ініціатив:') %>
-        <%= text_field_tag(:search) %>
-        <%= submit_tag('Пошук') %>
+<div class="container">
+  <div class="row">
+    <% if user_signed_in? %>
+        <div class="col-lg-6">
+          <%= form_for :search, url: '/search', method: 'get' do %>
+              <%= label_tag(:search, 'Пошук ініціатив:') %>
+              <%= text_field_tag(:search) %>
+              <%= submit_tag('Пошук') %>
+          <% end %>
+          <%= form_for :search, url: '/search/sort', method: 'get' do %>
+              <%= select('category', 'id', Category.all.collect { |p| [p.name, p.id] }, {include_blank: 'Ніяка'}) %>
+              <%= submit_tag('Відсортувати') %>
+          <% end %>
+        </div>
+        <div class="col-lg-6">
+          <%= current_user.email %>
+          <% if can? :manage, :all %>
+              <h3><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||
+          <% end %>
+          <%= link_to 'Головна', root_path %>||
+          <%= link_to 'Ініціативи', '/initiatives' %>||
+          <%= link_to 'Вийти', destroy_user_session_path, method: :delete %></h3>
+        </div>
+    <% else %>
+        <%= link_to 'Ввійти', new_user_session_path %>
+        <%= link_to 'Зареєстуватись', new_user_registration_path %>
     <% end %>
-    <%= current_user.email %>
-    <% if can? :manage, :all %>
-        <h3><%= link_to 'Перейти на сторінку адміністрації', '/admin' %> ||
-    <% end %>
-    <%= link_to 'Головна', root_path %>||
-    <%= link_to 'Ініціативи', '/initiatives' %>||
-    <%= link_to 'Вийти', destroy_user_session_path, method: :delete %></h3>
-    <br/>
-<% else %>
-    <%= link_to 'Ввійти', new_user_session_path %>
-    <%= link_to 'Зареєстуватись', new_user_registration_path %>
-<% end %>
-<% flash.each do |name, msg| %>
-    <div class="pad margin no-print">
-      <%= content_tag :div, :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-          <%= msg %>
+  </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <% flash.each do |name, msg| %>
+          <div class="pad margin no-print">
+            <%= content_tag :div, :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable", :role => "alert" do %>
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <%= msg %>
+            <% end %>
+          </div>
       <% end %>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">))))))))))))</h3>
+        </div>
+        <div class="panel-body">
+          <%= yield %>
+        </div>
+      </div>
     </div>
-<% end %>
-<%= yield %>
-
+  </div>
+</div>
 </body>
 </html>

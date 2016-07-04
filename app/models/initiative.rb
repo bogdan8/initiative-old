@@ -17,12 +17,16 @@ class Initiative < ActiveRecord::Base
     state :implemented
     state :unrealized
 
-    event :fundraiser do
+    event :fundraising_started do
       transitions from: :fundraiser, to: :launched
     end
 
-    event :launched do
-      transitions from: :launched, to: [:implemented, :uncached]
+    event :money_collected do
+      transitions from: :launched, to: :implemented
+    end
+
+    event :money_not_collected do
+      transitions from: :launched, to: :unrealized
     end
   end
 
