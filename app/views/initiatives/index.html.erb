@@ -1,15 +1,12 @@
 <h3>Ініціативи:</h3><br/>
 
-<%= link_to 'Додати ініціативу', '/initiatives/new', class: 'btn btn-success' %><br/>
-
-<% @initiatives.each do |items| %>
-    <h4>Назва: <%= items.title %></h4>
+<% @initiatives.each do |initiative| %>
+    <h4>Назва: <%= initiative.title %></h4>
+    <p>Категорія:
+      <%= show_initiative_categories initiative %>
+    </p>
     <p>
-      <%= link_to 'Показати', initiative_path(items), class: 'btn btn-default' %> |
-
-      <%= link_to 'Редагувати', edit_initiative_path(items), class: 'btn btn-warning' %> |
-
-      <%= link_to 'Видалити', initiative_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+      <%= link_to 'Показати', initiative_path(initiative), class: 'btn btn-default' %>
     </p>
 
 <% end %>
