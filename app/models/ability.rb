@@ -20,7 +20,7 @@ class Ability
     can :read, :all
     cannot :read, User
     can [:show, :update], User, id: user.id
-    can :manage, Initiative, id: user.id
+    can :manage, Initiative, user_id: user.id
     cannot :manage, Category
     can [:show], Category
   end
