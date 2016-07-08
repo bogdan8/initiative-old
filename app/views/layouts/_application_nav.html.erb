@@ -15,12 +15,12 @@
           <% if user_signed_in? %>
               <%= link_to 'мої дані', root_path, class: 'navbar-a' %>
               <%= link_to 'мої ініціативи', '/user_panels', class: 'navbar-a' %>
-              <%= link_to 'створити', '/initiatives/new', class: 'navbar-a' %>
           <% end %>
+          <%= link_to 'створити', '/initiatives/new', class: 'navbar-a' %>
         </ul>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-left form-search" role="search" method="get" action="/search">
+        <form class="navbar-form navbar-left" role="search" method="get" action="/search">
           <div class="form-group">
             <input type="text" name="search" id="search" class="form-control form-search" placeholder="ПОШУК">
           </div>
@@ -30,15 +30,16 @@
     </div>
   </div>
 </nav>
-<div class="styled-select slate">
-
-  <form action="/search/sort" accept-charset="UTF-8" method="get">
-    <select name="category[id]" id="category_id">
-      <option value="" >категорія</option>
-      <%= Category.all.each do |items| %>
-          <option value="<%= items.id %>"><%= items.name %></option>
+<div class="sort-block">
+  <form action="/search/sort" class="navbar-form navbar-left" method="get">
+    <select name="category[id]" id="category_id" class="select-sort">
+      <option selected="disabled" value="" class="first-option">категорія</option>
+      <% Category.all.each do |items| %>
+          <option value="<%= items.id %>"><p><%= items.name %></p></option>
       <% end %>
     </select>
-    <input name="commit" value="Відсортувати" type="submit">
+    <button type="submit" name="commit" class="btn button-sort">
+      Сортувати
+    </button>
   </form>
 </div>
