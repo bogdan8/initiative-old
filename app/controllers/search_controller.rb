@@ -9,7 +9,7 @@ class SearchController < ApplicationController
 
   def sort
     @array_initiative_categories = []
-    if @initiatives.empty?
+    if @initiatives.empty? || params[:category][:id].empty?
       redirect_to '/search'
     else
       @initiatives.each do |items|
