@@ -9,23 +9,32 @@ class Initiative < ActiveRecord::Base
 
   include AASM
 
-  scope :open_initiatives, -> { where(aasm_state: 'fundraiser') }
-
   aasm do
-    state :fundraiser, initial: true
-    state :launched
+    state :pending_approval, initial: true
+    state :approved
+    state :rejected
+    state :fundraiser
     state :implemented
     state :unrealized
 
-    event :fundraising_started do
-      transitions from: :fundraiser, to: :launched
+    event :completed_confirmation do
+      transitions from: :pending_approval, to: :approved
+      transitions from: :pending_approval, to: :rejected
     end
 
-    event :money_collected do
+    event :for_rejected_to_pending_approval do
+      transitions from: :rejected, to: :pending_approval
+    end
+
+    event :approved_in_fundraiser do
+      transitions from: :approved, to: :fundraiser
+    end
+
+    event :success_fundraiser do
       transitions from: :launched, to: :implemented
     end
 
-    event :money_not_collected do
+    event :error_fundraiser do
       transitions from: :launched, to: :unrealized
     end
   end
