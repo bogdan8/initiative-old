@@ -44,6 +44,30 @@ class InitiativesController < ApplicationController
     end
   end
 
+  def pending_approval
+    @initiative_approval = Initiative.all.pending_approval
+  end
+
+  def success_confirmation
+    @initiative = Initiative.find(params[:id])
+    if @initiative.success_confirmation!
+      redirect_to '/initiatives/pending_approval'
+      flash[:success] = 'Ініціативу підтверджено'
+    else
+      flash[:error] = @initiative.errors.full_messages.to_sentence
+    end
+  end
+
+  def error_confirmation
+    @initiative = Initiative.find(params[:id])
+    if @initiative.error_confirmation!
+      redirect_to '/initiatives/pending_approval'
+      flash[:success] = 'Ініціативу відхилено'
+    else
+      flash[:error] = @initiative.errors.full_messages.to_sentence
+    end
+  end
+
   private
 
   def initiative_params

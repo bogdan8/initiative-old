@@ -1,0 +1,13 @@
+<h2>Непідтверджені ініціативи:</h2>
+<% @initiative_approval.each do |initiative| %>
+    <h4>Назва: <%= initiative.title %></h4>
+    <p>Категорія:
+      <%= show_initiative_categories initiative %>
+    </p>
+    <p>
+      <%= link_to 'Показати', initiative_path(initiative), class: 'btn btn-default' %>
+      <%= link_to 'Підтвердити', success_confirmation_initiative_path(initiative.id), class: 'btn btn-success' %>
+      <%= link_to 'Відхилити', error_confirmation_initiative_path(initiative), class: 'btn btn-danger' %>
+    </p>
+
+<% end %>

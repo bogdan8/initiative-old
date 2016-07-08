@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :admins
-  resources :initiatives
+  resources :initiatives do
+    get :pending_approval, on: :collection
+    get :success_confirmation, on: :member
+    get :error_confirmation, on: :member
+  end
   resources :categories
   get 'search', to: 'search#index'
   get 'search/sort', to: 'search#sort'
