@@ -1,0 +1,20 @@
+<div class="header-block">
+  <%= image_tag('header/if.png', class: 'header-image') %>
+
+  <div class="multi-color-background-header-image"></div>
+  <div class="header-left-line"></div>
+  <p class="header-text-left-top">ІНІЦІАТИВИ</p>
+
+  <p class="header-text-left-middle">МІСТА</p>
+
+  <p class="header-text-left-bottom">ІВАНО-ФРАНКІВСЬКА</p>
+
+  <div class="header-block-right">
+    <% if user_signed_in? %>
+        <%= link_to 'ВИХІД', destroy_user_session_path, method: :delete, class: 'header-text-right' %>
+    <% else %>
+        <%= link_to 'ВХІД', new_user_session_path, class: 'header-text-right' %>
+        <%= link_to 'РЕЄСТРАЦІЯ', new_user_registration_path, class: 'header-text-right-register' %>
+    <% end %>
+  </div>
+</div>

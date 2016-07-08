@@ -4,9 +4,11 @@
   <title>Initiatives</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'layouts/application_header' %>
 <div class="container">
   <div class="row">
     <% if user_signed_in? %>
