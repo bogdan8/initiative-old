@@ -1,7 +1,5 @@
 <h3>Мої ініціативи:</h3><br/>
 
-<%= link_to 'Додати ініціативу', '/initiatives/new', class: 'btn btn-success' %><br/>
-
 <% @initiatives.each do |initiative| %>
     <h4>Назва: <%= initiative.title %></h4>
     <p>Категорія:

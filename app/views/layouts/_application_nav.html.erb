@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default havbar-block">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-a-home" href="/">головна</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="navbar-block-a">
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+              <%= link_to 'мої дані', root_path, class: 'navbar-a' %>
+              <%= link_to 'мої ініціативи', '/user_panels', class: 'navbar-a' %>
+              <%= link_to 'створити', '/initiatives/new', class: 'navbar-a' %>
+          <% end %>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left form-search" role="search" method="get" action="/search">
+          <div class="form-group">
+            <input type="text" name="search" id="search" class="form-control form-search" placeholder="ПОШУК">
+          </div>
+          <button type="submit" class="btn button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="styled-select slate">
+
+  <form action="/search/sort" accept-charset="UTF-8" method="get">
+    <select name="category[id]" id="category_id">
+      <option value="" >категорія</option>
+      <%= Category.all.each do |items| %>
+          <option value="<%= items.id %>"><%= items.name %></option>
+      <% end %>
+    </select>
+    <input name="commit" value="Відсортувати" type="submit">
+  </form>
+</div>

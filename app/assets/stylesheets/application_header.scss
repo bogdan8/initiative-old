@@ -8,6 +8,7 @@ p {
   width: 100%;
   height: 250px;
   background: #940206;
+  margin-bottom: 15px;
 }
 
 .header-image {
@@ -71,6 +72,9 @@ p {
     top: 50px;
     left: -150px;
   }
+  &:hover {
+    color: white;
+  }
 }
 
 .header-text-right-register {
@@ -78,5 +82,8 @@ p {
   margin: {
     top: $header-text-right-top + 90;
     left: -270px;
+  }
+  &:hover {
+    color: white;
   }
 }

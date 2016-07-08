@@ -1,0 +1,53 @@
+@import "variables";
+
+p {
+  font-family: Helvetica, sans-serif;
+}
+
+.havbar-block {
+  background-color: #4D4252;
+  height: 60px;
+}
+
+.navbar-block-a {
+  margin-left: 100px;
+}
+
+.navbar-a {
+  color: #9D979F;
+  font-size: 30px;
+  margin: {
+    top: 20px;
+    right: 40px;
+    left: 40px;
+  }
+  &:hover {
+    color: white;
+  }
+}
+
+.navbar-a-home {
+  @extend .navbar-a;
+  margin-left: 200px;
+}
+
+.form-search {
+  border-radius: 0px;
+  margin-right: -5px;
+}
+
+.button-search {
+  border-radius: 0px;
+  background-color: #9D979F;
+}
+
+.sort-category-default-options {
+  background-color: #4D4252;
+}
+
+select option {
+  padding:0px 10px 0px ;
+  &:hover {
+    box-shadow: 0 0 10px 100px #4D4252 inset;
+  }
+}
