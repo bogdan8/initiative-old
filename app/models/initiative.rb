@@ -9,7 +9,7 @@ class Initiative < ActiveRecord::Base
 
   include AASM
 
-  scope :open_initiatives, -> { where(aasm_state: 'open') }
+  scope :open_initiatives, -> { where(aasm_state: 'fundraiser') }
 
   aasm do
     state :fundraiser, initial: true

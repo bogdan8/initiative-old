@@ -32,6 +32,20 @@
       <%= f.label 'Термін після якого буде надано звіт(15 або 30) днів' %>
       <%= f.text_field :term_report, required: :required %>
     </p>
+    <%= f.label 'Категорії' %>
+    <br/>
+
+    <span>
+
+	<% Category.all.each do |category| %>
+	  <label>
+        <%= check_box_tag :category_ids, category.id, @initiative.category_ids.include?(category), name:'category_ids[]' %>
+        <%= category.name %>
+      </label>
+          <br/>
+	<% end %>
+
+    </span>
     <p>
       <%= f.submit 'Редагувати' %>
     </p>
