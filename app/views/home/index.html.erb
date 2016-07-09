@@ -1,8 +1,8 @@
 <% @initiatives.each do |items| %>
-    <h4>Назва: <%= items.title %></h4>
-    <p>Дата: <%= items.created_at %></p>
+    <h4><%= t('views.home.index.title') %>: <%= items.title %></h4>
+    <p><%= t('views.home.index.date') %>: <%= items.created_at %></p>
     <p>
-      <%= link_to 'Показати', initiative_path(items), class: 'btn btn-default' %>
+      <%= link_to t('views.link_to.show'), initiative_path(items), class: 'btn btn-default' %>
     </p>
 <% end %>
 <%= paginate @initiatives %>

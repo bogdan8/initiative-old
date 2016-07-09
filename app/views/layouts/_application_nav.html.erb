@@ -7,22 +7,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-a-home" href="/">головна</a>
+      <a class="navbar-a-home" href="/"><%= t('views.link_to.home') %></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="navbar-block-a">
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-              <%= link_to 'мої дані', root_path, class: 'navbar-a' %>
-              <%= link_to 'мої ініціативи', '/user_panels', class: 'navbar-a' %>
+              <%= link_to t('views.link_to.my_data'), root_path, class: 'navbar-a' %>
+              <%= link_to t('views.link_to.my_initiatives'), '/user_panels', class: 'navbar-a' %>
           <% end %>
-          <%= link_to 'створити', '/initiatives/new', class: 'navbar-a' %>
+          <%= link_to t('views.link_to.created'), '/initiatives/new', class: 'navbar-a' %>
         </ul>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search" method="get" action="/search">
           <div class="form-group">
-            <input type="text" name="search" id="search" class="form-control form-search" placeholder="ПОШУК">
+            <input type="text" name="search" id="search" class="form-control form-search" placeholder="<%= t('views.layout.application.nav.search') %>">
           </div>
           <button type="submit" class="btn button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
@@ -33,13 +33,13 @@
 <div class="sort-block">
   <form action="/search/sort" class="navbar-form navbar-left" method="get">
     <select name="category[id]" id="category_id" class="select-sort">
-      <option selected="disabled" value="" class="first-option">категорія</option>
+      <option selected="disabled" value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
       <% Category.all.each do |items| %>
           <option value="<%= items.id %>"><p><%= items.name %></p></option>
       <% end %>
     </select>
     <button type="submit" name="commit" class="btn button-sort">
-      Сортувати
+      <%= t('views.layout.application.nav.sort') %>
     </button>
   </form>
 </div>
