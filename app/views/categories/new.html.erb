@@ -1,10 +1,10 @@
-<h2>Додати</h2>
+<h2><%= t('views.category.new.title') %></h2>
 <%= form_for :category, url: '/categories', method: :post do |f| %>
     <div class="field">
-      <%= f.label 'Імя' %><br/>
+      <%= f.label t('views.form.name') %><br/>
       <%= f.text_field :name %>
     </div>
     <p>
-      <%= f.submit 'Додати' %>
+      <%= f.submit t('views.category.new.title') %>
     </p>
 <% end %>

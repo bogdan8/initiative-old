@@ -1,12 +1,12 @@
-<h2>Список категорій:</h2> <br/>
+<h2><%= t('views.category.index.title') %>:</h2> <br/>
 <% @categories.each do |items| %>
     <h4>Назва: <%= items.name %></h4>
     <p>
-      <%= link_to 'Показати', category_path(items), class: 'btn btn-default' %> |
+      <%= link_to t('views.link_to.show'), category_path(items), class: 'btn btn-default' %> |
 
-      <%= link_to 'Редагувати', edit_category_path(items), class: 'btn btn-warning' %> |
+      <%= link_to t('views.link_to.edit'), edit_category_path(items), class: 'btn btn-warning' %> |
 
-      <%= link_to 'Видалити', category_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+      <%= link_to t('views.link_to.delete'), category_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
     </p>
 
 <% end %>
