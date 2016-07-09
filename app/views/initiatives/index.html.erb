@@ -1,12 +1,12 @@
-<h3>Ініціативи:</h3><br/>
+<h2><%= t('views.initiative.index.title') %>:</h2> <br/>
 
 <% @initiatives.each do |initiative| %>
-    <h4>Назва: <%= initiative.title %></h4>
-    <p>Категорія:
+    <h4><%= t('views.initiative.index.name') %>: <%= initiative.title %></h4>
+    <p><%= t('views.initiative.index.category') %>:
       <%= show_initiative_categories initiative %>
     </p>
     <p>
-      <%= link_to 'Показати', initiative_path(initiative), class: 'btn btn-default' %>
+      <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %>
     </p>
 
 <% end %>

@@ -1,38 +1,38 @@
-<h2>Створити ініціативу</h2>
+<h2><%= t('views.initiative.new.title') %></h2>
 <%= form_for :initiative, url: '/initiatives', html: {multipart: true}, method: :post do |f| %>
     <p>
-      <%= f.label 'Назва' %>
+      <%= f.label t('views.form.name') %>
       <%= f.text_field :title, required: :required %>
     </p>
     <p>
-      <%= f.label 'Фото' %>
+      <%= f.label t('views.form.main_picture') %>
       <%= f.file_field :main_picture %>
     </p>
     <p>
-      <%= f.label 'Відео' %>
+      <%= f.label t('views.form.video') %>
       <%= f.text_area :main_video %>
     </p>
     <p>
-      <%= f.label 'Короткий опис' %>
+      <%= f.label t('views.form.short_description') %>
       <%= f.text_area :short_description, required: :required %>
     </p>
     <p>
-      <%= f.label 'Довгий опис' %>
+      <%= f.label t('views.form.long_description') %>
       <%= f.text_area :long_description, required: :required %>
     </p>
     <p>
-      <%= f.label 'Необхідна сума для виконання(від 100 до 50000)' %>
+      <%= f.label t('views.form.sum') %>
       <%= f.text_field :sum, required: :required %>
     </p>
     <p>
-      <%= f.label 'Термін збору коштів(30 або 60) днів' %>
+      <%= f.label t('views.form.term_fundraiser') %>
       <%= f.text_field :term_fundraiser, required: :required %>
     </p>
     <p>
-      <%= f.label 'Термін після якого буде надано звіт(15 або 30) днів' %>
+      <%= f.label t('views.form.term_report') %>
       <%= f.text_field :term_report, required: :required %>
     </p>
-    <%= f.label 'Категорії' %>
+    <%= f.label t('views.form.category') %>
     <br/>
 
     <span>
@@ -48,6 +48,6 @@
     </span>
 
     <p>
-      <%= f.submit 'Додати' %>
+      <%= f.submit t('views.initiative.new.title') %>
     </p>
 <% end %>
