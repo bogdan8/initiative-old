@@ -1,33 +1,33 @@
-<h2>Редагувати</h2>
+<h2><%= t('views.admins.edit.title') %></h2>
 <%= form_for :user, url: admin_path(@admin), method: :put do |f| %>
     <div class="field">
-      <%= f.label 'Імя' %><br/>
+      <%= f.label t('views.form.name') %><br/>
       <%= f.text_field :name %>
     </div>
 
     <div class="field">
-      <%= f.label 'Пошта' %><br/>
+      <%= f.label t('views.form.post') %><br/>
       <%= f.text_field :post %>
     </div>
 
     <div class="field">
-      <%= f.label 'Телефон' %><br/>
+      <%= f.label t('views.form.phone') %><br/>
       <%= f.number_field :phone %>
     </div>
 
     <div class="field">
-      <%= f.label 'Фото' %>
+      <%= f.label t('views.form.avatar') %>
       <%= f.file_field :avatar %>
     </div>
     <div class="field">
-      <%= f.label 'Email' %>
-      <%= f.text_field :email %>
+      <%= f.label t('views.form.email') %>
+      <%= f.text_field :email, type: :email %>
     </div>
     <div class="field">
-      <%= f.label 'Пароль' %>
+      <%= f.label t('views.form.password') %>
       <%= f.text_field :password %>
     </div>
     <p>
-      <%= f.submit 'редагувати' %>
+      <%= f.submit t('views.admins.edit.title') %>
     </p>
 <% end %>
