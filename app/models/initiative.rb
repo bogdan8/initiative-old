@@ -50,17 +50,17 @@ class Initiative < ActiveRecord::Base
   private
 
   def validate_sum
-    trans_error_sum = I18n.t('initiative.activerecord.errors.models.attributes.sum.correct_number')
+    trans_error_sum = I18n.t('activerecord.errors.models.initiative.attributes.sum.correct_number')
     errors.add(:sum, trans_error_sum) unless sum.between?(100, 50_000)
   end
 
   def validate_term_fundraiser
-    trans_error_term_fundraiser = I18n.t('initiative.activerecord.errors.models.attributes.term_fundraiser')
+    trans_error_term_fundraiser = I18n.t('activerecord.errors.models.initiative.attributes.term_fundraiser')
     errors.add(:term_fundraiser, trans_error_term_fundraiser) unless term_fundraiser == 30 || term_fundraiser == 60
   end
 
   def validate_term_report
-    trans_error_term_report = I18n.t('initiative.activerecord.errors.models.attributes.term_report')
+    trans_error_term_report = I18n.t('activerecord.errors.models.initiative.attributes.term_report')
     errors.add(:term_report, trans_error_term_report) unless term_report == 15 || term_report == 30
   end
 end

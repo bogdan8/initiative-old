@@ -15,7 +15,7 @@ class InitiativesController < ApplicationController
     if @initiative.save
       add_initiative_with_categories
       redirect_to @initiative
-      flash[:success] = 'Ініціативу додано'
+      flash[:success] = t('controller.initiative.save')
     else
       flash[:error] = @initiative.errors.full_messages.to_sentence
       render :new
@@ -28,7 +28,7 @@ class InitiativesController < ApplicationController
   def update
     if @initiative.update initiative_params
       redirect_to @initiative
-      flash[:success] = 'Ініціативу відредаговано'
+      flash[:success] = t('controller.initiative.update')
     else
       flash[:error] = @initiative.errors.full_messages.to_sentence
       render :edit
@@ -38,7 +38,7 @@ class InitiativesController < ApplicationController
   def destroy
     if @initiative.destroy
       redirect_to @initiative
-      flash[:success] = 'Ініціативу видалено'
+      flash[:success] = t('controller.initiative.destroy')
     else
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
@@ -52,7 +52,7 @@ class InitiativesController < ApplicationController
     @initiative = Initiative.find(params[:id])
     if @initiative.success_confirmation!
       redirect_to '/initiatives/pending_approval'
-      flash[:success] = 'Ініціативу підтверджено'
+      flash[:success] = t('controller.initiative.success_confirmation')
     else
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
@@ -62,7 +62,7 @@ class InitiativesController < ApplicationController
     @initiative = Initiative.find(params[:id])
     if @initiative.error_confirmation!
       redirect_to '/initiatives/pending_approval'
-      flash[:success] = 'Ініціативу відхилено'
+      flash[:success] = t('controller.initiative.error_confirmation')
     else
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end

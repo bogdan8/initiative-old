@@ -1,18 +1,114 @@
 uk:
-  initiative:
-    activerecord:
-      errors:
-        models:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'Неправильний формат електроної пошти'
+        initiative:
           attributes:
             sum:
-              correct_number: "Число має бути більше чим 100 і менше чим 50000"
-            term_fundraiser: "Ви вели невірне число, число має бути 30 або 60"
-            term_report: "Ви вели невірне число, число має бути 15 або 30"
+              correct_number: 'Число має бути більше чим 100 і менше чим 50000'
+            term_fundraiser: 'Ви вели невірне число, число має бути 30 або 60'
+            term_report: 'Ви вели невірне число, число має бути 15 або 30'
             password:
-              blank: "Ви неввели емайл"
+              blank: 'Ви неввели пароль'
+            short_description:
+              too_long: 'Задовгий опис'
+  controller:
+    admins:
+      save: 'Категорію додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Категорію видалено'
+    catrgory:
+      save: 'Адміністратора додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Адміністратора видалено'
+    initiative:
+      save: 'Ініціативу додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Ініціативу видалено'
+      success_confirmation: 'Ініціативу підтверджено'
+      error_confirmation: 'Ініціативу відхилено'
+
   views:
     pagination:
-      previous: "&lt; Назад"
-      next: "Вперед &gt;"
-      first: "Перше"
-      last: "Останє"
+      previous: '&lt; Назад'
+      next: 'Вперед &gt;'
+      first: 'Перше'
+      last: 'Останє'
+    form:
+      name: 'Імя'
+      post: 'Пошта'
+      phone: 'Телефон'
+      avatar: 'Фото'
+      email: 'Email'
+      password: 'Пароль'
+      main_picture: 'Фото'
+      video: 'Відео'
+      short_description: 'Короткий опис'
+      long_description: 'Довгий опис'
+      sum: 'Необхідна сума для виконання(від 100 до 50000)'
+      term_fundraiser: 'Термін збору коштів(30 або 60) днів'
+      term_report: 'Термін після якого буде надано звіт(15 або 30) днів'
+      category: 'Категорії'
+    link_to:
+      sing_in: 'Вхід'
+      sign_out: 'Вихід'
+      registration: 'Реєстрація'
+      home: 'Головна'
+      my_data: 'Мої дані'
+      my_initiatives: 'Мої ініціативи'
+      created: 'Створити'
+      show: 'Показати'
+      edit: 'Редагувати'
+      delete: 'Видалити'
+      success_confirmation: 'Підтвердити'
+      error_confirmation: 'Відхилити'
+    admins:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список адміністраторів'
+      new:
+        title: 'Додати'
+    category:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список категорій'
+      new:
+        title: 'Додати'
+      show:
+        title_initiative: 'Список ініціатив які належать цій категорії'
+        title: 'Назва'
+    home:
+      index:
+        title: 'Назва'
+        date: 'Дата'
+    initiative:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список ініціатив'
+         category: 'Категорії'
+         name: 'Назва'
+      new:
+        title: 'Додати'
+      show:
+        title_initiative: 'Список ініціатив які належать цій категорії'
+        title: 'Назва'
+      pending_approval:
+        title: 'Непідтверджені ініціативи'
+        name: 'Назва'
+    layout:
+      application:
+        header:
+          initiative: 'Ініціативи'
+          city: 'Міста'
+          name_city: 'Івано-Франківська'
+        nav:
+          category: 'Категорія'
+          search: 'Пошук'
+          sort: 'Сортувати'

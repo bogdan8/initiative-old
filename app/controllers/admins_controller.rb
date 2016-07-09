@@ -16,7 +16,7 @@ class AdminsController < ApplicationController
     @admin.add_role 'admin'
     if @admin.save
       redirect_to '/admins'
-      flash[:success] = 'Адміністратора додано'
+      flash[:success] = t('controller.admins.save')
     else
       flash[:error] = @admin.errors.full_messages.to_sentence
       render :new
@@ -29,7 +29,7 @@ class AdminsController < ApplicationController
   def update
     if @admin.update user_params
       redirect_to '/admins'
-      flash[:success] = 'Дані успішно відредаговані'
+      flash[:success] = t('controller.admins.update')
     else
       flash[:error] = @admin.errors.full_messages.to_sentence
       render :edit
@@ -39,7 +39,7 @@ class AdminsController < ApplicationController
   def destroy
     if @admin.destroy
       redirect_to '/admins'
-      flash[:success] = 'Адміністратора видалено'
+      flash[:success] = t('controller.admins.destroy')
     else
       flash[:error] = @admin.errors.full_messages.to_sentence
     end

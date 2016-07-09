@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
     @category = Category.new category_params
     if @category.save
       redirect_to '/categories'
-      flash[:success] = 'Категорію додано'
+      flash[:success] = t('controller.catrgory.save')
     else
       flash[:error] = @category.errors.full_messages.to_sentence
       render :new
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
   def update
     if @category.update category_params
       redirect_to '/categories'
-      flash[:success] = 'Дані успішно відредаговані'
+      flash[:success] = t('controller.catrgory.update')
     else
       flash[:error] = @category.errors.full_messages.to_sentence
       render :edit
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   def destroy
     if @category.destroy
       redirect_to '/categories'
-      flash[:success] = 'Категорію видалено'
+      flash[:success] = t('controller.catrgory.destroy')
     else
       flash[:error] = @category.errors.full_messages.to_sentence
     end
