@@ -1,4 +1,11 @@
 uk:
+  unauthorized:
+    default: "За замовчуванням текст повідомлення про помилку."
+    manage:
+      all: "Ви не маєте доступу до %{action} %{subject}."
+      user: "Не дозволено керувати іншими обліковими записами користувачів."
+    update:
+      project: "Не дозволено оновлювати цей проект."
   activerecord:
     errors:
       models:

@@ -23,5 +23,6 @@ class Ability
     can :manage, Initiative, user_id: user.id
     cannot :manage, Category
     can [:show], Category
+    cannot [:pending_approval], Initiative
   end
 end
