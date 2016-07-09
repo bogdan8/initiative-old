@@ -1,7 +1,7 @@
-<h2>Результат пошуку</h2>
+<h2><%= t('views.search.title') %></h2>
 <% @initiatives.each do |items| %>
-    <h4>Назва: <%= items.title %></h4>
+    <h4><%= t('views.search.name') %>: <%= items.title %></h4>
     <p>
-      <%= link_to 'Показати', initiative_path(items), class: 'btn btn-default' %>
+      <%= link_to t('views.link_to.show'), initiative_path(items), class: 'btn btn-default' %>
     </p>
 <% end %>

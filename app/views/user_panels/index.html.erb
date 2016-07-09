@@ -1,16 +1,16 @@
-<h3>Мої ініціативи:</h3><br/>
+<h2><%= t('views.user_panel.title') %>:</h2> <br/>
 
 <% @initiatives.each do |initiative| %>
-    <h4>Назва: <%= initiative.title %></h4>
-    <p>Категорія:
+    <h4><%= t('views.user_panel.name') %>: <%= initiative.title %></h4>
+    <p><%= t('views.user_panel.category') %>:
       <%= show_initiative_categories initiative %>
     </p>
     <p>
-      <%= link_to 'Показати', initiative_path(initiative), class: 'btn btn-default' %> |
+      <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %> |
 
-      <%= link_to 'Редагувати', edit_initiative_path(initiative), class: 'btn btn-warning' %> |
+      <%= link_to t('views.link_to.edit'), edit_initiative_path(initiative), class: 'btn btn-warning' %> |
 
-      <%= link_to 'Видалити', initiative_path(initiative), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+      <%= link_to t('views.link_to.delete'), initiative_path(initiative), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
     </p>
 
 <% end %>

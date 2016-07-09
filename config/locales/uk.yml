@@ -102,6 +102,13 @@ uk:
       pending_approval:
         title: 'Непідтверджені ініціативи'
         name: 'Назва'
+    search:
+      title: 'Результат пошуку'
+      name: 'Назва'
+    user_panel:
+      title: 'Мої ініціативи'
+      name: 'Назва'
+      category: 'Категорії'
     layout:
       application:
         header:
