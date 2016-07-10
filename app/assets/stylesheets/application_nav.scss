@@ -22,7 +22,7 @@ p {
     left: 40px;
   }
   &:hover {
-    color: white;
+    color: $color-white;
   }
 }
 
@@ -59,6 +59,7 @@ select option {
 .button-sort {
   @extend .button-search;
   height: 30px;
+  margin-top: -2px;
 }
 
 .select-sort {
@@ -80,12 +81,12 @@ select option {
   width: 150px;
   height: 31px;
   background-color: #4D4252;
-  color: white;
+  color: $color-white;
   option {
-    background-color: white;
+    background-color: $color-white;
     color: black;
     p {
-      color: white;
+      color: $color-white;
     }
   }
 }
