@@ -1,12 +1,14 @@
 <h2><%= t('views.user_panel.title') %>:</h2> <br/>
 
 <% @initiatives.each do |initiative| %>
-    <h4><%= t('views.user_panel.name') %>: <%= initiative.title %></h4>
+    <h4><%= t('views.user_panel.name') %>: <%= initiative.title %> <%= show_description_on_what_state_initiative initiative %></h4>
     <p><%= t('views.user_panel.category') %>:
       <%= show_initiative_categories initiative %>
     </p>
     <p>
       <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %> |
+
+      <%= show_for_confirmation_initiative_path(initiative)%>
 
       <%= link_to t('views.link_to.edit'), edit_initiative_path(initiative), class: 'btn btn-warning' %> |
 

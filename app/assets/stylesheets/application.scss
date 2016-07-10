@@ -4,4 +4,13 @@
  *= require ionicons
  *= require application_header
  *= require application_nav
+ *= require application_footer
+ *= require initiatives_list
  */
+body{
+  background-color: #EEEEEE;
+}
+p {
+  font-family: 'Lato', serif;
+  font-size: 48px;
+}
