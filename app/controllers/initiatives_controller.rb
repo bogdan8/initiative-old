@@ -44,6 +44,16 @@ class InitiativesController < ApplicationController
     end
   end
 
+  def for_confirmation
+    @initiative = Initiative.find(params[:id])
+    if @initiative.submit_for_confirmation!
+      redirect_to '/user_panels'
+      flash[:success] = t('controller.initiative.for_confirmation')
+    else
+      flash[:error] = @initiative.errors.full_messages.to_sentence
+    end
+  end
+
   def pending_approval
     @initiative_approval = Initiative.all.pending_approval
   end

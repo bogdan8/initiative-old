@@ -37,6 +37,7 @@ uk:
       update: 'Дані успішно відредаговані'
       destroy: 'Ініціативу видалено'
       success_confirmation: 'Ініціативу підтверджено'
+      for_confirmation: 'Відправлено на підтвердження'
       error_confirmation: 'Ініціативу відхилено'
 
   views:
@@ -61,9 +62,9 @@ uk:
       term_report: 'Термін після якого буде надано звіт(15 або 30) днів'
       category: 'Категорії'
     link_to:
-      sing_in: 'Вхід'
-      sign_out: 'Вихід'
-      registration: 'Реєстрація'
+      sing_in: 'ВХІД'
+      sign_out: 'ВИХІД'
+      registration: 'РЕЄСТРАЦІЯ'
       home: 'Головна'
       my_data: 'Мої дані'
       my_initiatives: 'Мої ініціативи'
@@ -73,6 +74,7 @@ uk:
       delete: 'Видалити'
       success_confirmation: 'Підтвердити'
       error_confirmation: 'Відхилити'
+      for_confirmation: 'Відправити для підтвердження'
     admins:
       edit:
         title: 'Редагувати'
@@ -119,9 +121,9 @@ uk:
     layout:
       application:
         header:
-          initiative: 'Ініціативи'
-          city: 'Міста'
-          name_city: 'Івано-Франківська'
+          initiative: 'ІНІЦІАТИВИ'
+          city: 'МІСТА'
+          name_city: 'ІВАНО-ФРАНКІВСЬКА'
         nav:
           category: 'Категорія'
           search: 'Пошук'

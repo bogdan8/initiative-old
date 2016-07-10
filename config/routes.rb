@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :initiatives do
     get :pending_approval, on: :collection
+    get :for_confirmation, on: :member
     get :success_confirmation, on: :member
     get :error_confirmation, on: :member
   end

@@ -11,16 +11,16 @@ class Ability
   end
 
   def the_administrator_can_do
-    can :manage, User
-    can :manage, Initiative
-    can :manage, Category
+    can :manage, [User, Initiative, Category]
   end
 
   def the_user_can_do(user)
     can :read, :all
     cannot :read, User
     can [:show, :update], User, id: user.id
+    cannot :manage, Initiative
     can :manage, Initiative, user_id: user.id
+    can [:show], Initiative
     cannot :manage, Category
     can [:show], Category
     cannot [:pending_approval], Initiative

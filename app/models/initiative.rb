@@ -10,18 +10,23 @@ class Initiative < ActiveRecord::Base
   include AASM
 
   aasm do
-    state :pending_approval, initial: true
+    state :create_initiative, initial: true
+    state :pending_approval
     state :rejected
     state :fundraiser
     state :implemented
     state :unrealized
+
+    event :submit_for_confirmation do
+      transitions from: [:create_initiative, :rejected], to: :pending_approval
+    end
 
     event :success_confirmation do
       transitions from: :pending_approval, to: :fundraiser
     end
 
     event :error_confirmation do
-      transitions from: :pending_approval, to: :rejected
+      transitions from: [:pending_approval, :create_initiative, :fundraiser], to: :rejected
     end
 
     event :success_fundraiser do
