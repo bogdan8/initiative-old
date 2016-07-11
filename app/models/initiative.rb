@@ -10,15 +10,16 @@ class Initiative < ActiveRecord::Base
   include AASM
 
   aasm do
-    state :create_initiative, initial: true
+    state :draft, initial: true
     state :pending_approval
     state :rejected
     state :fundraiser
+    state :fundraising_finished
     state :implemented
     state :unrealized
 
     event :submit_for_confirmation do
-      transitions from: [:create_initiative, :rejected], to: :pending_approval
+      transitions from: [:draft, :rejected], to: :pending_approval
     end
 
     event :success_confirmation do
@@ -26,14 +27,18 @@ class Initiative < ActiveRecord::Base
     end
 
     event :error_confirmation do
-      transitions from: [:pending_approval, :create_initiative, :fundraiser], to: :rejected
+      transitions from: [:pending_approval, :draft, :fundraiser], to: :rejected
     end
 
-    event :success_fundraiser do
+    event :finish_fundraising do
+      transitions from: :fundraiser, to: :fundraising_finished
+    end
+
+    event :finish_fundraiser_success do
       transitions from: :launched, to: :implemented
     end
 
-    event :error_fundraiser do
+    event :finish_fundraiser_errors do
       transitions from: :launched, to: :unrealized
     end
   end

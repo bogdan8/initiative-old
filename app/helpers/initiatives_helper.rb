@@ -4,13 +4,13 @@ module InitiativesHelper
   end
 
   def show_for_confirmation_initiative_path(initiative)
-    if initiative.create_initiative? || initiative.rejected?
+    if initiative.draft? || initiative.rejected?
       link_to t('views.link_to.for_confirmation'), for_confirmation_initiative_path(initiative), class: 'btn btn-info'
     end
   end
 
   def show_description_on_what_state_initiative(initiative)
-    if initiative.create_initiative?
+    if initiative.draft?
       content_tag :p, 'Чорновик', style: 'color: red;'
     elsif initiative.pending_approval?
       content_tag :p, 'Очікується на підтвердження адміністратором', style: 'color: green;'
