@@ -5,7 +5,7 @@
           <div class="initiative-list-block">
             <div class="block-list-images">
               <a href="<%= initiative_path(initiative) %>">
-                <%= image_tag initiative.main_picture.url(:medium), class: 'list-images' %>
+                <%= check_or_uploaded_picture_initiative initiative %>
               </a>
             </div>
             <div class="block-list-initiative-description">

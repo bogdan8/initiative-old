@@ -20,4 +20,12 @@ module InitiativesHelper
       content_tag :p, 'Проходить збір коштів', style: 'color: blue;'
     end
   end
+
+  def check_or_uploaded_picture_initiative(initiative)
+    if initiative.main_picture.url(:medium) == '/images/medium/missing.png'
+      image_tag 'initiatives/default-initiative-image.jpg', class: 'list-images'
+    else
+      image_tag initiative.main_picture.url(:medium), class: 'list-images'
+    end
+  end
 end

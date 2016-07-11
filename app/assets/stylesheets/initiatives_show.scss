@@ -1,0 +1,130 @@
+@import "variables";
+
+.initiative-show-block {
+  margin-top: 240px;
+  width: 500px;
+  border: 1px solid #9D979F;
+  height: 500px;
+  background-color: $color-white;
+  p {
+    text-align: center;
+    color: #9D979F;
+  }
+}
+
+.block-show-big-images {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -240px;
+  background-color: $color-white;
+}
+
+.block-show-small-images {
+  @extend .block-show-big-images;
+  width: 100px;
+  height: 100px;
+  margin-top: 40%;
+}
+
+.show-big-images {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.show-small-images {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.show-down-block {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    color: #96070A;
+    font-size: 100px;
+  }
+}
+
+.initiative-long-description {
+  font-size: 15px;
+  color: #9D979F;
+}
+
+.initiative-list-categories {
+  font-size: 20px;
+  p {
+    color: #9D979F;
+    font-size: 15px;
+  }
+}
+
+.initiative-need-sum {
+  font-size: 20px;
+  b {
+    color: #96070A;
+    font-size: 20px;
+  }
+}
+
+.initiative-collected {
+  @extend .initiative-need-sum;
+}
+
+.initiative-remains {
+  @extend .initiative-need-sum;
+}
+
+.initiative-button-support {
+  margin-top: 100px;
+  width: auto;
+  height: auto;
+  background-color: #96070A;
+  color: $color-white;
+  font-size: 25px;
+  padding: 7px;
+  float: right;
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.initiative-show-video {
+  margin-top: 200px;
+}
+
+.initiative-show-share {
+  margin-top: 100px;
+  p {
+    font-size: 20px;
+    .vk {
+      background-color: #4C75A2;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .facebook{
+      @extend .vk;
+      background-color: #3A5997;
+    }
+    .twitter{
+      @extend .vk;
+      background-color: #54ACEE;
+    }
+    .google{
+      @extend .vk;
+      background-color: #E02E2E;
+    }
+  }
+}
