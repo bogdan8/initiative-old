@@ -47,22 +47,22 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <p class="initiative-need-sum">Потрібна сума: <b><%= @initiative.sum %> грн</b></p>
+          <p class="initiative-need-sum"><%= t('views.initiative.show.need_sum') %>: <b><%= @initiative.sum %> грн</b></p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <p class="initiative-collected">Зібрано: <b><%= @initiative.sum %> грн</b></p>
+          <p class="initiative-collected"><%= t('views.initiative.show.collected') %>: <b><%= @initiative.sum %> грн</b></p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <p class="initiative-remains">Залишилось: <b><%= @initiative.sum %> грн</b></p>
+          <p class="initiative-remains"><%= t('views.initiative.show.remains') %>: <b><%= @initiative.sum %> грн</b></p>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <a href="#" class="initiative-button-support">підтримати</a>
+          <a href="#" class="initiative-button-support"><%= t('views.initiative.show.support') %></a>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="initiative-show-share">
-        <p>Поділитися
+        <p><%= t('views.initiative.show.share') %>
           <b class="vk"><i class="fa fa-vk" aria-hidden="true"></i></b>
           <b class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></b>
           <b class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></b>

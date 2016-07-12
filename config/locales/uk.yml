@@ -47,20 +47,21 @@ uk:
       first: 'Перше'
       last: 'Останє'
     form:
-      name: 'Імя'
+      name: 'Назва ініціативи'
       post: 'Пошта'
       phone: 'Телефон'
       avatar: 'Фото'
       email: 'Email'
       password: 'Пароль'
-      main_picture: 'Фото'
-      video: 'Відео'
+      main_picture: 'Головне фото'
+      video: 'Посилання на відео'
       short_description: 'Короткий опис'
       long_description: 'Довгий опис'
-      sum: 'Необхідна сума для виконання(від 100 до 50000)'
-      term_fundraiser: 'Термін збору коштів(30 або 60) днів'
-      term_report: 'Термін після якого буде надано звіт(15 або 30) днів'
+      sum: 'Потрібна сума'
+      term_fundraiser: 'Термін збору коштів(30 - 60) днів'
+      term_report: 'Термін подання звіту(15 - 30) днів'
       category: 'Категорії'
+      add_photos: 'Додати фото'
     link_to:
       sing_in: 'ВХІД'
       sign_out: 'ВИХІД'
@@ -96,6 +97,7 @@ uk:
       index:
         title: 'Назва'
         date: 'Дата'
+        remains: 'залишилось'
     initiative:
       edit:
         title: 'Редагувати'
@@ -104,10 +106,16 @@ uk:
          category: 'Категорії'
          name: 'Назва'
       new:
-        title: 'Додати'
+        title: 'Нова ініціатива'
+        btn_title: 'створити'
       show:
         title_initiative: 'Список ініціатив які належать цій категорії'
         title: 'Назва'
+        remains: 'залишилось'
+        need_sum: 'потрібно'
+        collected: 'зібрано'
+        support: 'підтримати'
+        share: 'Поділитись'
       pending_approval:
         title: 'Непідтверджені ініціативи'
         name: 'Назва'
