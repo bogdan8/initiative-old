@@ -1,53 +1,109 @@
-<h2><%= t('views.initiative.new.title') %></h2>
-<%= form_for :initiative, url: '/initiatives', html: {multipart: true}, method: :post do |f| %>
-    <p>
-      <%= f.label t('views.form.name') %>
-      <%= f.text_field :title, required: :required %>
-    </p>
-    <p>
-      <%= f.label t('views.form.main_picture') %>
-      <%= f.file_field :main_picture %>
-    </p>
-    <p>
-      <%= f.label t('views.form.video') %>
-      <%= f.text_area :main_video %>
-    </p>
-    <p>
-      <%= f.label t('views.form.short_description') %>
-      <%= f.text_area :short_description, required: :required %>
-    </p>
-    <p>
-      <%= f.label t('views.form.long_description') %>
-      <%= f.text_area :long_description, required: :required %>
-    </p>
-    <p>
-      <%= f.label t('views.form.sum') %>
-      <%= f.text_field :sum, required: :required %>
-    </p>
-    <p>
-      <%= f.label t('views.form.term_fundraiser') %>
-      <%= f.text_field :term_fundraiser, required: :required %>
-    </p>
-    <p>
-      <%= f.label t('views.form.term_report') %>
-      <%= f.text_field :term_report, required: :required %>
-    </p>
-    <%= f.label t('views.form.category') %>
-    <br/>
-
-    <span>
-
-	<% Category.all.each do |category| %>
-	  <label>
-        <%= check_box_tag :category_ids, category.id, @initiative.category_ids.include?(category), name:'category_ids[]' %>
-        <%= category.name %>
-      </label>
-          <br/>
-	<% end %>
-
-    </span>
-
-    <p>
-      <%= f.submit t('views.initiative.new.title') %>
-    </p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-11">
+      <p class="initiative-new-title"><%= t('views.initiative.new.title') %></p>
+      <%= form_for :initiative, url: '/initiatives', html: {multipart: true}, method: :post do |f| %>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.main_picture'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <div class="initiative-new-chose-image">
+                <div class="initiative-new-file-block">
+                  <div class="initiative-new-file-title">Додати фото</div>
+                  <input type="file" name="initiative[main_picture]" id="initiative_main_picture" size="1" class="initiative-new-file-input">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.category'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <div class="checkbox">
+                <label>
+                  <% Category.all.each do |category| %>
+                      <label>
+                        <%= check_box_tag :category_ids, category.id, @initiative.category_ids.include?(category), name: 'category_ids[]' %>
+                        <%= category.name %>
+                      </label>
+                      <br/>
+                  <% end %>
+                 </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.name'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_field :title, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.name') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.short_description'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_field :short_description, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.short_description') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.long_description'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_area :long_description, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.long_description') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.sum'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_field :sum, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.sum') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.video'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.text_area :main_video, class: 'form-control initiative-new-form-input', placeholder: t('views.form.video') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.term_fundraiser'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.number_field :term_fundraiser, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_fundraiser') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.term_report'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.number_field :term_report, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_report') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.add_photos'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <%= f.number_field :term_report, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_report') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-offset-4 col-lg-8">
+              <%= f.submit t('views.initiative.new.btn_title'), class: 'initiative-button-submit' %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

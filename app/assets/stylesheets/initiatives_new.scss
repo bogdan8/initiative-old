@@ -1,0 +1,66 @@
+@import "variables";
+
+.initiative-new-title {
+  color: #4D4252;
+  text-align: center;
+  font-size: 30px;
+}
+
+.initiative-new-form-names {
+  color: #4D4252;
+  font-size: 20px;
+  margin: {
+    top: 30px;
+    bottom: 30px;
+  }
+}
+
+.initiative-new-form-input {
+  margin: {
+    top: 30px;
+    bottom: 30px;
+  }
+}
+
+.initiative-new-file-block {
+  text-align: center;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #4D4252;
+  border-radius: 50%;
+  background-color: white;
+
+}
+
+.initiative-new-file-title {
+  color: #9D979F;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 45%;
+}
+
+.initiative-new-file-input {
+  margin-top: -50px;
+  margin-left: -410px;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  font-size: 150px;
+  height: 100px;
+}
+
+.initiative-button-submit {
+  margin-top: 100px;
+  width: auto;
+  height: auto;
+  background-color: #96070A;
+  color: $color-white;
+  font-size: 25px;
+  padding: 7px;
+  float: center;
+  &:hover {
+    color: $color-white;
+  }
+}
