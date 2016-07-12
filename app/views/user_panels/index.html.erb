@@ -1,18 +1,37 @@
-<h2><%= t('views.user_panel.title') %>:</h2> <br/>
+<div class="container">
+  <div class="row">
+    <% @initiatives.each do |initiative| %>
+        <div class="col-lg-4">
+          <div class="initiative-list-block">
+            <div class="block-list-images">
+              <a href="<%= initiative_path(initiative) %>">
+                <%= check_or_uploaded_picture_initiative initiative %>
+              </a>
+            </div>
+            <div class="block-list-initiative-description">
+              <p class="initiative-list-title">
+                <%= initiative.title %>
+                <b><%= show_description_on_what_state_initiative initiative %></b>
+              </p>
 
-<% @initiatives.each do |initiative| %>
-    <h4><%= t('views.user_panel.name') %>: <%= initiative.title %> <%= show_description_on_what_state_initiative initiative %></h4>
-    <p><%= t('views.user_panel.category') %>:
-      <%= show_initiative_categories initiative %>
-    </p>
-    <p>
-      <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %> |
+              <p class="initiative-list-short-description">
+                <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %><br />
 
-      <%= show_for_confirmation_initiative_path(initiative)%>
+                <%= show_for_confirmation_initiative_path(initiative)%>
 
-      <%= link_to t('views.link_to.edit'), edit_initiative_path(initiative), class: 'btn btn-warning' %> |
+                <%= link_to t('views.link_to.edit'), edit_initiative_path(initiative), class: 'btn btn-warning' %><br />
 
-      <%= link_to t('views.link_to.delete'), initiative_path(initiative), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
-    </p>
+                <%= link_to t('views.link_to.delete'), initiative_path(initiative), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
 
-<% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="list-down-block">
+      <i class="fa fa-sort-desc" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>

@@ -11,13 +11,14 @@ module InitiativesHelper
 
   def show_description_on_what_state_initiative(initiative)
     if initiative.draft?
-      content_tag :p, 'Чорновик', style: 'color: red;'
+      content_tag :p, 'Чорновик', style: 'color: red;', class: 'initiative-list-title-state'
     elsif initiative.pending_approval?
-      content_tag :p, 'Очікується на підтвердження адміністратором', style: 'color: green;'
+      content_tag :p, 'Очікується на підтвердження адміністратором',
+                  style: 'color: green;', class: 'initiative-list-title-state'
     elsif initiative.rejected?
-      content_tag :p, 'Ініціативу відхилено', style: 'color: red;'
+      content_tag :p, 'Ініціативу відхилено', style: 'color: red;', class: 'initiative-list-title-state'
     elsif initiative.fundraiser?
-      content_tag :p, 'Проходить збір коштів', style: 'color: blue;'
+      content_tag :p, 'Проходить збір коштів', style: 'color: blue;', class: 'initiative-list-title-state'
     end
   end
 
