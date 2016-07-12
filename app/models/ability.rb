@@ -4,19 +4,20 @@ class Ability
   def initialize(user)
     user ||= User.new
     if user.has_role? :admin
-      the_administrator_can_do
+      the_administrator_can_do user
     else
       the_user_can_do user
     end
   end
 
-  def the_administrator_can_do
+  def the_administrator_can_do(user)
     can :manage, [User, Initiative, Category]
+    cannot :destroy, User, id: user.id
   end
 
   def the_user_can_do(user)
     can :read, :all
-    cannot :read, User
+    cannot :manage, User
     can [:show, :update], User, id: user.id
     cannot :manage, Initiative
     can :manage, Initiative, user_id: user.id
