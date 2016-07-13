@@ -14,6 +14,9 @@
   background-color: #9D979F;
   height: 200px;
   width: 5px;
+  @media (max-width: $media-max-width-on-small-devise) {
+    margin-left: 40px;
+  }
 }
 
 .footer-text-left-top {
@@ -23,6 +26,13 @@
   margin: {
     top: $header-text-left-margin-top;
     left: 120px;
+  }
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+    margin: {
+      top: $header-text-left-margin-top;
+      left: 50px;
+    }
   }
 }
 
@@ -36,6 +46,9 @@
 .footer-text-left-bottom {
   @extend .footer-text-left-top;
   font-size: 25px;
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+  }
   margin: {
     top: $header-text-left-margin-top + 90;
   }
@@ -62,6 +75,9 @@
   flex-direction: column;
   float: right;
   justify-content: center;
+  @media (max-width: $media-max-width-on-small-devise) {
+    margin-right: 10px;
+  }
 }
 
 .footer-text-right {
@@ -73,6 +89,17 @@
     height: 30px;
     font-size: 25px;
     color: #4D4252;
+  }
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+    i {
+      background-color: $color-white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 15px;
+      color: #4D4252;
+    }
   }
 }
 

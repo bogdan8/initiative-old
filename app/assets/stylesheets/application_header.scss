@@ -28,6 +28,13 @@
     top: $header-text-left-margin-top;
     left: 120px;
   }
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+    margin: {
+      top: $header-text-left-margin-top;
+      left: 50px;
+    }
+  }
 }
 
 .header-text-left-middle {
@@ -39,7 +46,6 @@
 
 .header-text-left-bottom {
   @extend .header-text-left-top;
-  font-size: 25px;
   margin: {
     top: $header-text-left-margin-top + 90;
   }
@@ -51,6 +57,9 @@
   background-color: $color-white;
   height: 200px;
   width: 5px;
+  @media (max-width: $media-max-width-on-small-devise) {
+    margin-left: 40px;
+  }
 }
 
 .header-block-right {
@@ -68,6 +77,13 @@
     top: 50px;
     left: -150px;
   }
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+    margin: {
+      top: 50px;
+      left: -50px;
+    }
+  }
   &:hover {
     color: $color-white;
   }
@@ -78,6 +94,13 @@
   margin: {
     top: $header-text-right-top + 90;
     left: -270px;
+  }
+  @media (max-width: $media-max-width-on-small-devise) {
+    font-size: 15px;
+    margin: {
+      top: $header-text-right-top + 90;
+      left: -100px;
+    }
   }
   &:hover {
     color: $color-white;

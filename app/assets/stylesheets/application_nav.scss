@@ -1,34 +1,39 @@
 @import "variables";
 
-p {
-  font-family: Helvetica, sans-serif;
-}
-
-.havbar-block {
+.navbar-block {
   background-color: #4D4252;
-  height: 60px;
 }
 
-.navbar-block-a {
-  margin-left: 100px;
-}
-
-.navbar-a {
-  color: #9D979F;
-  font-size: 30px;
-  margin: {
-    top: 20px;
-    right: 40px;
-    left: 40px;
+@media (min-width: $media-min-width-on-big-devise) {
+  .nav-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  .navbar-a-home {
+    margin-left: 100px;
+  }
+}
+
+.navbar-brand:hover {
   &:hover {
     color: $color-white;
   }
 }
 
-.navbar-a-home {
-  @extend .navbar-a;
-  margin-left: 200px;
+.navbar-default .navbar-nav > li > a:hover {
+  color: $color-white;
+}
+
+.navbar-a {
+  color: #9D979F;
+  font-size: 30px;
+  @media (min-width: $media-min-width-on-big-devise) {
+    margin: {
+      right: 40px;
+      left: 40px;
+    }
+  }
 }
 
 .form-search {

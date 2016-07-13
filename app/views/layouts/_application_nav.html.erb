@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default havbar-block">
+<nav class="navbar navbar-default navbar-block">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -7,18 +7,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-a-home" href="/"><%= t('views.link_to.home') %></a>
+      <a class="navbar-brand navbar-a navbar-a-home" href="/"><%= t('views.link_to.home') %></a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="navbar-block-a">
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-              <%= link_to t('views.link_to.my_data'), root_path, class: 'navbar-a' %>
-              <%= link_to t('views.link_to.my_initiatives'), '/user_panels', class: 'navbar-a' %>
-          <% end %>
-          <%= link_to t('views.link_to.created'), '/initiatives/new', class: 'navbar-a' %>
-        </ul>
-      </div>
+      <ul class="nav navbar-nav nav-block">
+        <% if user_signed_in? %>
+            <li><%= link_to t('views.link_to.my_data'), root_path, class: 'navbar-a' %></li>
+            <li><%= link_to t('views.link_to.my_initiatives'), '/user_panels', class: 'navbar-a' %></li>
+        <% end %>
+        <li><%= link_to t('views.link_to.created'), '/initiatives/new', class: 'navbar-a' %></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search" method="get" action="/search">
           <div class="form-group">
@@ -30,16 +30,20 @@
     </div>
   </div>
 </nav>
-<div class="sort-block">
-  <form action="/search/sort" class="navbar-form navbar-left" method="get">
-    <select name="category[id]" id="category_id" class="select-sort">
-      <option selected="disabled" value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
-      <% Category.all.each do |items| %>
-          <option value="<%= items.id %>"><p><%= items.name %></p></option>
-      <% end %>
-    </select>
-    <button type="submit" name="commit" class="btn button-sort">
-      <%= t('views.layout.application.nav.sort') %>
-    </button>
-  </form>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-8 col-lg-4 col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4 col-xs-12 ">
+      <form action="/search/sort" class="navbar-form navbar-left" method="get">
+        <select name="category[id]" id="category_id" class="select-sort">
+          <option selected="disabled" value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
+          <% Category.all.each do |items| %>
+              <option value="<%= items.id %>"><p><%= items.name %></p></option>
+          <% end %>
+        </select>
+        <button type="submit" name="commit" class="btn button-sort">
+          <%= t('views.layout.application.nav.sort') %>
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
