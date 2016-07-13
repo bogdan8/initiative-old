@@ -5,28 +5,14 @@
         <div class="block-show-big-images">
           <%= image_tag @initiative.main_picture.url, class: 'show-big-images' %>
         </div>
-
         <div class="row initiative-show-small-images-block">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-            <div class="block-show-small-images">
-              <%= image_tag @initiative.main_picture.url, class: 'show-small-images' %>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-            <div class="block-show-small-images">
-              <%= image_tag @initiative.main_picture.url, class: 'show-small-images' %>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-            <div class="block-show-small-images">
-              <%= image_tag @initiative.main_picture.url, class: 'show-small-images' %>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-            <div class="block-show-small-images">
-              <%= image_tag @initiative.main_picture.url, class: 'show-small-images' %>
-            </div>
-          </div>
+          <% @initiative.initiative_images.each do |images| %>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                <div class="block-show-small-images">
+                  <%= image_tag images.initiative_images.url, class: 'show-small-images' %>
+                </div>
+              </div>
+          <% end %>
         </div>
         <div class="row">
           <div class="col-lg-12">

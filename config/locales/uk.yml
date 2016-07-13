@@ -62,6 +62,7 @@ uk:
       term_report: 'Термін подання звіту(15 - 30) днів'
       category: 'Категорії'
       add_photos: 'Додати фото'
+      old_photos: 'Фотографії які були додані'
     link_to:
       sing_in: 'ВХІД'
       sign_out: 'ВИХІД'

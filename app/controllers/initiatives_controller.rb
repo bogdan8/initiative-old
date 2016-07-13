@@ -15,6 +15,11 @@ class InitiativesController < ApplicationController
     @initiative = Initiative.new initiative_params
     add_initiative_with_categories
     if @initiative.save
+      if params[:initiative_images]
+        params[:initiative_images].each { |image|
+          @initiative.initiative_images.create(initiative_images: image)
+        }
+      end
       redirect_to @initiative
       flash[:success] = t('controller.initiative.save')
     else
@@ -90,7 +95,7 @@ class InitiativesController < ApplicationController
 
   def initiative_params
     one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
-    all_params = [:title, :main_video, :short_description, *one_params]
+    all_params = [:title, :main_video, :short_description, :initiative_images, *one_params]
     params.require(:initiative).permit(*all_params).merge(user_id: current_user.id)
   end
 

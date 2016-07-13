@@ -67,6 +67,20 @@
   }
 }
 
+.show-close{
+  display: none;
+}
+.show-delete-images:hover {
+  .show-close {
+    display: block;
+    position: absolute;
+    width: 50px;
+    font-size: 100px;
+    color: black;
+    margin-left: 10px;
+  }
+}
+
 .show-down-block {
   margin-top: 30px;
   width: 100%;
@@ -145,15 +159,15 @@
       padding: 5px;
       border-radius: 5px;
     }
-    .facebook{
+    .facebook {
       @extend .vk;
       background-color: #3A5997;
     }
-    .twitter{
+    .twitter {
       @extend .vk;
       background-color: #54ACEE;
     }
-    .google{
+    .google {
       @extend .vk;
       background-color: #E02E2E;
     }

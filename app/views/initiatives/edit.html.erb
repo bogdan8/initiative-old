@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-8">
               <%= fields_for(@initiative_category) do |ic| %>
-                  <%= collection_select(:category, :id, @all_categories, :id, :name,{},{multiple: true}) %>
+                  <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true}) %>
               <% end %>
             </div>
           </div>
@@ -80,6 +80,25 @@
             </div>
             <div class="col-lg-8">
               <%= f.number_field :term_report, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_report') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label t('views.form.old_photos'), class: 'initiative-new-form-names' %>
+            </div>
+            <div class="col-lg-8">
+              <div class="row initiative-show-small-images-block">
+                <% @initiative.initiative_images.each do |images| %>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                      <div class="block-show-small-images">
+                        <a href="#" class="show-delete-images">
+                          <i class="fa fa-times show-close" aria-hidden="true"></i>
+                          <%= image_tag images.initiative_images.url(:thumb), class: 'show-small-images' %>
+                        </a>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="row">
