@@ -21,17 +21,9 @@
               <%= f.label t('views.form.category'), class: 'initiative-new-form-names' %>
             </div>
             <div class="col-lg-8">
-              <div class="checkbox">
-                <label>
-                  <% Category.all.each do |category| %>
-                      <label>
-                        <%= check_box_tag :category_ids, category.id, @initiative.category_ids.include?(category), name: 'category_ids[]' %>
-                        <%= category.name %>
-                      </label>
-                      <br/>
-                  <% end %>
-                </label>
-              </div>
+              <%= fields_for(@initiative_category) do |ic| %>
+                  <%= collection_select(:category, :id, @all_categories, :id, :name,{},{multiple: true}) %>
+              <% end %>
             </div>
           </div>
           <div class="row">

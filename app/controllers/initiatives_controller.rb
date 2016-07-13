@@ -1,5 +1,6 @@
 class InitiativesController < ApplicationController
   load_and_authorize_resource
+  before_action :all_category, only: [:new, :edit]
 
   def index
   end
@@ -12,8 +13,8 @@ class InitiativesController < ApplicationController
 
   def create
     @initiative = Initiative.new initiative_params
+    add_initiative_with_categories
     if @initiative.save
-      add_initiative_with_categories
       redirect_to @initiative
       flash[:success] = t('controller.initiative.save')
     else
@@ -26,6 +27,8 @@ class InitiativesController < ApplicationController
   end
 
   def update
+    InitiativeCategory.delete_all("initiative_id = #{@initiative.id}")
+    add_initiative_with_categories
     if @initiative.update initiative_params
       redirect_to @initiative
       flash[:success] = t('controller.initiative.update')
@@ -80,6 +83,11 @@ class InitiativesController < ApplicationController
 
   private
 
+  def all_category
+    @all_categories = Category.all
+    @initiative_category = @initiative.initiative_categories.build
+  end
+
   def initiative_params
     one_params = [:long_description, :sum, :term_fundraiser, :term_report, :main_picture]
     all_params = [:title, :main_video, :short_description, *one_params]
@@ -87,10 +95,8 @@ class InitiativesController < ApplicationController
   end
 
   def add_initiative_with_categories
-    unless params[:category_ids].nil?
-      params[:category_ids].each do |id|
-        InitiativeCategory.create(initiative_id: @initiative.id, category_id: id)
-      end
+    params[:category][:id].each do |category|
+      @initiative.initiative_categories.build(category_id: category) unless category.empty?
     end
   end
 end
