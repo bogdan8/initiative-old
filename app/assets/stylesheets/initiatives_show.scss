@@ -67,18 +67,37 @@
   }
 }
 
-.show-close{
+.show-small-images-edit {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 5px;
+  @media (max-width: $media-max-width-on-small-devise) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.show-close {
   display: none;
 }
-.show-delete-images:hover {
-  .show-close {
-    display: block;
-    position: absolute;
-    width: 50px;
-    font-size: 100px;
-    color: black;
-    margin-left: 10px;
+
+.show-delete-images {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 0;
+  background-color: $color-white;
+  &:hover {
+    .show-close {
+      display: block;
+      position: absolute;
+      width: 50px;
+      font-size: 110px;
+      color: black;
+      margin-left: 20px;
+    }
   }
+
 }
 
 .show-down-block {

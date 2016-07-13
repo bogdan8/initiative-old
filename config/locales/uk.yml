@@ -37,6 +37,7 @@ uk:
       update: 'Дані успішно відредаговані'
       destroy: 'Ініціативу видалено'
       success_confirmation: 'Ініціативу підтверджено'
+      success_delete_photos_in_initiative: 'Фото видалено'
       for_confirmation: 'Відправлено на підтвердження'
       error_confirmation: 'Ініціативу відхилено'
 

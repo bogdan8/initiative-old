@@ -21,7 +21,7 @@
               <%= f.label t('views.form.category'), class: 'initiative-new-form-names' %>
             </div>
             <div class="col-lg-8">
-              <%= fields_for(@initiative_category) do |ic| %>
+              <%= fields_for(@initiative_category) do %>
                   <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true}) %>
               <% end %>
             </div>
@@ -91,10 +91,13 @@
                 <% @initiative.initiative_images.each do |images| %>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
                       <div class="block-show-small-images">
-                        <a href="#" class="show-delete-images">
-                          <i class="fa fa-times show-close" aria-hidden="true"></i>
-                          <%= image_tag images.initiative_images.url(:thumb), class: 'show-small-images' %>
-                        </a>
+                        <%= form_for :initiative_images, url: edit_delete_images_initiative_path(@initiative), method: :post do |form| %>
+                            <%= hidden_field_tag :initiative_photo_id, images.id %>
+                            <button type="submit" class="show-delete-images">
+                              <i class="fa fa-times show-close" aria-hidden="true"></i>
+                              <%= image_tag images.initiative_images.url(:medium), class: 'show-small-images-edit' %>
+                            </button>
+                        <% end %>
                       </div>
                     </div>
                 <% end %>
