@@ -4,7 +4,7 @@ class Initiative < ActiveRecord::Base
 
   belongs_to :user
   has_one :timeline
-  has_many :initiative_images, :dependent => :destroy
+  has_many :initiative_images, dependent: :destroy
   has_many :initiative_categories
   has_many :categories, through: :initiative_categories
 

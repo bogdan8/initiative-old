@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get :for_confirmation, on: :member
     get :success_confirmation, on: :member
     get :error_confirmation, on: :member
+    post 'edit/delete_images', to: 'initiatives#delete_images', on: :member
   end
   resources :categories
   get 'search', to: 'search#index'
