@@ -1,17 +1,17 @@
-/*
- *= require bootstrap
- *= require font-awesome
- *= require ionicons
- *= require application_header
- *= require application_nav
- *= require application_footer
- *= require initiatives_list
- *= require initiatives_show
- *= require initiatives_new
- */
-body{
+@import 'bootstrap';
+@import "font-awesome";
+@import 'ionicons';
+@import 'application_header';
+@import 'application_nav';
+@import 'application_footer';
+@import 'initiatives_list';
+@import 'initiatives_show';
+@import 'initiatives_new';
+
+body {
   background-color: #EEEEEE;
 }
+
 p {
   font-family: 'Lato', serif;
   font-size: 48px;

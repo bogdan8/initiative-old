@@ -81,7 +81,7 @@ class InitiativesController < ApplicationController
   end
 
   def add_initiative_with_categories
-    if params[:category]
+    unless params[:category].nil?
       params[:category][:id].each do |category|
         @initiative.initiative_categories.build(category_id: category) unless category.empty?
       end
