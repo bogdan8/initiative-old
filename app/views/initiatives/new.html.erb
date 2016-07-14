@@ -11,7 +11,7 @@
               <div class="initiative-new-chose-image">
                 <div class="initiative-new-file-block">
                   <div class="initiative-new-file-title">Додати фото</div>
-                  <input type="file" name="initiative[main_picture]" id="initiative_main_picture" size="1" class="initiative-new-file-input">
+                  <input type="file" required="required" name="initiative[main_picture]" id="initiative_main_picture" size="1" class="initiative-new-file-input">
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-lg-8">
               <%= fields_for(@initiative_category) do |ic| %>
-                  <%= collection_select(:category, :id, @all_categories, :id, :name,{},{multiple: true}) %>
+                  <%= collection_select(:category, :id, @all_categories, :id, :name,{},{multiple: true, require: true}) %>
               <% end %>
             </div>
           </div>
