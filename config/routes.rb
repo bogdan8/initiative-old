@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get 'search/sort', to: 'search#sort'
 
   get 'user_panels', to: 'user_panels#index'
+  get 'user_panels_information', to: 'user_panels#show_user'
 end

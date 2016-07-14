@@ -16,14 +16,12 @@ class Ability
   end
 
   def the_user_can_do(user)
-    can :read, :all
-    cannot :manage, User
+    cannot :manage, [User, Initiative, Category]
     can [:show, :update], User, id: user.id
-    cannot :manage, Initiative
+    can :read, Initiative
     can :manage, Initiative, user_id: user.id
-    can [:show], Initiative
-    cannot :manage, Category
-    can [:show], Category
+    can :read, Category
     cannot [:pending_approval], Initiative
+    cannot [:show_user], Initiative, user_id: user.id
   end
 end

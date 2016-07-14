@@ -14,10 +14,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-block">
         <% if user_signed_in? %>
-            <li><%= link_to t('views.link_to.my_data'), root_path, class: 'navbar-a' %></li>
-            <li><%= link_to t('views.link_to.my_initiatives'), '/user_panels', class: 'navbar-a' %></li>
+            <li><%= link_to t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a' %></li>
+            <li><%= link_to t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a' %></li>
         <% end %>
-        <li><%= link_to t('views.link_to.created'), '/initiatives/new', class: 'navbar-a' %></li>
+        <li><%= link_to t('views.link_to.created'), new_initiative_path, class: 'navbar-a' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search" method="get" action="/search">
