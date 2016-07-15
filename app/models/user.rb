@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  after_create :assign_default_role
+
+  def assign_default_role
+    add_role(:user)
+  end
   size_avatar = { medium: '300x300>', thumb: '100x100>' }
   path_avatar = ':rails_root/public/images/:attachment/:id/:style/:filename'
 

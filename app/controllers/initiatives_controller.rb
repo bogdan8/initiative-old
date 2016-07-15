@@ -3,6 +3,8 @@ class InitiativesController < ApplicationController
   before_action :all_category, only: [:new, :edit]
   before_action :find_initiatives, only: [:delete_images, :error_confirmation, :success_confirmation, :for_confirmation]
 
+  include AbilityStateToInitiatives
+
   def index
   end
 

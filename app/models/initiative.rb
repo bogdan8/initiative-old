@@ -74,4 +74,6 @@ class Initiative < ActiveRecord::Base
     trans_error_term_report = I18n.t('activerecord.errors.models.initiative.attributes.term_report')
     errors.add(:term_report, trans_error_term_report) unless term_report == 15 || term_report == 30
   end
+
+  scopify
 end

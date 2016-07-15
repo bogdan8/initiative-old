@@ -1,12 +1,6 @@
 module AbilityStateToInitiatives
   extend ActiveSupport::Concern
 
-  included do
-    before_action :for_confirmation
-    before_action :success_confirmation
-    before_action :error_confirmation
-  end
-
   def for_confirmation
     if @initiative.submit_for_confirmation!
       redirect_to '/user_panels'
