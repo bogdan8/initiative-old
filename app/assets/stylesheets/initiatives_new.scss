@@ -20,7 +20,7 @@
     top: 30px;
     bottom: 30px;
   }
-  border:{
+  border: {
     color: #4D4252;
     radius: 0;
   }
@@ -34,7 +34,6 @@
   border: 1px solid #4D4252;
   border-radius: 50%;
   background-color: white;
-
 }
 
 .initiative-new-file-title {
@@ -45,14 +44,49 @@
   margin-top: 45%;
 }
 
+.initiative-edit-file-title {
+  @extend .initiative-new-file-title;
+  margin: {
+    top: 130px;
+    left: 80px;
+  }
+  position: absolute;
+}
+
+.initiative-new-block-show-images {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: $color-white;
+  @media (max-width: $media-max-width-on-small-devise) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 .initiative-new-file-input {
-  margin-top: -50px;
-  margin-left: -410px;
+  margin-top: -165px;
   -moz-opacity: 0;
   filter: alpha(opacity=0);
   opacity: 0;
   font-size: 150px;
-  height: 100px;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+}
+
+.initiative-edit-file-input {
+  opacity: 0;
+  font-size: 150px;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  border-radius: 50%;
 }
 
 .initiative-button-submit {
@@ -63,8 +97,37 @@
   color: $color-white;
   font-size: 25px;
   padding: 7px;
-  float: center;
   &:hover {
     color: $color-white;
   }
+}
+
+.block-edit-big-images {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -240px;
+  background-color: $color-white;
+  @media (max-width: $media-max-width-on-small-devise) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.block-edit-small-images {
+  @extend .block-show-big-images;
+  width: 100px;
+  height: 100px;
+  margin-top: 40%;
+}
+
+.edit-small-images {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 5px;
 }
