@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160711103934) do
     t.datetime "updated_at",                          null: false
     t.string   "name"
     t.string   "post"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
