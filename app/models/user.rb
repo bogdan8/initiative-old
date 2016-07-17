@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   after_create :assign_default_role
-  after_find :send_user_mail
+  after_create :send_user_mail
 
   def assign_default_role
     add_role(:user)
