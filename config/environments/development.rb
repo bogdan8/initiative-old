@@ -46,8 +46,8 @@ Rails.application.configure do
     address:        'smtp.gmail.com',
     port:           587,
     authentication: :plain,
-    user_name:      'bogdanlitvin8@gmail.com',
-    password:       '70sunogo',
+    user_name:      'sityIvanoFrankivsk@gmail.com',
+    password:       '123654789q',
     openssl_verify_mode:  'none'
   }
 end
