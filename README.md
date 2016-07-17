@@ -1,29 +1,11 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Щоб створити акаунт адміністратора та користувача напишіть: rake db:seed
+-Щоб додати категорію потрібно зайти через адміністратора в меню ініціативи і на сторінку Непідтверджені ініціативи
+-
+-
+-email до адмінки admin@admin.com
+-пароль до адмінки 123456
+-
+-email до користувача user@user.com
+-пароль до користувача 123456
