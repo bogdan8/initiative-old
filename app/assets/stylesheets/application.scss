@@ -1,5 +1,5 @@
 @import 'bootstrap';
-@import "font-awesome";
+@import "font-awesome.css";
 @import 'ionicons';
 @import 'application_header';
 @import 'application_nav';
@@ -7,6 +7,8 @@
 @import 'initiatives_list';
 @import 'initiatives_show';
 @import 'initiatives_new';
+@import 'select2/select2.css';
+@import 'select2/s2-docs.css';
 
 body {
   background-color: #EEEEEE;

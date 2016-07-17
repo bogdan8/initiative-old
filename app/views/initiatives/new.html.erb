@@ -19,9 +19,10 @@
               <%= f.label t('views.form.category'), class: 'initiative-new-form-names' %>
             </div>
             <div class="col-lg-8">
+              <div class="block-with-margin"></div>
               <% unless @initiative_category.nil? %>
                   <%= fields_for(@initiative_category) do %>
-                      <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true, require: true}) %>
+                      <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true, require: true, class: 'category_select', style: 'width: 100%'}) %>
                   <% end %>
               <% end %>
             </div>
