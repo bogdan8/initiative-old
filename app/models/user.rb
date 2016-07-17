@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   after_create :assign_default_role
-  after_create :send_user_mail
+  after_find :send_user_mail
 
   def assign_default_role
     add_role(:user)
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_attached_file :avatar,
                     styles: size_avatar,
