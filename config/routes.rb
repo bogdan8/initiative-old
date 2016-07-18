@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   get 'user_panels', to: 'user_panels#index'
   get 'user_panels_information', to: 'user_panels#show_user'
+  get 'home/more_initiatives', to: 'home#more_initiatives'
 end
