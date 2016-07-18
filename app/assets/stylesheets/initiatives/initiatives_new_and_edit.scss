@@ -15,6 +15,15 @@
   }
 }
 
+.initiative-edit-form-names {
+  color: #4D4252;
+  font-size: 20px;
+  margin: {
+    top: 100px;
+    bottom: 30px;
+  }
+}
+
 .initiative-new-form-input {
   margin: {
     top: 30px;
@@ -86,7 +95,7 @@
 }
 
 .initiative-button-submit {
-  margin-top: 100px;
+  margin-top: 50px;
   width: auto;
   height: auto;
   background-color: #96070A;
