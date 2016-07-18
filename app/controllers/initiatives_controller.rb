@@ -28,6 +28,7 @@ class InitiativesController < ApplicationController
   end
 
   def edit
+    respond_to_format
   end
 
   def update
@@ -40,7 +41,6 @@ class InitiativesController < ApplicationController
       flash[:error] = @initiative.errors.full_messages.to_sentence
       render :edit
     end
-    respond_to_format
   end
 
   def destroy
@@ -59,8 +59,7 @@ class InitiativesController < ApplicationController
   def delete_images
     @images = @initiative.initiative_images.find(params[:initiative_photo_id])
     if @images.destroy
-      redirect_to "/initiatives/#{@initiative.id}/edit"
-      flash[:success] = t('controller.initiative.success_delete_photos_in_initiative')
+      redirect_to edit_initiative_path @initiative.id
     else
       flash[:error] = @images.errors.full_messages.to_sentence
     end
