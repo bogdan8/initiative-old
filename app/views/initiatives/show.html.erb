@@ -3,9 +3,7 @@
     <div class="col-lg-6 col-md-12 col-sm-12">
       <div class="initiative-show-block">
         <div class="block-show-big-images">
-          <a href="<%= initiative_path(@initiative) %>">
-            <%= check_or_uploaded_picture_initiative @initiative %>
-          </a>
+          <%= image_tag @initiative.main_picture.url, class: 'show-big-images' %>
         </div>
         <div class="row initiative-show-small-images-block">
           <% @initiative.initiative_images.each do |images| %>
@@ -74,7 +72,7 @@
     <div class="col-lg-offset-2 col-lg-8 col-sm-12 col-xs-12">
       <div class="initiative-show-video">
         <% if @initiative.main_video.empty? %>
-            <%= image_tag @initiative.main_picture.url, class: 'show-big-images-instead-video' %>
+            <%= image_tag @initiative.main_picture.url, class: 'show-big-images-instead' %>
         <% else %>
             <%== @initiative.main_video %>
         <% end %>

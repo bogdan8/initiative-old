@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
     $("#form-search-button").submit(function () {
         $.ajax({
-            url: '/ ',
+            url: '/',
             method: 'post',
             dataType: 'json'
         });

@@ -35,6 +35,7 @@ class InitiativesController < ApplicationController
     InitiativeCategory.delete_all("initiative_id = #{@initiative.id}")
     add_initiative_with_categories
     if @initiative.update initiative_params
+      add_images_to_initiative
       redirect_to @initiative
       flash[:success] = t('controller.initiative.update')
     else

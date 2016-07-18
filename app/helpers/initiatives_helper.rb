@@ -26,7 +26,7 @@ module InitiativesHelper
     if initiative.main_picture.url(:medium) == '/images/medium/missing.png'
       image_tag 'initiatives/default-initiative-image.jpg', class: 'list-images'
     else
-      image_tag initiative.main_picture.url(:medium), class: 'list-images'
+      image_tag initiative.main_picture.url, class: 'list-images'
     end
   end
 end
