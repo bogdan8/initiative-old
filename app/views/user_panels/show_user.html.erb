@@ -1,11 +1,75 @@
-<h2>Інформація</h2>
-<br />
-<p>Імя: <%= @user.name %></p>
-<p>Пошта: <%= @user.post %></p>
-<p>Телефон: <%= @user.phone %></p>
-<p>Емайл: <%= @user.email %></p>
-<p>Скільки разів заходив: <%= @user.sign_in_count %></p>
-<p>Коли останій раз заходив: <%= @user.last_sign_in_at %></p>
-<p>Фото повний розмір: <%= image_tag @user.avatar.url %></p>
-<p>Фото середнє: <%= image_tag @user.avatar.url(:medium) %></p>
-<p>Фото мале: <%= image_tag @user.avatar.url(:thumb) %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-11 col-xs-12">
+      <div class="row">
+        <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-title">
+            <%= t('views.user_panel.show.title') %>
+          </p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <%= link_to 'Редагувати', edit_user_registration_path, class: 'user-panel-button-edit-user' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-names-user-information">Фото: </p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <div class="user-panel-show-new-file-block">
+            <%= image_tag @user.avatar.url, class: 'user-panel-show-block-show-images' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= t('views.user_panel.show.name') %>:
+          </p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= @user.name %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= t('views.user_panel.show.post') %>:
+          </p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= @user.post %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= t('views.user_panel.show.phone') %>:
+          </p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= @user.phone %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= t('views.user_panel.show.email') %>:
+          </p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+          <p class="user-panel-show-names-user-information">
+            <%= @user.email %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

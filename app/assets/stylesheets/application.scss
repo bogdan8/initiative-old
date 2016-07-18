@@ -1,14 +1,15 @@
 @import 'bootstrap';
 @import "font-awesome";
 @import 'ionicons';
-@import 'application_header';
-@import 'application_nav';
-@import 'application_footer';
-@import 'initiatives_list';
-@import 'initiatives_show';
-@import 'initiatives_new';
+@import 'application_layout/application_header';
+@import 'application_layout/application_nav';
+@import 'application_layout/application_footer';
+@import 'initiatives/initiatives_list';
+@import 'initiatives/initiatives_show';
+@import 'initiatives/initiatives_new';
 @import 'select2/select2.css';
-@import 'select2/s2-docs.css';
+@import 'user_panels/show_user';
+@import 'devise/registration_edit';
 
 body {
   background-color: #EEEEEE;

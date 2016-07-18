@@ -23,7 +23,7 @@
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
               <div class="block-with-margin"></div>
               <%= fields_for(@initiative_category) do %>
-                  <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true, require: true, class: 'category_select', style: 'width: 100%'}) %>
+                  <%= collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true, class: 'category_select', style: 'width: 100%'}) %>
               <% end %>
             </div>
           </div>

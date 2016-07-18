@@ -33,14 +33,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-offset-8 col-lg-4 col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4 col-xs-12">
-      <form action="/search/sort" class="navbar-form navbar-right text-right" method="get">
+      <form action="/search/sort" class="navbar-form navbar-right text-right" method="get" data-remote="true">
         <select name="category[id]" id="category_id" class="select-sort">
           <option selected="disabled" value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
           <% Category.all.each do |items| %>
               <option value="<%= items.id %>"><p><%= items.name %></p></option>
           <% end %>
         </select>
-        <button type="submit" name="commit" class="btn button-sort">
+        <button type="submit" name="commit" class="btn button-sort" id="button-sort">
           <%= t('views.layout.application.nav.sort') %>
         </button>
       </form>

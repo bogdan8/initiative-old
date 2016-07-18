@@ -1,6 +1,6 @@
 @import "variables";
 
-.initiative-new-title {
+.user-panel-show-title {
   color: #4D4252;
   text-align: center;
   font-size: 30px;
@@ -63,10 +63,6 @@
   justify-content: center;
   padding: $image-padding;
   background-color: $color-white;
-  @media (max-width: $media-max-width-on-small-devise) {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 .initiative-new-file-input {
@@ -131,6 +127,7 @@
   border-radius: 50%;
   padding: 5px;
 }
-.block-with-margin{
+
+.block-with-margin {
   margin-top: 20px;
 }

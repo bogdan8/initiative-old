@@ -125,9 +125,29 @@ uk:
       title: 'Результат пошуку'
       name: 'Назва'
     user_panel:
+      show:
+        title: 'Мої дані'
+        name: "Ім'я"
+        post: 'Пошта'
+        phone: 'Телефон'
+        email: 'Емайл'
       title: 'Мої ініціативи'
       name: 'Назва'
       category: 'Категорії'
+    devise:
+      registration:
+        edit:
+          title: 'Мої дані'
+          name: "Ім'я"
+          post: 'Пошта'
+          phone: 'Телефон'
+          email: 'Емайл'
+          password: 'Пароль'
+          repeat_password: 'Повторіть пароль'
+          current_password: 'Теперішній пароль'
+          update: 'Обновити'
+          cancel_my_account: 'Скасувати мій аккаунт'
+          delete_my_account: 'Видалити мій аккаунт'
     layout:
       application:
         header:
