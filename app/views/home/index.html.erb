@@ -1,29 +1,31 @@
 <div class="container">
-  <div class="row">
-    <% @initiatives.each do |initiative| %>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-          <div class="initiative-list-block">
-            <div class="block-list-images">
-              <a href="<%= initiative_path(initiative) %>">
-                <%= check_or_uploaded_picture_initiative initiative %>
-              </a>
-            </div>
-            <div class="block-list-initiative-description">
-              <p class="initiative-list-title">
-                <%= initiative.title %>
-              </p>
+  <div class="row show-list-initiatives">
+    <div id="show-initiatives">
+      <% @initiatives.each do |initiative| %>
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="initiative-list-block">
+              <div class="block-list-images">
+                <a href="<%= initiative_path(initiative) %>">
+                  <%= check_or_uploaded_picture_initiative initiative %>
+                </a>
+              </div>
+              <div class="block-list-initiative-description">
+                <p class="initiative-list-title">
+                  <%= initiative.title %>
+                </p>
 
-              <p class="initiative-list-short-description">
-                <%= initiative.short_description %>
-              </p>
+                <p class="initiative-list-short-description">
+                  <%= initiative.short_description %>
+                </p>
 
-              <p class="initiative-list-days-left">
-                <%= t('views.home.index.remains') %> <b>10 днів</b>
-              </p>
+                <p class="initiative-list-days-left">
+                  <%= t('views.home.index.remains') %> <b>10 днів</b>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="row">
     <div class="list-down-block">

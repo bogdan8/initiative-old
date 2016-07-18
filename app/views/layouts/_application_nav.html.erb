@@ -37,10 +37,10 @@
         <select name="category[id]" id="category_id" class="select-sort">
           <option selected="disabled" value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
           <% Category.all.each do |items| %>
-              <option value="<%= items.id %>"><p><%= items.name %></p></option>
+              <option id="category_sort" value="<%= items.id %>"><p><%= items.name %></p></option>
           <% end %>
         </select>
-        <button type="submit" name="commit" class="btn button-sort" id="button-sort">
+        <button type="submit" name="commit" class="hidden" id="button-sort">
           <%= t('views.layout.application.nav.sort') %>
         </button>
       </form>
