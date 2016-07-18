@@ -20,4 +20,11 @@ class ApplicationController < ActionController::Base
       'application'
     end
   end
+
+  def respond_to_format
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 end

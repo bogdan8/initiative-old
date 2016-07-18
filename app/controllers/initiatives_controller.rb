@@ -40,6 +40,7 @@ class InitiativesController < ApplicationController
       flash[:error] = @initiative.errors.full_messages.to_sentence
       render :edit
     end
+    respond_to_format
   end
 
   def destroy
