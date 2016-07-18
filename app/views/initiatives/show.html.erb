@@ -3,7 +3,9 @@
     <div class="col-lg-6 col-md-12 col-sm-12">
       <div class="initiative-show-block">
         <div class="block-show-big-images">
-          <%= image_tag @initiative.main_picture.url, class: 'show-big-images' %>
+          <a href="<%= initiative_path(@initiative) %>">
+            <%= check_or_uploaded_picture_initiative @initiative %>
+          </a>
         </div>
         <div class="row initiative-show-small-images-block">
           <% @initiative.initiative_images.each do |images| %>
