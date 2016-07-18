@@ -4,6 +4,10 @@ class SearchController < ApplicationController
   def index
     session[:name_initiative] = params[:search]
     search_initiatives
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def sort

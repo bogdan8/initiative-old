@@ -20,11 +20,13 @@
         <li><%= link_to t('views.link_to.created'), new_initiative_path, class: 'navbar-a' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form navbar-left" role="search" method="get" action="/search">
+        <form class="navbar-form navbar-left" role="search" method="get" action="/search" data-remote="true">
           <div class="form-group">
             <input type="text" name="search" id="search" class="form-control form-search" placeholder="<%= t('views.layout.application.nav.search') %>">
           </div>
-          <button type="submit" class="btn button-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button type="submit" class="btn button-search" id="form-search-button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
         </form>
       </ul>
     </div>

@@ -8,4 +8,11 @@ $(document).ready(function () {
             dataType: 'json'
         });
     });
+    $("#form-search-button").submit(function () {
+        $.ajax({
+            url: '',
+            method: 'post',
+            dataType: 'json'
+        });
+    });
 });
