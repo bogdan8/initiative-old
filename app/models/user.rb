@@ -1,13 +1,13 @@
 class User < ActiveRecord::Base
   after_create :assign_default_role
-  after_create :send_user_mail
+  after_create :send_user_mail_welcome
 
   def assign_default_role
     add_role(:user)
   end
 
-  def send_user_mail
-    CreateUserMailer.send_new_user_message(self).deliver
+  def send_user_mail_welcome
+    UserMailer.send_message_welcome_to_new_user(self).deliver
   end
 
   size_avatar = { medium: '300x300>', thumb: '100x100>' }
