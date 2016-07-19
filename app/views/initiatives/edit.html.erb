@@ -98,28 +98,30 @@
               </div>
             </div>
         <% end %>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <p class="initiative-edit-form-names"><%= t('views.form.old_photos') %></p>
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <% unless @initiative.initiative_images.empty? %>
             <div class="row">
-              <% @initiative.initiative_images.each do |images| %>
-                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 ">
-                    <div class="block-edit-small-images">
-                      <%= form_for :initiative_images, url: edit_delete_images_initiative_path(@initiative), method: :post, remote: true do %>
-                          <%= hidden_field_tag :initiative_photo_id, images.id %>
-                          <button type="submit" class="show-delete-images">
-                            <i class="fa fa-times show-close" aria-hidden="true"></i>
-                            <%= image_tag images.initiative_images.url(:medium), class: 'edit-small-images' %>
-                          </button>
-                      <% end %>
-                    </div>
-                  </div>
-              <% end %>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <p class="initiative-edit-form-names"><%= t('views.form.old_photos') %></p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <div class="row">
+                  <% @initiative.initiative_images.each do |images| %>
+                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 ">
+                        <div class="block-edit-small-images">
+                          <%= form_for :initiative_images, url: edit_delete_images_initiative_path(@initiative), method: :post, remote: true do %>
+                              <%= hidden_field_tag :initiative_photo_id, images.id %>
+                              <button type="submit" class="show-delete-images">
+                                <i class="fa fa-times show-close" aria-hidden="true"></i>
+                                <%= image_tag images.initiative_images.url(:medium), class: 'edit-small-images' %>
+                              </button>
+                          <% end %>
+                        </div>
+                      </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

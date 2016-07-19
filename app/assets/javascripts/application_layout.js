@@ -8,10 +8,12 @@ $(document).ready(function () {
             dataType: 'json'
         });
     });
-    $("#form-search-button").submit(function () {
+    $('#search').on('input', function () {
+        var search = $('#search').val();
+        $("#form-search-button").submit();
         $.ajax({
-            url: '/',
-            method: 'post',
+            url: 'search?search=' + search,
+            method: 'get',
             dataType: 'json'
         });
     });

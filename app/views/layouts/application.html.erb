@@ -12,8 +12,9 @@
 <%= render 'layouts/application_header' %>
 <%= render 'layouts/application_nav' %>
 <%= render 'layouts/application_errors' %>
-
-<%= yield %>
+<div id="body-block">
+  <%= yield %>
+</div>
 <%= render 'layouts/application_footer' %>
 </body>
 </html>

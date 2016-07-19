@@ -1,2 +1,3 @@
-$('.show-list-initiatives').html("<%= escape_javascript render('search/index')%>");
-$('#show-initiatives').remove();
+$('#body-block').html("<%= escape_javascript render('search/index')%>");
+$('#container').remove();
+$('#result-search').html($('#search').val());

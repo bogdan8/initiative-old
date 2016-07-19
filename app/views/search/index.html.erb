@@ -1,6 +1,5 @@
-<div class="container">
-  <div class="row show-list-initiatives">
-    <div id="show-initiatives">
+<div class="container" id="container">
+  <div class="row">
       <% @initiatives.each do |initiative| %>
           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
             <div class="initiative-list-block">
@@ -26,7 +25,6 @@
           </div>
       <% end %>
     </div>
-  </div>
   <div class="row">
     <div class="list-down-block">
       <i class="fa fa-sort-desc" aria-hidden="true"></i>

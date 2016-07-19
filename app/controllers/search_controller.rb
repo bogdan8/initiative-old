@@ -20,7 +20,8 @@ class SearchController < ApplicationController
   private
 
   def search_initiatives
-    @initiatives = Initiative.where('title LIKE ?', "%#{session[:name_initiative]}%").order(created_at: :desc)
+    @initiatives = Initiative.where('title LIKE ?',
+                                    "%#{session[:name_initiative]}%").fundraiser.order(created_at: :desc)
   end
 
   def add_category_with_initiative

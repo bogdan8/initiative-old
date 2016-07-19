@@ -29,6 +29,19 @@
   font-size: 15px;
   color: #9D979F;
 }
+.initiative-new-title{
+  @extend .initiative-list-short-description;
+  margin-top: 0;
+  font-size: 30px;
+}
+.show-result-search{
+  @extend .initiative-list-short-description;
+  margin:{
+    top: 0;
+    bottom: 20px;
+  }
+  font-size: 20px;
+}
 
 .initiative-list-days-left {
   margin: {

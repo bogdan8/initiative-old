@@ -1,2 +1,4 @@
-$('.show-list-initiatives').html("<%= escape_javascript render('search/sort')%>");
-$('#show-initiatives').remove();
+$('#body-block').html("<%= escape_javascript render('search/sort')%>");
+$('#container').remove();
+$('#result-search').html($('#search').val());
+$('#result-sort').html($('#category_id option:selected').text());
