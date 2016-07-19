@@ -7,9 +7,6 @@ class HomeController < ApplicationController
   def more_initiatives
     session[:number] += 3
     @initiatives = Initiative.fundraiser.order(created_at: :desc).limit(session[:number])
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    respond_to_format
   end
 end
