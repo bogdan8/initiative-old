@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import "font-awesome";
 @import 'ionicons';
+@import 'another';
 @import 'application_layout/application_header';
 @import 'application_layout/application_nav';
 @import 'application_layout/application_footer';
@@ -10,12 +11,3 @@
 @import 'select2/select2.css';
 @import 'user_panels/show_user';
 @import 'devise/registration_edit';
-
-body {
-  background-color: #EEEEEE;
-}
-
-p {
-  font-family: 'Lato', serif;
-  font-size: 48px;
-}
