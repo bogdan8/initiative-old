@@ -1,0 +1,7 @@
+$("<%= escape_javascript render('user_panels/index') %>").insertBefore('#show-initiatives-more');
+<% if last_page %>
+$('.next-page-pagination').remove();
+<% else %>
+var href = '<%= user_panels_path %>' + '?page=' + '<%= current_page + 1 %>';
+$('.next-page-pagination').attr('href', href);
+<% end %>
