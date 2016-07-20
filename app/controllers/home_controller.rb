@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
   def index
-    session[:number] = 3
-    @initiatives = Initiative.fundraiser.order(created_at: :desc).limit(session[:number])
+    @initiatives = Initiative.fundraiser.order(created_at: :desc).page(params[:page]).per(3)
+    @last_page = @initiatives.last_page?
+    @current_page = @initiatives.current_page
   end
 
   def more_initiatives
-    session[:number] += 3
     @initiatives = Initiative.fundraiser.order(created_at: :desc).limit(session[:number])
     respond_to_format
   end

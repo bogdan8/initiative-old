@@ -25,13 +25,13 @@
             </div>
           </div>
       <% end %>
+      <div id="show-initiatives-more">
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="list-down-block">
-      <a href="<%= home_more_initiatives_path %>"  data-remote="true">
-        <i class="fa fa-sort-desc" aria-hidden="true"></i>
-      </a>
+      <%= link_to_next_page @initiatives, fa_icon('sort-desc'), class: 'next-page-pagination', remote: true %>
     </div>
   </div>
 </div>
