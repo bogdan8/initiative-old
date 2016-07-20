@@ -5,4 +5,5 @@
 //= require select2/select2.min.js
 //= require initiatives
 //= require application_layout
-//= require turbolinks
+//= require jquery.turbolinks
+
