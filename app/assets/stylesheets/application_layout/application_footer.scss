@@ -57,13 +57,14 @@
 .footer-text-center {
   font-size: 30px;
   color: $color-white;
+  margin-top: 45%;
 }
 
 .footer-block-center {
   width: 99%;
   display: flex;
-  align-items: end;
   justify-content: center;
+  align-items: end;
   height: 250px;
 }
 

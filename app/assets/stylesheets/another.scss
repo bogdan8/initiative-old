@@ -9,6 +9,7 @@ p {
   font-size: 48px;
 }
 
+/* bootstrap style begin */
 @media (max-width: 1190px) {
   .navbar-header {
     float: none;
@@ -36,6 +37,26 @@ p {
   }
 }
 
+input {
+  box-shadow: none;
+  &:focus:hover {
+    box-shadow: none;
+    border-color: black;
+  }
+  &:active {
+    box-shadow: none;
+    border-color: black;
+  }
+  &:hover {
+    box-shadow: none;
+    border-color: black;
+  }
+}
+
+textarea {
+  @extend input;
+}
+
 input[type="file"] {
   cursor: pointer;
 }
@@ -44,3 +65,19 @@ input[type="file"] {
   margin: 0;
   color: $color-white;
 }
+
+/* bootstrap style end */
+
+/* select 2 style begin */
+.select2-container--default .select2-selection--multiple {
+  border: {
+    radius: 0;
+    color: #4D4252;
+  }
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+  color: #555;
+}
+
+/* select 2 style end */
