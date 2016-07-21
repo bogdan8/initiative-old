@@ -19,8 +19,9 @@
               <div class="devise-registration-edit-file-block">
                 <div class="devise-registration-edit-file-title">Редагувати фото</div>
                 <input type="file" name="user[avatar]" id="user_avatar" size="1" class="devise-registration-edit-file-input">
-
-                <%= image_tag @user.avatar.url, class: 'devise-registration-edit-block-show-images' %>
+                <% unless @user.avatar.url == '/images/original/missing.png' %>
+                    <%= image_tag @user.avatar.url, class: 'devise-registration-edit-block-show-images' %>
+                <% end %>
               </div>
             </div>
           </div>

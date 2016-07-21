@@ -17,7 +17,9 @@
         </div>
         <div class="col-lg-8 col-md-8 col-xs-12">
           <div class="user-panel-show-new-file-block">
-            <%= image_tag @user.avatar.url, class: 'user-panel-show-block-show-images' %>
+            <% unless @user.avatar.url == '/images/original/missing.png' %>
+                <%= image_tag @user.avatar.url, class: 'user-panel-show-block-show-images' %>
+            <% end %>
           </div>
         </div>
       </div>
