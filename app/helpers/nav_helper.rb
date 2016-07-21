@@ -55,4 +55,12 @@ module NavHelper
       content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a'))
     end
   end
+
+  def if_user_signed_show_index_link_with_text_decoration
+    if request.original_fullpath == root_path
+      link_to(t('views.link_to.home'), root_path, class: 'navbar-brand navbar-a navbar-a-home navbar-a-chose')
+    else
+      link_to(t('views.link_to.home'), root_path, class: 'navbar-brand navbar-a navbar-a-home')
+    end
+  end
 end

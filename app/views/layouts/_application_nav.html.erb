@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand navbar-a navbar-a-home" href="/"><%= t('views.link_to.home') %></a>
+      <%== if_user_signed_show_index_link_with_text_decoration %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

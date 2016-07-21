@@ -17,6 +17,7 @@
 
 .navbar-a-home {
   color: $color-white;
+  padding: 15px;
 }
 
 .navbar-brand:hover {
@@ -41,6 +42,10 @@
       left: 40px;
     }
   }
+}
+
+.navbar-collapse-me {
+  padding: 5px;
 }
 
 .navbar-a-chose {
