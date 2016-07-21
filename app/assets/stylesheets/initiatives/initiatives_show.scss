@@ -177,22 +177,27 @@
   margin-top: 100px;
   p {
     font-size: 20px;
+    color: #4D4252;
     .vk {
       background-color: #4C75A2;
       padding: 5px;
       border-radius: 5px;
+      color: $color-white;
     }
     .facebook {
       @extend .vk;
       background-color: #3A5997;
+      color: $color-white;
     }
     .twitter {
       @extend .vk;
       background-color: #54ACEE;
+      color: $color-white;
     }
     .google {
       @extend .vk;
       background-color: #E02E2E;
+      color: $color-white;
     }
   }
 }

@@ -105,25 +105,14 @@
                 <%= current_user.email %>
               </p>
             </li>
-            <!-- Menu Body -->
-            <li class="user-body">
-              <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-              </div>
-            </li>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <%= link_to 'показати', user_panels_information_path, class: 'btn btn-default btn-flat' %>
+                <%= link_to 'редагувати', edit_user_registration_path, class: 'btn btn-default btn-flat' %>
               </div>
               <div class="pull-right">
-                <%= link_to 'Вийти', destroy_user_session_path, method: :delete, class: 'btn btn-default btn-flat' %></h4>
+                <%= link_to 'вийти', destroy_user_session_path, method: :delete, class: 'btn btn-default btn-flat' %>
               </div>
             </li>
           </ul>
