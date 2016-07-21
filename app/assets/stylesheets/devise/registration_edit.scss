@@ -7,6 +7,21 @@
   color: $color-white;
   font-size: 25px;
   padding: 7px;
+  border: none;
+  &:hover {
+    color: $color-white;
+  }
+}
+.devise-registration-button-submit {
+  width: auto;
+  height: auto;
+  background-color: #96070A;
+  color: $color-white;
+  font-size: 25px;
+  padding: 7px;
+  border: none;
+  margin: 20px;
+  display: inline-block;
   &:hover {
     color: $color-white;
   }

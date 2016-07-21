@@ -13,7 +13,7 @@
           <%= devise_error_messages! %>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
-              <p class="user-panel-show-names-user-information">Фото: </p>
+              <p class="user-panel-show-names-user-information">Фото* </p>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
               <div class="devise-registration-edit-file-block">
@@ -26,55 +26,55 @@
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Імя
+                Імя*
               </p>
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                <%= f.text_field :name, class: 'form-control initiative-new-form-input' %>
+                <%= f.text_field :name, required: :required, class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Пошта
+                Пошта*
               </p>
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                <%= f.text_field :post, class: 'form-control initiative-new-form-input' %>
+                <%= f.text_field :post, required: :required, class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Телефон
+                Телефон*
               </p>
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                <%= f.text_field :phone, class: 'form-control initiative-new-form-input' %>
+                <%= f.text_field :phone, required: :required, class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Емайл
+                Емайл*
               </p>
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                <%= f.email_field :email, autofocus: true, class: 'form-control initiative-new-form-input' %>
+                <%= f.email_field :email, required: :required, autofocus: true, class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Пароль
+                Пароль*
                 <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> символів мінімум)</em>
                 <% end %><br/>
@@ -82,20 +82,20 @@
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                <%= f.password_field :password, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
+                <%= f.password_field :password, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-xs-12">
               <p class="user-panel-show-names-user-information">
-                Повторити пароль
+                Повторити пароль*
               </p>
             </div>
             <div class="col-lg-8 col-md-8 col-xs-12">
               <p class="user-panel-show-names-user-information">
 
-                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
+                <%= f.password_field :password_confirmation, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
               </p>
             </div>
           </div>
