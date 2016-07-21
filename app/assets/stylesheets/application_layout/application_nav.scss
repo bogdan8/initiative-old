@@ -11,22 +11,29 @@
     justify-content: center;
   }
   .navbar-a-home {
-    margin-left: 100px;
-  }
-}
-
-.navbar-brand:hover {
-  &:hover {
     color: $color-white;
   }
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-a-home {
   color: $color-white;
 }
 
+.navbar-brand:hover {
+  &:hover {
+    color: #d2d2d2;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $color-white;
+  &:hover {
+    color: #d2d2d2;
+  }
+}
+
 .navbar-a {
-  color: #9D979F;
+  color: $color-white;
   font-size: 30px;
   @media (min-width: $media-min-width-on-big-devise) {
     margin: {
@@ -36,9 +43,41 @@
   }
 }
 
+.navbar-a-chose {
+  text-decoration: underline;
+}
+
 .form-search {
+  @media (min-width: $media-min-width-on-big-devise) {
+    margin-right: 30px;
+  }
+  padding: 0 20px;
   border-radius: 0;
-  margin-right: -5px;
+  width: 200px;
+  height: 37px;
+  border: none;
+  font-size: 20px;
+  &::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #5D4852;
+  }
+
+  &:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #5D4852;
+    opacity: 1;
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #5D4852;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #5D4852;
+  }
 }
 
 .button-search {
@@ -80,17 +119,27 @@ select option {
   background-image: url('header/chevron-down.png');
   background-position: right center;
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 55px;
 
+  border: 0;
   border-radius: 0;
-  width: 150px;
-  height: 31px;
+  width: 200px;
+  height: 37px;
   background-color: #4D4252;
   color: $color-white;
+  font-size: 20px;
+  padding: 0 20px;
+  .first-option {
+    p {
+      margin-left: 30px;
+    }
+  }
   option {
     background-color: $color-white;
     color: black;
+    padding: 0 20px;
     p {
+      margin-left: 30px;
       color: $color-white;
     }
   }

@@ -13,16 +13,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-block">
-        <% if user_signed_in? %>
-            <li><%= link_to t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a' %></li>
-            <li><%= link_to t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a' %></li>
-        <% end %>
-        <li><%= link_to t('views.link_to.created'), new_initiative_path, class: 'navbar-a' %></li>
+        <%== if_user_signed_show_chose_link_with_text_decoration %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search" method="get" action="/search" data-remote="true">
           <div class="form-group">
-            <input type="text" name="search" id="search" class="form-control form-search" placeholder="<%= t('views.layout.application.nav.search') %>">
+            <input type="text" name="search" id="search" class="form-search" placeholder="<%= t('views.layout.application.nav.search') %>">
           </div>
           <button type="submit" class="hidden" id="form-search-button">
             <i class="fa fa-search" aria-hidden="true"></i>
@@ -37,7 +33,8 @@
     <div class="col-lg-offset-8 col-lg-4 col-md-offset-8 col-md-4 col-sm-offset-8 col-sm-4 col-xs-12">
       <form action="/search/sort" class="navbar-form navbar-right text-right" method="get" data-remote="true">
         <select name="category[id]" id="category_id" class="select-sort">
-          <option selected  disabled value="" class="first-option"><%= t('views.layout.application.nav.category') %></option>
+          <option selected disabled value="" class="first-option">
+            <p><%= t('views.layout.application.nav.category') %></p></option>
           <% Category.all.each do |items| %>
               <option id="category_sort" value="<%= items.id %>"><p><%= items.name %></p></option>
           <% end %>

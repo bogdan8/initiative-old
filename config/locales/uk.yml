@@ -155,6 +155,6 @@ uk:
           city: 'МІСТА'
           name_city: 'ІВАНО-ФРАНКІВСЬКА'
         nav:
-          category: 'Категорія'
-          search: 'Пошук'
+          category: 'категорія'
+          search: 'ПОШУК'
           sort: 'Сортувати'

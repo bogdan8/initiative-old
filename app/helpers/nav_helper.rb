@@ -23,4 +23,36 @@ module NavHelper
       content
     end
   end
+
+  def if_user_signed_show_chose_link_with_text_decoration
+    if user_signed_in?
+      if request.original_fullpath == root_path
+        links = []
+        links << content_tag(:li, link_to(t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a'))
+        return links.join
+      elsif request.original_fullpath == user_panels_path
+        links = []
+        links << content_tag(:li, link_to(t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a navbar-a-chose'))
+        links << content_tag(:li, link_to(t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a'))
+        return links.join
+      elsif request.original_fullpath == user_panels_information_path
+        links = []
+        links << content_tag(:li, link_to(t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a navbar-a-chose'))
+        links << content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a'))
+        return links.join
+      elsif request.original_fullpath == new_initiative_path
+        links = []
+        links << content_tag(:li, link_to(t('views.link_to.my_initiatives'), user_panels_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.my_data'), user_panels_information_path, class: 'navbar-a'))
+        links << content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a navbar-a-chose'))
+        return links.join
+      end
+    else
+      content_tag(:li, link_to(t('views.link_to.created'), new_initiative_path, class: 'navbar-a'))
+    end
+  end
 end

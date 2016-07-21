@@ -17,14 +17,16 @@ unless User.with_any_role(:admin).any?
   user.add_role 'user'
   puts "Користувача добавлено, email(user@user.com), password(123456)"
 end
-# add category
-category = Category.new
-category.name = 'Місто'
-category.save
-category = Category.new
-category.name = 'Подвіря'
-category.save
-puts "Категорії додані"
+unless Category
+  # add category
+  category = Category.new
+  category.name = 'Місто'
+  category.save
+  category = Category.new
+  category.name = 'Подвіря'
+  category.save
+  puts "Категорії додані"
+end
 # add initiatives
 initiative = Initiative.new
 initiative.title = 'Прибрати вулицю'
@@ -62,4 +64,4 @@ initiative_category = InitiativeCategory.new
 initiative_category.initiative_id = 2
 initiative_category.category_id = 1
 initiative_category.save
-puts "Категорії додані"
+puts "Категорії додані до ініціатив"
