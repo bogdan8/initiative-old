@@ -71,7 +71,7 @@ group :development, :test do
   # for testing
   gem 'rspec-rails', '~> 3.5'
   gem 'database_cleaner'
-
+  gem 'factory_girl_rails'
 end
 
 group :development do
