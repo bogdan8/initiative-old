@@ -1,4 +1,4 @@
-$("<%= escape_javascript render('user_panels/index') %>").insertBefore('#show-initiatives-more');
+$("<%= escape_javascript render(render_page) %>").insertBefore('#show-initiatives-more');
 <% if last_page %>
 $('.next-page-pagination').remove();
 <% else %>
