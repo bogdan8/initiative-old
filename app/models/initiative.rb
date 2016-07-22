@@ -3,7 +3,6 @@ class Initiative < ActiveRecord::Base
   path_main_picture = ':rails_root/public/images/:class/:attachment/:id/:style/:filename'
 
   belongs_to :user
-  has_one :timeline
   has_many :initiative_images, dependent: :destroy
   has_many :initiative_categories
   has_many :categories, through: :initiative_categories
