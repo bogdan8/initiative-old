@@ -19,6 +19,8 @@ AllCops:
     - '**/config/initializers/rolify.rb'
     - '**/config/initializers/kaminari_config.rb'
     - '**/test/test_helper.rb'
+    - '**/spec/spec_helper.rb'
+    - '**/spec/rails_helper.rb'
     - '**/db/seeds.rb'
 
 Rails:
