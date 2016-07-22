@@ -17,7 +17,7 @@ unless User.with_any_role(:admin).any?
   user.add_role 'user'
   puts "Користувача добавлено, email(user@user.com), password(123456)"
 end
-unless Category
+unless Category.first
   # add category
   category = Category.new
   category.name = 'Місто'
@@ -51,17 +51,19 @@ initiative.aasm_state = 'fundraiser'
 initiative.user_id = 2
 initiative.save
 puts "Ініціативи додані"
+unless InitiativeCategory.first
 # add initiative_category
-initiative_category = InitiativeCategory.new
-initiative_category.initiative_id = 1
-initiative_category.category_id = 1
-initiative_category.save
-initiative_category = InitiativeCategory.new
-initiative_category.initiative_id = 2
-initiative_category.category_id = 2
-initiative_category.save
-initiative_category = InitiativeCategory.new
-initiative_category.initiative_id = 2
-initiative_category.category_id = 1
-initiative_category.save
-puts "Категорії додані до ініціатив"
+  initiative_category = InitiativeCategory.new
+  initiative_category.initiative_id = 1
+  initiative_category.category_id = 1
+  initiative_category.save
+  initiative_category = InitiativeCategory.new
+  initiative_category.initiative_id = 2
+  initiative_category.category_id = 2
+  initiative_category.save
+  initiative_category = InitiativeCategory.new
+  initiative_category.initiative_id = 2
+  initiative_category.category_id = 1
+  initiative_category.save
+  puts "Категорії додані до ініціатив"
+end
