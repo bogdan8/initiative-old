@@ -3,7 +3,7 @@ class UserPanelsController < ApplicationController
 
   def index
     @initiatives = Initiative.where('user_id = ?',
-                                    current_user.id).page(params[:page]).per(3) unless current_user.has_role? :admin
+                                    current_user.id).order(created_at: :desc).page(params[:page]).per(3)
     @last_page = @initiatives.last_page?
     @current_page = @initiatives.current_page
   end
