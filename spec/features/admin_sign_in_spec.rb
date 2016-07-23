@@ -14,6 +14,6 @@ feature 'Admin sign_in' do
       fill_in 'user_password', with: '123456'
     end
     click_button 'Війти'
-    expect(page).to have_content 'Ви увійшли в систему'
+    expect(page).to have_content 'AdminLTE'
   end
 end

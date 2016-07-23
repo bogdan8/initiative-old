@@ -1,8 +1,8 @@
 def login
   visit new_user_session_path
-
-  fill_in 'user_email', with: 'user@user.com'
-  fill_in 'user_password', with: '123456'
-
+  within('#new_user') do
+    fill_in 'user_email', with: 'admin@admin.com'
+    fill_in 'user_password', with: '123456'
+  end
   click_button 'Війти'
 end
