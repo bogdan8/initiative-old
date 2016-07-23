@@ -71,10 +71,10 @@ group :development, :test do
   # for testing
   gem 'rspec-rails', '~> 3.5'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.2.1'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
-  gem 'simplecov', :require => false, :group => :test
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
