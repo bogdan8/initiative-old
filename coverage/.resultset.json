@@ -1,6 +1,14 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/category.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/initiative_category.rb": [
         1,
         1,
@@ -487,14 +495,6 @@
         null,
         null
       ],
-      "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
       "/home/ne4ajb/Documents/rubyschool/initiatives/app/mailers/user_mailer.rb": [
         1,
         1,
@@ -725,6 +725,6 @@
         0
       ]
     },
-    "timestamp": 1469279884
+    "timestamp": 1469280204
   }
 }
