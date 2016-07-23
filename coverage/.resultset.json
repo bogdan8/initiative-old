@@ -129,6 +129,11 @@
         1,
         null
       ],
+      "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/timeline.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/ne4ajb/Documents/rubyschool/initiatives/app/controllers/admins_controller.rb": [
         1,
         1,
@@ -689,10 +694,6 @@
         0,
         0
       ],
-      "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/timeline.rb": [
-        0,
-        0
-      ],
       "/home/ne4ajb/Documents/rubyschool/initiatives/app/models/user.rb": [
         0,
         0,
@@ -725,6 +726,6 @@
         0
       ]
     },
-    "timestamp": 1469281324
+    "timestamp": 1469281560
   }
 }
