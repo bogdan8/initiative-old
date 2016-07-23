@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-23T16:46:00+03:00">2016-07-23T16:46:00+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-23T17:11:04+03:00">2016-07-23T17:11:04+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.57
+         0.61
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>17</td>
         <td>12</td>
         <td>5</td>
-        <td>1.9</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>2.2</td>
+        <td>3.4</td>
       </tr>
       
       <tr>
@@ -197,7 +197,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
@@ -293,7 +293,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.57
+         0.64
        </span>
     </span> hits/line)
   </h2>
@@ -335,7 +335,7 @@
         <td>17</td>
         <td>12</td>
         <td>5</td>
-        <td>1.9</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -365,7 +365,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>2.2</td>
+        <td>3.4</td>
       </tr>
       
       <tr>
@@ -537,7 +537,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.7
+         2.0
        </span>
     </span> hits/line)
   </h2>
@@ -569,7 +569,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.0</td>
       </tr>
       
     </tbody>
@@ -1182,20 +1182,20 @@
           <code class="ruby">  def layout</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="15">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="15">
+          <span class="hits">13</span>
           
           <code class="ruby">    if current_user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="16">
+          <span class="hits">7</span>
           
           <code class="ruby">      &#39;application&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="17">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="17">
+          <span class="hits">6</span>
           
           <code class="ruby">    elsif current_user.has_role? :admin</code>
         </li>
@@ -1212,8 +1212,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
           
           <code class="ruby">      &#39;application&#39;</code>
         </li>
@@ -1836,20 +1836,20 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="3">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="3">
+          <span class="hits">5</span>
           
           <code class="ruby">    @initiatives = Initiative.fundraiser.order(created_at: :desc).page(params[:page]).per(3)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="4">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="4">
+          <span class="hits">5</span>
           
           <code class="ruby">    @last_page = @initiatives.last_page?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="5">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="5">
+          <span class="hits">5</span>
           
           <code class="ruby">    @current_page = @initiatives.current_page</code>
         </li>
@@ -3942,14 +3942,14 @@
           <code class="ruby">  def send_message_welcome_to_new_user(user)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
           
           <code class="ruby">    @user = user</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    mail(to: @user.email, subject: &#39;Ви успішно зареєструвались.&#39;)</code>
         </li>

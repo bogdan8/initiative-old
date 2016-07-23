@@ -20,6 +20,8 @@ AllCops:
     - '**/config/initializers/kaminari_config.rb'
     - '**/test/test_helper.rb'
     - '**/spec/spec_helper.rb'
+    - '**/spec/models/initiative_image_spec.rb'
+    - '**/spec/models/user_spec.rb'
     - '**/spec/rails_helper.rb'
     - '**/db/seeds.rb'
 
