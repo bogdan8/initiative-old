@@ -70,6 +70,7 @@ group :development, :test do
 
   # for testing
   gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.2.1'
   gem 'shoulda-matchers', '~> 3.1'
