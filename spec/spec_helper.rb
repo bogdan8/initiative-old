@@ -24,6 +24,7 @@ require 'rspec/rails'
 require 'support/database_cleaner'
 require 'support/session_helper'
 require 'shoulda/matchers'
+require 'support/factory_girl'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
