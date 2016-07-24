@@ -5,6 +5,6 @@ feature 'adding initiatives' do
 
     visit initiative_path(initiative)
 
-    expect(page).to have_content('Категорія:')
+    expect(page).to have_content(initiative.title)
   end
 end
