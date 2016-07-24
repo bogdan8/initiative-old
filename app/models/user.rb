@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   end
 
   def send_user_mail_welcome
-    UserMailer.send_message_welcome_to_new_user(self).deliver
+    UserMailer.send_message_welcome_to_new_user(self).deliver_later
   end
 
   size_avatar = { medium: '300x300>', thumb: '100x100>' }

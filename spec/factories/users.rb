@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :user do
+    name 'Bogdan'
+    post '123456'
+    phone '123456'
     email 'admin@admin.com'
     password '123456'
     confirmed_at '2016-07-17 07:35:55.139051'

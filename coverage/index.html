@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-23T17:11:04+03:00">2016-07-23T17:11:04+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-24T11:04:07+03:00">2016-07-24T11:04:07+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -197,7 +197,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -537,7 +537,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.0
+         2.3
        </span>
     </span> hits/line)
   </h2>
@@ -569,7 +569,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>2.3</td>
       </tr>
       
     </tbody>
@@ -3942,14 +3942,14 @@
           <code class="ruby">  def send_message_welcome_to_new_user(user)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="7">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="7">
+          <span class="hits">5</span>
           
           <code class="ruby">    @user = user</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="8">
+          <span class="hits">5</span>
           
           <code class="ruby">    mail(to: @user.email, subject: &#39;Ви успішно зареєструвались.&#39;)</code>
         </li>
@@ -5109,7 +5109,7 @@
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">    UserMailer.send_message_welcome_to_new_user(self).deliver</code>
+          <code class="ruby">    UserMailer.send_message_welcome_to_new_user(self).deliver_later</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
