@@ -71,3 +71,7 @@ uk:
             password:
               blank: "Ви неввели пароль"
               too_short: "Пароль закороткий мінімум 6 символів"
+            password_confirmation:
+              confirmation: 'Паролі незбігаються'
+            current_password:
+              blank: 'Ви неввели пароль'

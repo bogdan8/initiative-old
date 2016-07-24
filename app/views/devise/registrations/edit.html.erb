@@ -18,7 +18,8 @@
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
               <div class="devise-registration-edit-file-block">
                 <div class="devise-registration-edit-file-title">Редагувати фото</div>
-                <input type="file" name="user[avatar]" id="user_avatar" size="1" class="devise-registration-edit-file-input">
+
+                <%= f.file_field :avatar, class: 'devise-registration-edit-file-input' %>
                 <% unless @user.avatar.url == '/images/original/missing.png' %>
                     <%= image_tag @user.avatar.url, class: 'devise-registration-edit-block-show-images' %>
                 <% end %>
@@ -130,8 +131,9 @@
             <%= button_to t('views.devise.registration.edit.delete_my_account'),
                           registration_path(resource_name),
                           class: 'devise-registration-edit-button-submit',
-                          data: {confirm: 'Are you sure?'},
+                          data: {confirm: 'Ви впевнені?'},
                           method: :delete %>
+            <%= spinner_css %>
           </p>
         </div>
       </div>

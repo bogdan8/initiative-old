@@ -13,7 +13,7 @@
   <!-- search form -->
   <form action="/search" method="get" class="sidebar-form">
     <div class="input-group">
-      <input type="text" name="search" id="search"  placeholder="Пошук">
+      <input type="text" name="search" id="search" placeholder="Пошук">
       <span class="input-group-btn">
         <button type='submit' id='form-search-button' class="btn btn-flat"><i class="fa fa-search"></i></button>
       </span>
@@ -25,39 +25,29 @@
     <%= nav_link root_path do %>
         <i class="fa fa-dashboard"></i> <span>Головна</span>
     <% end %>
-    <%= treeview_link 'Адмін' do %>
-        <%= nav_link '/admins' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Список адміністраторів
-        <% end %>
-        <%= nav_link '/admins/new' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Додати адміністратора
-        <% end %>
+    <%= nav_link '/admins' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Список адміністраторів
     <% end %>
-    <%= treeview_link 'Ініціативи' do %>
-        <%= nav_link '/initiatives' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Список ініціатив
-        <% end %>
-        <%= nav_link '/initiatives/new' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Додати ініціативу
-        <% end %>
-        <%= nav_link '/initiatives/pending_approval' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Непідтверджені ініціативи
-        <% end %>
+    <%= nav_link '/admins/new' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Додати адміністратора
     <% end %>
-    <%= treeview_link 'Категорії' do %>
-        <%= nav_link '/categories' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Список категорій
-        <% end %>
-        <%= nav_link '/categories/new' do %>
-            <i class="fa fa-angle-double-right"></i>
-            Додати категорію
-        <% end %>
+    <%= nav_link '/initiatives' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Список ініціатив
+    <% end %>
+    <%= nav_link '/initiatives/pending_approval' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Непідтверджені ініціативи
+    <% end %>
+    <%= nav_link '/categories' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Список категорій
+    <% end %>
+    <%= nav_link '/categories/new' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Додати категорію
     <% end %>
   </ul>
 </section>
