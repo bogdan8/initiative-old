@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :take_all_initiatives_to_show_in_the_admin_panel
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     redirect_to main_app.root_url
@@ -26,5 +28,9 @@ class ApplicationController < ActionController::Base
       format.html
       format.js
     end
+  end
+
+  def take_all_initiatives_to_show_in_the_admin_panel
+    @initiatives_pending_approval = Initiative.pending_approval unless Initiative.pending_approval.nil?
   end
 end
