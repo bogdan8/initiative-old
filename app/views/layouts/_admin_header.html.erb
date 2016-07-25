@@ -29,7 +29,7 @@
                     <li><!-- start message -->
                       <a href="<%= initiative_path(initiative) %>">
                         <div class="pull-left">
-                          <%= image_tag initiative.user.avatar.url(:medium), class: 'img-circle' %>
+                          <%= image_tag initiative.user.avatar.url(:medium), class: 'img-circle' unless initiative.user.avatar.nil? %>
                         </div>
                         <h4>
                           Користувач <%= initiative.user.email %>
@@ -42,7 +42,8 @@
                 <% end %>
               </ul>
             </li>
-            <li class="footer"><a href="<%= pending_approval_initiatives_path %>">Показати більше непідтверджених ініцціатив</a></li>
+            <li class="footer">
+              <a href="<%= pending_approval_initiatives_path %>">Показати більше непідтверджених ініцціатив</a></li>
           </ul>
         </li>
         <!-- User Account: style can be found in dropdown.less -->

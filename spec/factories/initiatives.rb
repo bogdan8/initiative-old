@@ -7,7 +7,8 @@ FactoryGirl.define do
     sum '777'
     term_fundraiser '30'
     term_report '15'
+    main_picture { File.open('spec/support/photo.jpg') }
     aasm_state 'fundraiser'
-    user_id '2'
+    user_id '1'
   end
 end
