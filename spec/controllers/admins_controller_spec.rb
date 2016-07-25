@@ -25,7 +25,7 @@ describe AdminsController, type: :controller do
   describe 'GET #new' do
     subject { get :new }
 
-    it 'renders the index template' do
+    it 'renders the new template' do
       expect(subject).to render_template(:new)
       expect(subject).to render_template('new')
       expect(subject).to render_template('admins/new')
