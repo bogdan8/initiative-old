@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature 'change state' do
   before :all do
-    @user = create(:user, email: 'admin@admin.com', password: '123456')
-    @user.add_role 'admin'
-
-    login
+    login_admin
   end
   scenario 'create initiative' do
     initiative = create(:initiative, aasm_state: 'pending_approval', user_id: @user.id)

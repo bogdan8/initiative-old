@@ -8,7 +8,7 @@ require 'rspec/rails'
 require 'devise'
 require 'simplecov'
 SimpleCov.start 'rails'
-puts 'required simplecov'
+puts 'simplecov started'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
