@@ -17,5 +17,4 @@ describe HomeController, type: :controller do
       expect(subject).to_not render_template('home/show')
     end
   end
-
 end
