@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-25T12:30:09+03:00">2016-07-25T12:30:09+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-25T12:52:02+03:00">2016-07-25T12:52:02+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.87
+         0.93
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>20</td>
         <td>15</td>
         <td>5</td>
-        <td>3.8</td>
+        <td>4.1</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>3.4</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
@@ -207,7 +207,7 @@
         <td>47</td>
         <td>47</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -273,7 +273,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.86
+         0.92
        </span>
     </span> hits/line)
   </h2>
@@ -315,7 +315,7 @@
         <td>20</td>
         <td>15</td>
         <td>5</td>
-        <td>3.8</td>
+        <td>4.1</td>
       </tr>
       
       <tr>
@@ -345,7 +345,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>3.4</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
@@ -400,7 +400,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.79
+         1.9
        </span>
     </span> hits/line)
   </h2>
@@ -452,7 +452,7 @@
         <td>47</td>
         <td>47</td>
         <td>0</td>
-        <td>2.5</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -1154,14 +1154,14 @@
           <code class="ruby">  def layout</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="17">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="19" data-linenumber="17">
+          <span class="hits">19</span>
           
           <code class="ruby">    if current_user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="18">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="18">
+          <span class="hits">9</span>
           
           <code class="ruby">      &#39;application&#39;</code>
         </li>
@@ -1256,8 +1256,8 @@
           <code class="ruby">  def take_all_initiatives_to_show_in_the_admin_panel</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="34">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="24" data-linenumber="34">
+          <span class="hits">24</span>
           
           <code class="ruby">    @initiatives_pending_approval = Initiative.pending_approval unless Initiative.pending_approval.nil?</code>
         </li>
@@ -1832,20 +1832,20 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="3">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
           <code class="ruby">    @initiatives = Initiative.fundraiser.order(created_at: :desc).page(params[:page]).per(3)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
           <code class="ruby">    @last_page = @initiatives.last_page?</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="5">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
           
           <code class="ruby">    @current_page = @initiatives.current_page</code>
         </li>
@@ -4580,14 +4580,14 @@
           <code class="ruby">  def validate_sum</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="63">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="63">
+          <span class="hits">15</span>
           
           <code class="ruby">    trans_error_sum = I18n.t(&#39;activerecord.errors.models.initiative.attributes.sum.correct_number&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="64">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="64">
+          <span class="hits">15</span>
           
           <code class="ruby">    errors.add(:sum, trans_error_sum) unless sum.between?(100, 50_000)</code>
         </li>
@@ -4610,14 +4610,14 @@
           <code class="ruby">  def validate_term_fundraiser</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="68">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="68">
+          <span class="hits">15</span>
           
           <code class="ruby">    trans_error_term_fundraiser = I18n.t(&#39;activerecord.errors.models.initiative.attributes.term_fundraiser&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="69">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="69">
+          <span class="hits">15</span>
           
           <code class="ruby">    errors.add(:term_fundraiser, trans_error_term_fundraiser) unless term_fundraiser == 30 || term_fundraiser == 60</code>
         </li>
@@ -4640,14 +4640,14 @@
           <code class="ruby">  def validate_term_report</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="73">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="73">
+          <span class="hits">15</span>
           
           <code class="ruby">    trans_error_term_report = I18n.t(&#39;activerecord.errors.models.initiative.attributes.term_report&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="74">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="74">
+          <span class="hits">15</span>
           
           <code class="ruby">    errors.add(:term_report, trans_error_term_report) unless term_report == 15 || term_report == 30</code>
         </li>
