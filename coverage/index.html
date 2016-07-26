@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-25T14:42:10+03:00">2016-07-25T14:42:10+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-07-26T09:31:21+03:00">2016-07-26T09:31:21+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.41
+         1.45
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>20</td>
         <td>15</td>
         <td>5</td>
-        <td>6.1</td>
+        <td>6.7</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>4.6</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -273,7 +273,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.23
+         1.34
        </span>
     </span> hits/line)
   </h2>
@@ -315,7 +315,7 @@
         <td>20</td>
         <td>15</td>
         <td>5</td>
-        <td>6.1</td>
+        <td>6.7</td>
       </tr>
       
       <tr>
@@ -345,7 +345,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>4.6</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -1154,14 +1154,14 @@
           <code class="ruby">  def layout</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="17">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="33" data-linenumber="17">
+          <span class="hits">33</span>
           
           <code class="ruby">    if current_user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="18">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="13" data-linenumber="18">
+          <span class="hits">13</span>
           
           <code class="ruby">      &#39;application&#39;</code>
         </li>
@@ -1256,8 +1256,8 @@
           <code class="ruby">  def take_all_initiatives_to_show_in_the_admin_panel</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="34">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="38" data-linenumber="34">
+          <span class="hits">38</span>
           
           <code class="ruby">    @initiatives_pending_approval = Initiative.pending_approval unless Initiative.pending_approval.nil?</code>
         </li>
@@ -1832,20 +1832,20 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="3">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="10" data-linenumber="3">
+          <span class="hits">10</span>
           
           <code class="ruby">    @initiatives = Initiative.fundraiser.order(created_at: :desc).page(params[:page]).per(3)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="4">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="10" data-linenumber="4">
+          <span class="hits">10</span>
           
           <code class="ruby">    @last_page = @initiatives.last_page?</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="5">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="10" data-linenumber="5">
+          <span class="hits">10</span>
           
           <code class="ruby">    @current_page = @initiatives.current_page</code>
         </li>
