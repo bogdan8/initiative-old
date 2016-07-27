@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :take_all_initiatives_to_show_in_the_admin_panel
 
+  include CheckWhetherTheInitiativeIsOver
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     redirect_to main_app.root_url
