@@ -43,6 +43,7 @@ uk:
       success_delete_photos_in_initiative: 'Фото видалено'
       for_confirmation: 'Відправлено на підтвердження'
       error_confirmation: 'Ініціативу відхилено'
+      started_implement_success: 'Ініціативу відправлено для надання звіту'
   views:
     pagination:
       previous: '&lt; Назад'
@@ -78,6 +79,7 @@ uk:
       edit: 'Редагувати'
       delete: 'Видалити'
       success_confirmation: 'Підтвердити'
+      fundraising_finished: 'Розпочати звіт'
       error_confirmation: 'Відхилити'
       for_confirmation: 'Відправити для підтвердження'
     admins:
@@ -122,6 +124,9 @@ uk:
         share: 'Поділитись'
       pending_approval:
         title: 'Непідтверджені ініціативи'
+        name: 'Назва'
+      fundraising_finished:
+        title: 'Завершений збір коштів'
         name: 'Назва'
     search:
       title: 'Результат пошуку'

@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   resources :admins
   resources :initiatives do
     get :pending_approval, on: :collection
+    get :fundraising_finished, on: :collection
     get :for_confirmation, on: :member
     get :success_confirmation, on: :member
     get :error_confirmation, on: :member
+    get :started_implement, on: :member
     post 'edit/delete_images', to: 'initiatives#delete_images', on: :member
   end
   resources :categories

@@ -25,7 +25,7 @@ class Ability
     can :read, Initiative
     can :manage, Initiative, user_id: user.id
     can :read, Category
-    cannot [:pending_approval], Initiative
+    cannot [:pending_approval, :fundraising_finished], Initiative
     cannot [:show_user], Initiative, user_id: user.id
   end
 

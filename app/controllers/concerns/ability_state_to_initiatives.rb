@@ -28,4 +28,17 @@ module AbilityStateToInitiatives
       flash[:error] = @initiative.errors.full_messages.to_sentence
     end
   end
+
+  def fundraising_finished
+    @initiative_fundraising_finished = Initiative.all.fundraising_finished
+  end
+
+  def started_implement
+    if @initiative.started_implement!
+      redirect_to '/initiatives/fundraising_finished'
+      flash[:success] = t('controller.initiative.started_implement_success')
+    else
+      flash[:error] = @initiative.errors.full_messages.to_sentence
+    end
+  end
 end

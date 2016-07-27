@@ -15,6 +15,7 @@ class Initiative < ActiveRecord::Base
     state :rejected
     state :fundraiser
     state :fundraising_finished
+    state :being_implemented
     state :implemented
     state :unrealized
 
@@ -34,12 +35,16 @@ class Initiative < ActiveRecord::Base
       transitions from: :fundraiser, to: :fundraising_finished
     end
 
+    event :started_implement do
+      transitions from: :fundraising_finished, to: :being_implemented
+    end
+
     event :finish_fundraiser_success do
-      transitions from: :launched, to: :implemented
+      transitions from: :fundraising_finished, to: :implemented
     end
 
     event :finish_fundraiser_errors do
-      transitions from: :launched, to: :unrealized
+      transitions from: :fundraising_finished, to: :unrealized
     end
   end
 
