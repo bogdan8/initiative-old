@@ -155,6 +155,7 @@
   font-size: 25px;
   padding: 7px;
   float: right;
+  border: 0;
   &:hover {
     color: $color-white;
   }
@@ -210,4 +211,38 @@
 
 .block-modal-images-size {
   z-index: 1050;
+}
+
+.block-pay {
+  height: auto;
+  display: none;
+}
+
+.img-paypal {
+  width: 120px;
+  height: 80px;
+}
+
+#paypal {
+  margin-top: 32px;
+}
+
+.img-stripe {
+  width: 100px;
+  height: 60px;
+}
+
+#stripe {
+  margin-top: 20px;
+}
+
+.initiative-show-form-input {
+  margin: {
+    top: 20px;
+    bottom: 30px;
+  }
+  border: {
+    color: #4D4252;
+    radius: 0;
+  }
 }
