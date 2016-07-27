@@ -117,9 +117,13 @@
 }
 
 .fa-question::before {
-  @extend .fa-usd
+  justify-content: center;
+  display: flex;
+  margin-top: 2px;
 }
 
-.fa-info {
-  @extend .fa-usd
+.fa-info::before {
+  justify-content: center;
+  display: flex;
+  margin-top: 2px;
 }
