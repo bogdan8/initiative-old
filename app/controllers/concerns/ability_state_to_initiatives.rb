@@ -11,7 +11,7 @@ module AbilityStateToInitiatives
   end
 
   def success_confirmation
-    @initiative.update_attribute('finished_day', DateTime.now.to_date + 30)
+    @initiative.update_attribute('finished_day', DateTime.current.to_date + 30)
     if @initiative.success_confirmation!
       redirect_to '/initiatives/pending_approval'
       flash[:success] = t('controller.initiative.success_confirmation')
