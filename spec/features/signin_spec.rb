@@ -9,7 +9,7 @@ feature 'signing in' do
     click_button 'Війти'
   end
 
-  scenario 'visiting the site to sign in' do
+  scenario '#visiting the site to sign in' do
     visit root_path
     click_link 'ВХІД'
     fill_in_signin_fields

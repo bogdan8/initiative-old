@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Devise::Mailer do
-  it 'sends a confirmation email to correct email with custom text' do
+  it '#sends a confirmation email to correct email with custom text' do
     user = create(:user, email: 'ifrankivsbk@gmail.com')
 
     confirmation_email = Devise.mailer.deliveries.last

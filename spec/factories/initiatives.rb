@@ -9,6 +9,7 @@ FactoryGirl.define do
     term_report '15'
     main_picture { File.open('spec/support/photo.jpg') }
     aasm_state 'fundraiser'
+    finished_day '30'
     user_id '1'
   end
 end

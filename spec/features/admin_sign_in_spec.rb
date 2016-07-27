@@ -7,7 +7,7 @@ feature 'Admin sign_in' do
                        confirmation_sent_at: '2016-07-17 07:35:36.292019')
     user.add_role 'admin'
   end
-  scenario 'allows accees to page admins' do
+  scenario '#allows accees to page admins' do
     visit new_user_session_path
     within('#new_user') do
       fill_in 'user_email', with: 'admin@admin.com'

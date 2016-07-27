@@ -53,6 +53,8 @@ module InitiativesHelper
   end
 
   def initiatives_days_left(initiative)
-    (initiative.finished_day - DateTime.now.to_date.day).day
+    unless initiative.finished_day.nil?
+      (initiative.finished_day - DateTime.now.to_date.day).day
+    end
   end
 end
