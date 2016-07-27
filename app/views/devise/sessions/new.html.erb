@@ -45,7 +45,10 @@
           <% end -%>
 
           <div class="col-lg-offset-4 col-md-8 col-xs-12">
-            <%= f.submit 'Війти', class: 'devise-registration-edit-button-submit' %>
+            <p class="user-panel-show-names-user-information">
+              <%= f.submit 'Війти', class: 'devise-registration-edit-button-submit' %>
+              <%= spinner_css %>
+            </p>
           </div>
       <% end %>
       <%= render "devise/shared/links" %>

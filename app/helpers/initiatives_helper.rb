@@ -47,4 +47,8 @@ module InitiativesHelper
 
     html.html_safe
   end
+
+  def initiatives_days_left initiative
+    (initiative.finished_day - DateTime.now.to_date.day).day
+  end
 end
