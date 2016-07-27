@@ -15,7 +15,7 @@ class Ability
   private
 
   def the_administrator_can_do(user)
-    can :manage, [User, Initiative, Category]
+    can :manage, [User, Initiative, Category, Timeline]
     cannot :destroy, User, id: user.id
   end
 
@@ -27,10 +27,11 @@ class Ability
     can :read, Category
     cannot [:pending_approval, :fundraising_finished], Initiative
     cannot [:show_user], Initiative, user_id: user.id
+    can :create, Timeline
   end
 
   def the_not_authorized_user_can
-    cannot :manage, [User, Initiative, Category]
+    cannot :manage, [User, Initiative, Category, Timeline]
     can :read, Initiative
   end
 end

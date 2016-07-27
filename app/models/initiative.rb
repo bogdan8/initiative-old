@@ -6,6 +6,7 @@ class Initiative < ActiveRecord::Base
   has_many :initiative_images, dependent: :destroy
   has_many :initiative_categories
   has_many :categories, through: :initiative_categories
+  has_many :timelines
 
   include AASM
 

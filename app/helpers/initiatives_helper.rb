@@ -19,6 +19,10 @@ module InitiativesHelper
       content_tag :p, 'Ініціативу відхилено', style: 'color: red;', class: 'initiative-list-title-state'
     elsif initiative.fundraiser?
       content_tag :p, 'Проходить збір коштів', style: 'color: blue;', class: 'initiative-list-title-state'
+    elsif initiative.fundraising_finished?
+      content_tag :p, 'Підтвердження початку звуті', style: 'color: blue;', class: 'initiative-list-title-state'
+    elsif initiative.being_implemented?
+      content_tag :p, 'Розпочато подання звіту', style: 'color: blue;', class: 'initiative-list-title-state'
     end
   end
 
