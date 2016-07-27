@@ -106,7 +106,29 @@
     </div>
   </div>
   <% if @initiative.being_implemented? %>
-      <p>Додати звіт</p>
+      <p class="text-center">Звіт до ініціативи:</p>
+      <% @initiative.timelines.each do |timeline| %>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <p class="initiative-new-form-names">Назва: <%= timeline.title %>,
+                      Дата: <%= timeline.date.to_date %></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-xs-12">
+                    <p class="initiative-new-form-names">Опис:</p>
+
+                    <p class="initiative-new-form-names"><%= timeline.description %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      <p class="text-center">Додати звіт</p>
 
       <div class="container">
         <div class="row">

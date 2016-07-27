@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get :error_confirmation, on: :member
     get :started_implement, on: :member
     post 'edit/delete_images', to: 'initiatives#delete_images', on: :member
-    resources :timeline
+    resources :timeline, only: [:create]
   end
   resources :categories
   get 'search', to: 'search#index'
