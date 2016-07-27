@@ -82,6 +82,7 @@ uk:
       fundraising_finished: 'Розпочати звіт'
       error_confirmation: 'Відхилити'
       for_confirmation: 'Відправити для підтвердження'
+      being_implemented_link: 'Додати звіт'
     admins:
       edit:
         title: 'Редагувати'

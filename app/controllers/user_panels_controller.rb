@@ -11,4 +11,8 @@ class UserPanelsController < ApplicationController
   def show_user
     @user = User.find(current_user.id)
   end
+
+  def show_initiative
+    @initiative = Initiative.find(params[:id])
+  end
 end
