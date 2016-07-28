@@ -1,20 +1,15 @@
 require 'rails_helper'
 
-describe Timeline, type: :controller do
+describe TimelineController, type: :controller do
   before(:each) do
-    create(:initiative)
+    @request.env['devise.mapping'] = Devise.mappings[:user]
+    @user = FactoryGirl.create(:user)
+    @user.confirm
+    sign_in @user
+    create(:initiative, user_id: @user.id)
   end
-  describe '#GET #index' do
-    subject { get :index }
-
-    it '#renders the index template' do
-      expect(subject).to render_template(:index)
-      expect(subject).to render_template('index')
-      expect(subject).to render_template('home/index')
-    end
-
-    it '#does not render a different template' do
-      expect(subject).to_not render_template('home/show')
+  describe '#GET ' do
+    it '#redirects to the home page upon save' do
     end
   end
 end

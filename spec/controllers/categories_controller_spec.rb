@@ -28,4 +28,10 @@ describe CategoriesController, type: :controller do
       expect(assigns(:category)).to be_a_new(Category)
     end
   end
+  describe '#creat action' do
+    it '#redirects to home index if category was created' do
+      post :create, category: FactoryGirl.attributes_for(:category)
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end
