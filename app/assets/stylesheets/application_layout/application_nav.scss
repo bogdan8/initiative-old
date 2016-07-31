@@ -85,6 +85,12 @@
   }
 }
 
+.form-category {
+  @-moz-document url-prefix() {
+    margin-right: -60px;
+  }
+}
+
 .button-search {
   border-radius: 0;
   background-color: #9D979F;

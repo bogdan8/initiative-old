@@ -237,6 +237,15 @@
 }
 
 .initiative-show-form-input {
+  background: #f8f8f8;
+  font-size: 18px;
+  color: #4D4252;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
   margin: {
     top: 20px;
     bottom: 30px;
@@ -245,4 +254,37 @@
     color: #4D4252;
     radius: 0;
   }
+  width: 70px;
+  height: 35px;
+  option {
+    font-size: 18px;
+  }
+}
+
+.show-many-value {
+  border: 1px solid #4D4252;
+  overflow: hidden;
+  background: #fafafa url('initiatives/select-form.png') no-repeat 105% 50%;
+  background-size: 20px 100%;
+  width: 70px;
+  height: 35px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-many-value select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  margin-bottom: 20px;
+}
+
+.show-many-value select:focus {
+  outline: none;
 }

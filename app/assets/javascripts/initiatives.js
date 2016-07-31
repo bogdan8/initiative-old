@@ -3,12 +3,12 @@ $(document).ready(function () {
         placeholder: 'Натисніть сюди щоб вибрати категорії'
     });
     $('form').submit(function () {
-        $('.initiative-button-submit').css('display', 'none');
-        $('.devise-registration-edit-button-submit').css('display', 'none');
-        $('.sk-cube-grid').css('display', 'block');
+        $('.initiative-button-submit').hide();
+        $('.devise-registration-edit-button-submit').hide();
+        $('.sk-cube-grid').show();
     });
-    $('.initiative-button-support').click(function(){
-        $('.block-pay').slideDown( "slow");
+    $('.initiative-button-support').click(function () {
+        $('.block-pay').slideDown("slow");
         $('#button-support').css('background-color', '#4D4252')
     });
 });
