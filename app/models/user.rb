@@ -2,6 +2,20 @@ class User < ActiveRecord::Base
   after_create :assign_default_role
   after_create :send_user_mail_welcome
 
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create ||= create_from_omniauth(auth)
+  end
+
+  def self.create_from_omniauth(auth)
+    create! do |user|
+      user.provider = auth['provider']
+      user.uid = auth['uid']
+      user.email = "ifcity#{rand(50000)}@city.com"
+      user.password = 123456 + rand(50000)
+      user.name = auth['info']['name']
+    end
+  end
+
   def assign_default_role
     add_role(:user)
   end

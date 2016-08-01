@@ -14,6 +14,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-block">
         <%== if_user_signed_show_chose_link_with_text_decoration %>
+        <%= link_to 'twitter', '/auth/twitter' %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <form class="navbar-form navbar-left" role="search" method="get" action="/search" data-remote="true">

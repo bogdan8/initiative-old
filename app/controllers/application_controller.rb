@@ -35,4 +35,10 @@ class ApplicationController < ActionController::Base
   def take_all_initiatives_to_show_in_the_admin_panel
     @initiatives_pending_approval = Initiative.pending_approval unless Initiative.pending_approval.nil?
   end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  helper_method :current_user
 end

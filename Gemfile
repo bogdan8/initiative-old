@@ -78,6 +78,9 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
 
   gem 'dotenv-rails'
+  # For social auth
+  gem 'omniauth-facebook'
+  gem 'omniauth-twitter'
 end
 
 group :development do

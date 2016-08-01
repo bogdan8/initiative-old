@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  get 'auth/:provider/callback', to: 'sessions#create'
+
   resources :admins
   resources :initiatives do
     get :pending_approval, on: :collection
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
   get 'user_panels', to: 'user_panels#index'
   get 'user_panels_information', to: 'user_panels#show_user'
   get 'user_panels_initiative/:id', to: 'user_panels#show_initiative'
+
 end
