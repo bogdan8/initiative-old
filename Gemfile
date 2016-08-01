@@ -76,6 +76,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
   gem 'simplecov', require: false, group: :test
+
+  gem 'dotenv-rails'
 end
 
 group :development do

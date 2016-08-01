@@ -89,6 +89,12 @@
   @-moz-document url-prefix() {
     margin-right: -60px;
   }
+  @media (max-width: $media-max-width-on-small-devise) {
+    margin-right: 30px;
+  }
+  @media (min-width: $media-min-width-on-big-devise) {
+    margin-right: -60px;
+  }
 }
 
 .button-search {
