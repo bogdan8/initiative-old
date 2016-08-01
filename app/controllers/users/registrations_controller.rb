@@ -6,6 +6,7 @@ module Users
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up).push(:name, :post, :phone, :avatar)
+      devise_parameter_sanitizer.for(:account_update).push(:name, :post, :phone, :avatar)
     end
   end
 end

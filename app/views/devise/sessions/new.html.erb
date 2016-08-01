@@ -6,6 +6,8 @@
           <p class="user-panel-show-title">
             Війти
           </p>
+          <%= link_to 'twitter', '/auth/twitter' %>
+          <%= link_to 'facebook', '/auth/facebook' %>
         </div>
       </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -51,7 +53,7 @@
             </p>
           </div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      <%= render 'devise/shared/links' %>
 
     </div>
   </div>
