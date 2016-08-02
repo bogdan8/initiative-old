@@ -7,7 +7,7 @@
             Війти
           </p>
           <%= link_to 'twitter', '/auth/twitter' %>
-          <%= link_to 'facebook', '/auth/facebook' %>
+          <%= link_to 'facebook', '/auth/facebook?display=popup' %>
         </div>
       </div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -45,7 +45,6 @@
                 </div>
               </div>
           <% end -%>
-
           <div class="col-lg-offset-4 col-md-8 col-xs-12">
             <p class="user-panel-show-names-user-information">
               <%= f.submit 'Війти', class: 'devise-registration-edit-button-submit' %>
