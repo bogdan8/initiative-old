@@ -91,6 +91,11 @@
               <%= file_field_tag 'initiative_images[]', type: :file, multiple: true, class: 'initiative-new-form-input' %>
             </div>
           </div>
+          <div class="col-lg-offset-4 col-md-8 col-xs-12">
+            <p class="user-panel-show-names-user-information">
+              <%= recaptcha_tags %>
+            </p>
+          </div>
           <div class="row">
             <div class="col-lg-offset-4 col-lg-8">
               <%= f.submit t('views.initiative.new.btn_title'), class: 'initiative-button-submit' %>

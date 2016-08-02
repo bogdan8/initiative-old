@@ -81,6 +81,7 @@ group :development, :test do
   # For social auth
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
+  gem 'recaptcha', require: 'recaptcha/rails'
 end
 
 group :development do

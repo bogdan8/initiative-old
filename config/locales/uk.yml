@@ -1,4 +1,7 @@
 uk:
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Помилка'
   unauthorized:
     default: "За замовчуванням текст повідомлення про помилку."
     manage:

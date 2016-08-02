@@ -11,7 +11,11 @@
 
   <div class="header-block-right">
     <% if user_signed_in? %>
-        <%= link_to t('views.link_to.sign_out'), destroy_user_session_path, method: :delete, class: 'header-text-right' %>
+        <% if session[:user_id] %>
+            <%= link_to t('views.link_to.sign_out'), '/signout', class: 'header-text-right' %>
+        <% else %>
+            <%= link_to t('views.link_to.sign_out'), destroy_user_session_path, method: :delete, class: 'header-text-right' %>
+        <% end %>
     <% else %>
         <%= link_to t('views.link_to.sing_in'), new_user_session_path, class: 'header-text-right' %>
         <%= link_to t('views.link_to.registration'), new_user_registration_path, class: 'header-text-right-register' %>

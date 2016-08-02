@@ -17,7 +17,7 @@ class InitiativesController < ApplicationController
   def create
     @initiative = Initiative.new initiative_params
     add_initiative_with_categories
-    if @initiative.save
+    if verify_recaptcha(model: @initiative) && @initiative.save
       add_images_to_initiative
       redirect_to @initiative
       flash[:success] = t('controller.initiative.save')
