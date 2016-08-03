@@ -21,7 +21,11 @@
 
                 <%= f.file_field :avatar, class: 'devise-registration-edit-file-input' %>
                 <% unless @user.avatar.url == '/images/original/missing.png' %>
-                    <%= image_tag @user.avatar.url, class: 'devise-registration-edit-block-show-images' %>
+                    <% if @user.avatar_file_name && @user.avatar_file_name[0..3] == 'http' %>
+                        <img src="<%= @user.avatar_file_name %>" class="user-panel-show-block-show-images">
+                    <% else %>
+                        <%= image_tag @user.avatar.url, class: 'devise-registration-edit-block-show-images' %>
+                    <% end %>
                 <% end %>
               </div>
             </div>
