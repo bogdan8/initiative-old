@@ -24,16 +24,8 @@
   </div>
   <div class="col-lg-12">
     <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-        <%= link_to "Не отримали інструкції для розблокувати?", new_unlock_path(resource_name), class: 'devise-registration-button-submit' %>
+        <%= link_to "Не отримали інструкції щоб розблокувати?", new_unlock_path(resource_name), class: 'devise-registration-button-submit' %>
         <br/>
-    <% end -%>
-  </div>
-  <div class="col-lg-12">
-    <%- if devise_mapping.omniauthable? %>
-        <%- resource_class.omniauth_providers.each do |provider| %>
-            <%= link_to "Увійти на з #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'devise-registration-button-submit' %>
-            <br/>
-        <% end -%>
     <% end -%>
   </div>
 </div>

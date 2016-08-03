@@ -71,34 +71,36 @@
               </p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-xs-12">
-              <p class="user-panel-show-names-user-information">
-                Пароль*
-                <% if @minimum_password_length %>
-                    <em>(<%= @minimum_password_length %> символів мінімум)</em>
-                <% end %><br/>
-              </p>
-            </div>
-            <div class="col-lg-8 col-md-8 col-xs-12">
-              <p class="user-panel-show-names-user-information">
-                <%= f.password_field :password, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-xs-12">
-              <p class="user-panel-show-names-user-information">
-                Повторити пароль*
-              </p>
-            </div>
-            <div class="col-lg-8 col-md-8 col-xs-12">
-              <p class="user-panel-show-names-user-information">
+          <% if f.object.password_required? %>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                  <p class="user-panel-show-names-user-information">
+                    Пароль*
+                    <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> символів мінімум)</em>
+                    <% end %><br/>
+                  </p>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                  <p class="user-panel-show-names-user-information">
+                    <%= f.password_field :password, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                  <p class="user-panel-show-names-user-information">
+                    Повторити пароль*
+                  </p>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                  <p class="user-panel-show-names-user-information">
 
-                <%= f.password_field :password_confirmation, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
-              </p>
-            </div>
-          </div>
+                    <%= f.password_field :password_confirmation, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input' %>
+                  </p>
+                </div>
+              </div>
+          <% end %>
           <div class="col-lg-offset-4 col-md-8 col-xs-12">
             <p class="user-panel-show-names-user-information">
               <%= recaptcha_tags %>

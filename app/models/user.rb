@@ -6,15 +6,26 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      if auth.info.email.nil?
-        user.email = "ifcity#{rand(50_000)}@city.com"
-      else
-        user.email = auth.info.email
-      end
       user.avatar_file_name = auth.info.image unless auth.info.image.nil?
-      user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
+      user.email = auth.info.email unless auth.info.email.nil?
+      user.skip_confirmation!
     end
+  end
+
+  def self.new_with_session(params, session)
+    if session['devise.user_attributes']
+      new(session['devise.user_attributes'], without_protection: true) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+  end
+
+  def password_required?
+    super && provider.blank?
   end
 
   def assign_default_role
@@ -32,7 +43,7 @@ class User < ActiveRecord::Base
   has_many :initiatives
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_attached_file :avatar,

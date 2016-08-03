@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations',
+                                    omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'home#index'
-
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :admins
   resources :initiatives do
