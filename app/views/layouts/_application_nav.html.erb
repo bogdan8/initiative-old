@@ -34,7 +34,8 @@
       <form action="/search/sort" class="navbar-form navbar-right text-right form-category" method="get" data-remote="true">
         <select name="category[id]" id="category_id" class="select-sort">
           <option selected disabled value="" class="first-option">
-            <p><%= t('views.layout.application.nav.category') %></p></option>
+            <p><%= t('views.layout.application.nav.category') %></p>
+          </option>
           <% Category.all.each do |items| %>
               <option id="category_sort" value="<%= items.id %>"><p><%= items.name %></p></option>
           <% end %>

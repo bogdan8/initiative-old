@@ -9,11 +9,8 @@ class SearchController < ApplicationController
 
   def sort
     @array_initiative_categories = []
-    if @initiatives.empty? || params[:category][:id].empty?
-      redirect_to '/search'
-    else
-      add_category_with_initiative
-    end
+    return redirect_to '/search' if @initiatives.empty? || params[:category][:id].empty?
+    add_category_with_initiative unless @initiatives.empty? || params[:category][:id].empty?
     respond_to_format
   end
 

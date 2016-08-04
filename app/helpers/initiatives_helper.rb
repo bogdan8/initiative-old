@@ -5,7 +5,7 @@ module InitiativesHelper
 
   def show_for_confirmation_initiative_path(initiative)
     if initiative.draft? || initiative.rejected?
-      link_to t('views.link_to.for_confirmation'), for_confirmation_initiative_path(initiative), class: 'btn btn-info'
+      link_to t('views.link_to.for_confirmation'), for_confirmation_initiative_path(initiative), class: 'btn btn-info user_panels_button'
     end
   end
 
