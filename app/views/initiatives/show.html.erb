@@ -182,7 +182,7 @@
       <% @initiative.timelines.each do |timeline| %>
           <div class="container">
             <div class="row">
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-xs-12">
                     <p class="initiative-new-form-names">Назва: <%= timeline.title %>,
@@ -195,6 +195,11 @@
 
                     <p class="initiative-new-form-names"><%= timeline.description %></p>
                   </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="initiative-timeline-video">
+                  <%== timeline.video %>
                 </div>
               </div>
             </div>

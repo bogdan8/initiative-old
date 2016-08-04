@@ -47,6 +47,8 @@ uk:
       for_confirmation: 'Відправлено на підтвердження'
       error_confirmation: 'Ініціативу відхилено'
       started_implement_success: 'Ініціативу відправлено для надання звіту'
+      timeline:
+        save: 'Звіт додано'
   views:
     pagination:
       previous: '&lt; Назад'
