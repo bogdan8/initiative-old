@@ -93,6 +93,28 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-lg-12">
+          <p class="initiative-remains"><%= t('views.initiative.show.user_info') %>:
+            <a type="button" data-toggle="modal" data-target="#model<%= @initiative.user.id %>">
+              <b><%= @initiative.user.name %></b>
+            </a>
+          </p>
+          <!-- Modal -->
+          <div class="modal fade block-modal-images-size" id="model<%= @initiative.user.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p class="show-user-description-in-initiative">
+                    <b class="show-user-name-in-initiative"><%= @initiative.user.name %></b>
+                    <%= image_tag @initiative.user.avatar.url, class: 'show-user-image-in-initiative' %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-lg-12 col-sm-12 col-xs-12">
           <a class="initiative-button-support" id="button-support"><%= t('views.initiative.show.support') %></a>
         </div>
@@ -195,7 +217,7 @@
     <div class="col-lg-12">
       <div id="disqus_thread"></div>
       <script>
-          (function() { // DON'T EDIT BELOW THIS LINE
+          (function () { // DON'T EDIT BELOW THIS LINE
               var d = document, s = d.createElement('script');
               s.src = '//ifcity.disqus.com/embed.js';
               s.setAttribute('data-timestamp', +new Date());

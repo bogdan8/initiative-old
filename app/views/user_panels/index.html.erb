@@ -21,8 +21,6 @@
                     <br/>
 
                     <%= link_to t('views.link_to.delete'), initiative_path(initiative), method: :delete, class: 'btn btn-danger user_panels_button', data: {confirm: 'Ви впевнені?'} %>
-                <% elsif initiative.being_implemented? %>
-                    <%= link_to t('views.link_to.being_implemented_link'), edit_initiative_path(initiative), class: 'btn btn-warning user_panels_button' %>
                 <% end %>
               </p>
             </div>
