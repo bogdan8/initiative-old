@@ -91,3 +91,12 @@
     font-size: 100px;
   }
 }
+
+.show-title-in-reports{
+  @extend .initiative-list-short-description;
+  margin:{
+    top: 0;
+    bottom: 20px;
+  }
+  font-size: 25px;
+}
