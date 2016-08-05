@@ -78,10 +78,14 @@ group :development, :test do
   gem 'simplecov', require: false, group: :test
 
   gem 'dotenv-rails'
+
   # For social auth
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
   gem 'recaptcha', require: 'recaptcha/rails'
+
+  # For payed
+  gem 'stripe'
 end
 
 group :development do

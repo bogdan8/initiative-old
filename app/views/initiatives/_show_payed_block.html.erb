@@ -1,15 +1,17 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="block-pay">
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="<%= donations_stripe_path %>">
         <div class="radio">
 
           <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="paypal" value="paypal">
+            <br>
+            <br>
+            <input type="radio" name="payed" id="payed" value="paypal">
             <%= image_tag 'initiatives/PayPal.png', class: 'img-paypal' %>
           </label>
           <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="stripe" value="stripe">
+            <input type="radio" name="payed" id="stripe" value="stripe">
             <%= image_tag 'initiatives/stripe.png', class: 'img-stripe' %>
           </label>
         </div>
@@ -20,26 +22,37 @@
             </div>
             <div class="col-lg-4">
               <div class="input-group">
-                <input type="text" class="form-control initiative-show-form-input" id="exampleInputAmount" placeholder="Сума">
+                <input type="text" class="form-control initiative-show-form-input" name="amount" id="amount" placeholder="Сума">
+                <textarea name="initiative_id" id="initiative_id" class="hidden"><%= @initiative.id %></textarea>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="show-many-value">
-                <select name="" class="initiative-show-form-input">
-                  <option value="1">Грн</option>
-                  <option value="2">$</option>
-                  <option value="3">&euro;</option>
+                <select name="currency" class="initiative-show-form-input">
+                  <!-- <option value="uah">Грн</option>-->
+                  <option value="usd">$</option>
+                  <!-- <option value="eur">&euro;</option>-->
                 </select>
               </div>
             </div>
           </div>
         </div>
+        <div class="hidden">
+          <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-amount="pay"
+          data-name="ifCity"
+          data-locale="auto">
+          </script>
+        </div>
         <div class="col-lg-12 col-sm-12 col-xs-12">
-          <button class="initiative-button-support" type="submit">
+          <button class="initiative-button-support" id="form-button-stripe">
             оплаптити
           </button>
         </div>
       </form>
+
     </div>
   </div>
 </div>

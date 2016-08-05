@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804143522) do
+ActiveRecord::Schema.define(version: 20160805091151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20160804143522) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.string   "payer_id"
+    t.integer  "user_id"
+    t.integer  "initiative_id"
+    t.integer  "amount"
+    t.string   "description"
+    t.string   "currency"
+    t.string   "aasm_state"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "initiative_categories", force: :cascade do |t|
@@ -44,8 +56,8 @@ ActiveRecord::Schema.define(version: 20160804143522) do
     t.integer  "sum"
     t.integer  "term_fundraiser"
     t.integer  "term_report"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "main_picture_file_name"
     t.string   "main_picture_content_type"
     t.integer  "main_picture_file_size"
@@ -53,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160804143522) do
     t.string   "aasm_state"
     t.integer  "user_id"
     t.date     "finished_day"
+    t.integer  "collected_amount",          default: 0, null: false
   end
 
   create_table "roles", force: :cascade do |t|

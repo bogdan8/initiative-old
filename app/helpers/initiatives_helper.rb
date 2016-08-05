@@ -57,4 +57,19 @@ module InitiativesHelper
       (initiative.finished_day - DateTime.now.to_date.day).day
     end
   end
+
+  def block_percentage(initiative)
+    percentage = (initiative.collected_amount * 100) / initiative.sum
+    percentage_p = percentage
+    percentage_p = 100 if (initiative.collected_amount * 100) / initiative.sum > 100
+    percentage = 108 if (initiative.collected_amount * 100) / initiative.sum > 100
+    html = <<-HTML
+    <div class="block-show-big-image-percentage">
+      <div class="block-show-percentage" style="height: #{percentage}%">
+        <p class="block-show-percentage-p"> #{percentage_p}%</p>
+      </div>
+    </div>
+    HTML
+    html.html_safe
+  end
 end

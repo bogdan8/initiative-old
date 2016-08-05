@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   get 'user_panels_initiative/:id', to: 'user_panels#show_initiative'
 
   get 'reports', to: 'home#reports'
+
+  # payed callback
+  get 'donations/stripe', to: 'donations#stripe'
 end

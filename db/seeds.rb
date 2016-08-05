@@ -10,6 +10,7 @@ unless User.with_any_role(:admin).any?
   # add user
   user = User.new
   user.email = 'user@user.com'
+  user.name = 'Bobo'
   user.password = '123456'
   user.confirmed_at = '2016-07-17 07:35:55.139051'
   user.confirmation_sent_at = '2016-07-17 07:35:36.292019'

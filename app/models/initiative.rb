@@ -7,6 +7,7 @@ class Initiative < ActiveRecord::Base
   has_many :initiative_categories
   has_many :categories, through: :initiative_categories
   has_many :timelines
+  has_many :donations
 
   include AASM
 
