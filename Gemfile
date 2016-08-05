@@ -86,6 +86,7 @@ group :development, :test do
 
   # For payed
   gem 'stripe'
+  gem 'paypal-sdk-rest'
 end
 
 group :development do
