@@ -5,11 +5,11 @@ class DonationsController < ApplicationController
 
   def stripe
     flash[:success] = 'Ви успішно оплатили'
-    redirect_to "/initiatives/#{@initiative_id}"
+    redirect_to root_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to "/initiatives/#{@initiative_id}"
+    redirect_to root_path
   end
 
   private

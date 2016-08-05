@@ -75,7 +75,6 @@
 .block-show-percentage {
   z-index: 20;
   background-color: rgba(0, 255, 165, 0.5);
-  height: 108%;
   width: 108%;
   margin: {
     bottom: -10px;
@@ -84,6 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: end;
+  border-radius: 0 0 135px 135px;
 }
 
 .block-show-percentage-p {

@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
   # payed callback
   get 'donations/stripe', to: 'donations#stripe'
+  get 'donations/paypal', to: 'donations#paypal'
 end
