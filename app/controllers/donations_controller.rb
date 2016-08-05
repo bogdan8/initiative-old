@@ -4,7 +4,7 @@ class DonationsController < ApplicationController
   before_action :create_donate, :stripe
 
   def stripe
-    flash[:success] = 'ВИ успішно оплатили'
+    flash[:success] = 'Ви успішно оплатили'
     redirect_to "/initiatives/#{@initiative_id}"
 
   rescue Stripe::CardError => e
@@ -37,7 +37,7 @@ class DonationsController < ApplicationController
       user_id: current_user.id,
       initiative_id: @initiative.id,
       amount: params[:amount].to_i * 100,
-      description: 'Rails Stripe customer',
+      description: "for initiatives: #{@initiative.title}",
       currency: params[:currency]
     )
     @collected_amount = @initiative.collected_amount + params[:amount].to_i

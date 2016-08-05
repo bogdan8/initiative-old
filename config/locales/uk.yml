@@ -28,6 +28,10 @@ uk:
               blank: 'Ви неввели пароль'
             short_description:
               too_long: 'Задовгий опис'
+        donate:
+           attributes:
+              amount:
+                correct_number: 'Число має бути більше чим 1 і менше чим 9999'
 
   controller:
     admins:

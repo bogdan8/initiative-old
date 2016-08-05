@@ -13,4 +13,13 @@ class Donation < ActiveRecord::Base
     end
   end
   scopify
+
+  validate :validate_amount
+
+  private
+
+  def validate_amount
+    trans_error_amount = I18n.t('activerecord.errors.models.donate.attributes.amount.correct_number')
+    errors.add(:amount, trans_error_amount) unless amount.between?(1, 9_999)
+  end
 end
