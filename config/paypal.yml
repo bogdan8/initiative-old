@@ -1,8 +1,8 @@
 test: &default
 
   # Credentials for REST APIs
-  client_id: EVN['PAYPAL_USER_ID']
-  client_secret: EVN['PAYPAL_SECRET_KEY']
+  client_id: ENV['PAYPAL_USER_ID']
+  client_secret: ENV['PAYPAL_SECRET_KEY']
 
   # Mode can be 'live' or 'sandbox'
   mode: sandbox

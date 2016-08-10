@@ -64,6 +64,23 @@ class Initiative < ActiveRecord::Base
                     default_url: '/images/:style/missing.png'
   validates_attachment_content_type :main_picture, content_type: %r{\Aimage\/.*\Z}
 
+  serialize :notification_params, Hash
+  def paypal_url(return_url, amount)
+    values = {
+      cmd: '_xclick',
+      charset: 'utf-8',
+      business: '4orna_primara-facilitator@mail.ru',
+      invoice: id,
+      return: "http://127.0.0.1:3000/#{return_url}",
+      item_number: id,
+      item_name: title,
+      currency_code: 'USD',
+      amount: amount,
+      notify_url: 'http://127.0.0.1:3000/hook'
+    }
+    "https://www.sandbox.paypal.com/cgi-bin/webscr?#{values.to_query}"
+  end
+
   private
 
   def validate_sum

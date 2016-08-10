@@ -11,4 +11,15 @@ $(document).ready(function () {
         $('.block-pay').slideDown("slow");
         $('#button-support').css('background-color', '#4D4252')
     });
+    /* show paypal block */
+    $('input[type=radio][name=payed]').change(function () {
+        if (this.value == 'paypal') {
+            $('.stripe').hide();
+            $('.paypal').show();
+        }
+        else if (this.value == 'stripe') {
+            $('.stripe').show();
+            $('.paypal').hide();
+        }
+    });
 });

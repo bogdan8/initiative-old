@@ -11,6 +11,7 @@ AllCops:
     - '**/bin/rails'
     - '**/db/schema.rb'
     - '**/models/user.rb'
+    - '**/app/controllers/donations_controller.rb'
     - '**/app/helpers/nav_helper.rb'
     - '**/app/helpers/devise_helper.rb'
     - '**/app/helpers/initiatives_helper.rb'

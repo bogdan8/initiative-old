@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations',
                                     omniauth_callbacks: 'users/omniauth_callbacks' }
-
   root to: 'home#index'
 
   resources :admins
@@ -28,5 +27,7 @@ Rails.application.routes.draw do
 
   # payed callback
   get 'donations/stripe', to: 'donations#stripe'
-  get 'donations/paypal', to: 'donations#paypal'
+  post 'donations/:id/paypal', to: 'donations#paypal'
+  post '/hook', to: 'regstrations#hook'
+  post '/initiatives/:id', to: 'initiatives#show'
 end

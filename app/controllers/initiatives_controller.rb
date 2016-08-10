@@ -2,6 +2,7 @@ class InitiativesController < ApplicationController
   load_and_authorize_resource
   before_action :all_category, only: [:new, :edit]
   before_action :find_initiatives, only: [:delete_images, :error_confirmation, :success_confirmation, :for_confirmation]
+  skip_before_action :verify_authenticity_token, only: [:show]
 
   include AbilityStateToInitiatives
 
