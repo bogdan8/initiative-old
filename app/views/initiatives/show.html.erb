@@ -54,7 +54,8 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <p class="initiative-collected"><%= t('views.initiative.show.collected') %>: <b><%= @initiative.collected_amount %> грн</b>
+          <p class="initiative-collected"><%= t('views.initiative.show.collected') %>:
+            <b><%= @initiative.collected_amount %> грн</b>
           </p>
         </div>
       </div>
@@ -91,7 +92,9 @@
           <a class="initiative-button-support" id="button-support"><%= t('views.initiative.show.support') %></a>
         </div>
       </div>
-      <%= render 'initiatives/show_payed_block', locals: {initiative: @initiative} %>
+      <% if user_signed_in? %>
+          <%= render 'initiatives/show_payed_block', locals: {initiative: @initiative} %>
+      <% end %>
     </div>
   </div>
   <div class="row">

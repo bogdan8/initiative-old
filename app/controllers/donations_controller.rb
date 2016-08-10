@@ -2,11 +2,11 @@ class DonationsController < ApplicationController
   before_action :find_initiative, :stripe
   before_action :create_customer_and_charge, :stripe
   before_action :create_donate, :stripe
+  before_action :check_whether_enough_money, :stripe
 
   def stripe
-    flash[:success] = 'Ви успішно оплатили'
+    flash[:success] = @text
     redirect_to root_path
-
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path
@@ -43,5 +43,14 @@ class DonationsController < ApplicationController
     @collected_amount = @initiative.collected_amount + params[:amount].to_i
 
     @initiative.update(collected_amount: @collected_amount)
+  end
+
+  def check_whether_enough_money
+    if @initiative.collected_amount >= @initiative.sum
+      @initiative.finish_fundraising!
+      @text = 'Ініціатива завершила збір коштів і перейшла на розгляд адміністратора'
+    else
+      @text = 'Ви успішно оплатили'
+    end
   end
 end

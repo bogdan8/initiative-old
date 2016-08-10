@@ -35,6 +35,7 @@ module AbilityStateToInitiatives
 
   def started_implement
     if @initiative.started_implement!
+      @initiative.update_attribute('finished_day', DateTime.current.to_date + @initiative.term_report)
       redirect_to '/initiatives/fundraising_finished'
       flash[:success] = t('controller.initiative.started_implement_success')
     else
