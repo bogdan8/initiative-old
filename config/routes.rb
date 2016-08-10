@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'user_panels', to: 'user_panels#index'
   get 'user_panels_information', to: 'user_panels#show_user'
   get 'user_panels_initiative/:id', to: 'user_panels#show_initiative'
+  get 'my_payments', to: 'user_panels#my_payments'
 
   get 'reports', to: 'home#reports'
 

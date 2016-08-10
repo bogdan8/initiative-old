@@ -15,4 +15,8 @@ class UserPanelsController < ApplicationController
   def show_initiative
     @initiative = Initiative.find(params[:id])
   end
+
+  def my_payments
+    @donate = Donation.where('user_id = ?', current_user.id)
+  end
 end
