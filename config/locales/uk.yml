@@ -1,7 +1,8 @@
 uk:
   recaptcha:
     errors:
-      incorrect-captcha-sol: 'Помилка'
+      verification_failed: 'Ви не пройшли перевірку'
+      recaptcha_unreachable: 'Помилка'
   unauthorized:
     default: "За замовчуванням текст повідомлення про помилку."
     manage:
@@ -10,6 +11,16 @@ uk:
     update:
       project: "Не дозволено оновлювати цей проект."
   activerecord:
+    attributes:
+      user:
+        current_password: "Поточний пароль"
+        password_confirmation: "Повторіть пароль"
+        current_password: "Поточний пароль"
+        password: "Пароль:"
+      initiative:
+        sum: "Сума:"
+        term_fundraiser: "Термін збору:"
+        term_report: "Термін збору:"
     errors:
       messages:
         record_invalid: 'Виникли помилки: %{errors}'
@@ -21,7 +32,7 @@ uk:
         initiative:
           attributes:
             sum:
-              correct_number: 'Число має бути більше чим 100 і менше чим 50000'
+              correct_number: 'має бути більше чим 100 і менше чим 50000'
             term_fundraiser: 'Ви вели невірне число, число має бути 30 або 60'
             term_report: 'Ви вели невірне число, число має бути 15 або 30'
             password:
