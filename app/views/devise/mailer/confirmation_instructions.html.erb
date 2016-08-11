@@ -1,7 +1,5 @@
-<p>Доброго дня <%= @email %>!</p>
-
-<p>Ви можете підтвердити свою адресу електронної пошти облікового запису по посиланню нижче:</p>
-
-<p>Дякуємо за розуміння, приємного дня:</p>
-
-<p><%= link_to 'Підтвердити мій акаунт', confirmation_url(@resource, confirmation_token: @token) %></p>
+<h2>Вітаємо вас з реєстрацією на нашому сайті!!!</h2>
+<p>Ваше ім'я: <b style="color: green"><%= @user.name %></b></p>
+<p>Ваша пошта: <b style="color: green"><%= @user.post %></b></p>
+<p>Ваш телефон: <b style="color: green"><%= @user.phone %></b></p>
+<p>Ваш емейл: <b><%= @user.email %></b></p>

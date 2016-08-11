@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   after_create :assign_default_role
   after_create :send_user_mail_welcome
 
+  @@user_password = "if_city_#{rand(30..10500)}"
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -9,7 +11,9 @@ class User < ActiveRecord::Base
       user.avatar_file_name = auth.info.image unless auth.info.image.nil?
       user.name = auth.info.name
       user.email = auth.info.email unless auth.info.email.nil?
+      user.password = @@user_password
       user.skip_confirmation!
+      UserMailer.send_password_to_user(user, @@user_password).deliver_now! unless auth.info.email.nil?
     end
   end
 
@@ -34,6 +38,7 @@ class User < ActiveRecord::Base
 
   def send_user_mail_welcome
     UserMailer.send_message_welcome_to_new_user(self).deliver_later
+    UserMailer.send_password_to_user(self, @@user_password).deliver_now! unless self.provider != 'twitter'
   end
 
   size_avatar = { medium: '300x300>', thumb: '100x100>' }

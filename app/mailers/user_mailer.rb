@@ -7,4 +7,10 @@ class UserMailer < Devise::Mailer
     @user = user
     mail(to: @user.email, subject: 'Ви успішно зареєструвались.')
   end
+
+  def send_password_to_user(user, password)
+    @user = user
+    @user_password = password
+    mail(to: @user.email, subject: 'Ваш тимчасовий пароль.')
+  end
 end

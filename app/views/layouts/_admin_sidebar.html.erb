@@ -33,9 +33,9 @@
         <i class="fa fa-angle-double-right"></i>
         Додати адміністратора
     <% end %>
-    <%= nav_link '/initiatives' do %>
+    <%= nav_link '/initiatives/all' do %>
         <i class="fa fa-angle-double-right"></i>
-        Список ініціатив
+        Список всіх ініціатив
     <% end %>
     <%= nav_link '/initiatives/pending_approval' do %>
         <i class="fa fa-angle-double-right"></i>
@@ -45,6 +45,14 @@
         <i class="fa fa-angle-double-right"></i>
         Завершили збір коштів
     <% end %>
+    <%= nav_link '/initiatives/report' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Ініціативи з звітом
+    <% end %>
+    <%= nav_link '/initiatives/audit_implemented' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Завершена ініціатива чи ні
+    <% end %>
     <%= nav_link '/categories' do %>
         <i class="fa fa-angle-double-right"></i>
         Список категорій
@@ -52,6 +60,10 @@
     <%= nav_link '/categories/new' do %>
         <i class="fa fa-angle-double-right"></i>
         Додати категорію
+    <% end %>
+    <%= nav_link '/admins/payments' do %>
+        <i class="fa fa-angle-double-right"></i>
+        Всі платежі користувачів
     <% end %>
   </ul>
 </section>
