@@ -13,8 +13,9 @@ class AdminsController < ApplicationController
 
   def create
     @admin = User.new user_params
-    @admin.add_role 'admin'
+    @admin.skip_confirmation!
     if @admin.save
+      @admin.add_role 'admin'
       redirect_to '/admins'
       flash[:success] = t('controller.admins.save')
     else
@@ -43,6 +44,10 @@ class AdminsController < ApplicationController
     else
       flash[:error] = @admin.errors.full_messages.to_sentence
     end
+  end
+
+  def payments
+    @donate = Donation.all
   end
 
   private

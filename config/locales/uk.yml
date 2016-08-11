@@ -61,6 +61,10 @@ uk:
       success_delete_photos_in_initiative: 'Фото видалено'
       for_confirmation: 'Відправлено на підтвердження'
       error_confirmation: 'Ініціативу відхилено'
+      insufficient_funds: 'Ініціативу відхилено бо недостатньо коштів'
+      locked: 'Ініціативу заблоковано'
+      implemented: 'Ініціативу успішно завершено'
+      unrealized: 'Ініціативу не успішно завершено'
       started_implement_success: 'Ініціативу відправлено для надання звіту'
       timeline:
         save: 'Звіт додано'
@@ -98,8 +102,11 @@ uk:
       show: 'Показати'
       edit: 'Редагувати'
       delete: 'Видалити'
+      locked: 'Заблокувати'
       success_confirmation: 'Підтвердити'
       fundraising_finished: 'Розпочати звіт'
+      implemented: 'Успішно завершити ініціативу'
+      unrealized: 'Не успішно завершити ініціативу'
       error_confirmation: 'Відхилити'
       for_confirmation: 'Відправити для підтвердження'
       being_implemented_link: 'Додати звіт'
@@ -129,6 +136,7 @@ uk:
         report: 'Ініціативи з звітами'
         fundraiser: 'Розпочаті ініціативи'
         my_payments: 'Мої платежі'
+        payments: 'Всі платежі'
     initiative:
       edit:
         title: 'Редагувати'
@@ -154,6 +162,10 @@ uk:
       fundraising_finished:
         title: 'Завершений збір коштів'
         name: 'Назва'
+      being_implemented:
+        title: 'Проходить додання звіту'
+      audit_implemented:
+        title: 'Завершені додвання звітів'
     search:
       title: 'Результат пошуку'
       name: 'Назва'

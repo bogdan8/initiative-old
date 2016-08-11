@@ -3,14 +3,23 @@ Rails.application.routes.draw do
                                     omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'home#index'
 
-  resources :admins
+  resources :admins do
+    get :payments, on: :collection
+  end
   resources :initiatives do
+    get :all, on: :collection
     get :pending_approval, on: :collection
     get :fundraising_finished, on: :collection
+    get :report, on: :collection
+    get :audit_implemented, on: :collection
     get :for_confirmation, on: :member
     get :success_confirmation, on: :member
     get :error_confirmation, on: :member
     get :started_implement, on: :member
+    get :insufficient_funds, on: :member
+    get :implemented, on: :member
+    get :unrealized, on: :member
+    get :locked, on: :member
     post 'edit/delete_images', to: 'initiatives#delete_images', on: :member
     resources :timeline, only: [:create]
   end
