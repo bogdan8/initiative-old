@@ -10,7 +10,7 @@
           <p>
             <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %>
             <%= link_to t('views.link_to.fundraising_finished'), started_implement_initiative_path(initiative.id), class: 'btn btn-success', data: {confirm: 'Ви впевнені?'} %>
-            <%= link_to t('views.link_to.error_confirmation'), error_confirmation_initiative_path(initiative), class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
+            <%= link_to t('views.link_to.error_confirmation'), insufficient_funds_initiative_path(initiative), class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'} %>
           </p>
 
       <% end %>

@@ -18,8 +18,10 @@ class Initiative < ActiveRecord::Base
     state :fundraiser
     state :fundraising_finished
     state :being_implemented
+    state :audit_implemented
     state :implemented
     state :unrealized
+    state :locked
 
     event :submit_for_confirmation do
       transitions from: [:draft, :rejected], to: :pending_approval
@@ -41,12 +43,24 @@ class Initiative < ActiveRecord::Base
       transitions from: :fundraising_finished, to: :being_implemented
     end
 
+    event :insufficient_funds do
+      transitions from: :fundraising_finished, to: :unrealized
+    end
+
+    event :check_implemented do
+      transitions from: :being_implemented, to: :audit_implemented
+    end
+
     event :finish_fundraiser_success do
-      transitions from: :fundraising_finished, to: :implemented
+      transitions from: :audit_implemented, to: :implemented
     end
 
     event :finish_fundraiser_errors do
-      transitions from: :fundraising_finished, to: :unrealized
+      transitions from: :audit_implemented, to: :unrealized
+    end
+
+    event :locked_forever do
+      transitions to: :locked
     end
   end
 

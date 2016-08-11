@@ -23,6 +23,14 @@ module InitiativesHelper
       content_tag :p, 'Підтвердження початку звуті', style: 'color: blue;', class: 'initiative-list-title-state'
     elsif initiative.being_implemented?
       content_tag :p, 'Розпочато подання звіту', style: 'color: blue;', class: 'initiative-list-title-state'
+    elsif initiative.audit_implemented?
+      content_tag :p, 'Очікується остаточного результату', style: 'color: blue;', class: 'initiative-list-title-state'
+    elsif initiative.implemented?
+      content_tag :p, 'Ініціатива завершена успішно', style: 'color: green;', class: 'initiative-list-title-state'
+    elsif initiative.unrealized?
+      content_tag :p, 'Ініціатива незавершена', style: 'color: red;', class: 'initiative-list-title-state'
+   elsif initiative.locked?
+      content_tag :p, 'Ініціатива заблокована', style: 'color: red;', class: 'initiative-list-title-state'
     end
   end
 
