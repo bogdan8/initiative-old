@@ -160,7 +160,7 @@ uk:
         title: 'Непідтверджені ініціативи'
         name: 'Назва'
       fundraising_finished:
-        title: 'Завершений збір коштів'
+        title: 'Завершені по даті або збір коштів'
         name: 'Назва'
       being_implemented:
         title: 'Проходить додання звіту'

@@ -11,6 +11,7 @@
         <tr>
           <th>Ініціатива</th>
           <th>Кількість грошей</th>
+          <th>Який банкінг</th>
           <th>Дата</th>
         </tr>
         </thead>
@@ -24,6 +25,7 @@
                 </a>
               </td>
               <td><%= donate.amount %></td>
+              <td><%= donate.internet_banking %></td>
               <td><%= donate.created_at %></td>
             </tr>
         <% end %>
