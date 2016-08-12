@@ -65,6 +65,7 @@
             <b><%= initiatives_days_left @initiative %> днів</b></p>
         </div>
       </div>
+      <% unless @initiative.user.nil? %>
       <div class="row">
         <div class="col-lg-12">
           <p class="initiative-remains"><%= t('views.initiative.show.user_info') %>:
@@ -87,6 +88,7 @@
           </div>
         </div>
       </div>
+      <% end %>
       <div class="row">
         <div class="col-lg-12 col-sm-12 col-xs-12">
           <a class="initiative-button-support" id="button-support"><%= t('views.initiative.show.support') %></a>
@@ -108,7 +110,7 @@
       </div>
     </div>
   </div>
-  <% if @initiative.being_implemented? %>
+  <% if @initiative.being_implemented? || @initiative.audit_implemented? %>
       <p class="text-center">Звіт до ініціативи:</p>
       <% @initiative.timelines.each do |timeline| %>
           <div class="container">
@@ -116,15 +118,16 @@
               <div class="col-lg-6">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-xs-12">
-                    <p class="initiative-new-form-names">Назва: <%= timeline.title %>,
-                      Дата: <%= timeline.date.to_date %></p>
+                    <p class="initiative-new-form-names"><b>Назва:</b> <%= timeline.title %>
+                      <b class="right"><%= timeline.date.to_date %></b>
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-xs-12">
-                    <p class="initiative-new-form-names">Опис:</p>
+                    <p class="initiative-new-form-names"><b>Опис:</b>
 
-                    <p class="initiative-new-form-names"><%= timeline.description %></p>
+                      <%= timeline.description %></p>
                   </div>
                 </div>
               </div>

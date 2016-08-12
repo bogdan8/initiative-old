@@ -7,6 +7,9 @@
           <h4><%= t('views.form.category') %>:
             <%= show_initiative_categories initiative %>
           </h4>
+          <p>
+            <%= link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default' %>
+          </p>
       <% end %>
     </div>
   </div>
