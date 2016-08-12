@@ -13,13 +13,14 @@ class DonationsController < ApplicationController
       description: "for initiatives: #{@initiative.title}",
       currency: params[:currency]
     )
-    Donation.create(
+    @donate = Donation.create(
       payer_id: @customer.id,
       user_id: current_user.id,
       initiative_id: @initiative.id,
-      amount: params[:amount].to_i * 100,
+      amount: params[:amount].to_i,
       description: "for initiatives: #{@initiative.title}",
-      currency: params[:currency]
+      currency: params[:currency],
+      internet_banking: 'stripe'
     )
     @collected_amount = @initiative.collected_amount + params[:amount].to_i
 
@@ -40,7 +41,8 @@ class DonationsController < ApplicationController
   def paypal
     @initiative = Initiative.find(params[:initiative_id])
     @amount = params[:amount].to_i
-    Donation.create(user_id: current_user.id, initiative_id: @initiative.id, amount: @amount)
+    Donation.create(user_id: current_user.id, initiative_id: @initiative.id, amount: @amount,
+                    internet_banking: 'paypal')
     redirect_to @initiative.paypal_url(initiative_path(@initiative), @amount)
   end
 
