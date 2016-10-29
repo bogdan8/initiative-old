@@ -1,0 +1,1 @@
+Chewy.settings = {host: 'localhost:9250'} # do not use environments

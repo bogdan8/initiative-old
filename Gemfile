@@ -64,11 +64,13 @@ gem 'select2-rails'
 # gem thor
 gem 'thor'
 
+# gem chewy
+gem 'chewy'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-  # for testing
+  # For testing
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
   gem 'database_cleaner'
@@ -87,6 +89,9 @@ group :development, :test do
   # For payed
   gem 'stripe'
   gem 'paypal-sdk-rest'
+
+  # For url
+  gem 'friendly_id', '~> 5.1.0'
 end
 
 group :development do
