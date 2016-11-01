@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-lg-12
+      h2 = "#{@category.name}: "
+      br
+
+      h2 = t('views.category.show.title_initiative')
+      - @category.initiatives.each do |items|
+        h4 = "#{t('views.category.show.title')}: #{items.title}"
+
+        p
+          = link_to t('views.link_to.show'), initiative_path(items), class: 'btn btn-default'
+
+          = link_to t('views.link_to.edit'), edit_initiative_path(items), class: 'btn btn-warning'
+
+          = link_to t('views.link_to.delete'), initiative_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'}

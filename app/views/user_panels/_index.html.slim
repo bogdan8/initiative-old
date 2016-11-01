@@ -1,0 +1,19 @@
+- @initiatives.each do |initiative|
+  .col-lg-4
+    .initiative-list-block
+      .block-list-images
+        a href="/user_panels_initiative/#{initiative.id}"
+          = check_or_uploaded_picture_initiative initiative
+      .block-list-initiative-description
+        p.initiative-list-title
+          = initiative.title
+          b
+            = show_description_on_what_state_initiative initiative
+
+        p.initiative-list-short-description
+          = show_for_confirmation_initiative_path(initiative)
+          - if initiative.draft? || initiative.rejected?
+            = link_to t('views.link_to.edit'), edit_initiative_path(initiative), class: 'btn btn-warning user_panels_button'
+            br
+
+            = link_to t('views.link_to.delete'), initiative_path(initiative), method: :delete, class: 'btn btn-danger user_panels_button', data: {confirm: 'Ви впевнені?'}

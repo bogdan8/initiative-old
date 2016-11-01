@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-lg-12
+      h2
+        = "#{t('views.category.index.title')}:"
+        br
+      - @categories.each do |items|
+        h4 "Назва: #{items.name}"
+        p
+          = link_to t('views.link_to.show'), category_path(items), class: 'btn btn-default'
+
+          = link_to t('views.link_to.edit'), edit_category_path(items), class: 'btn btn-warning'
+
+          = link_to t('views.link_to.delete'), category_path(items), method: :delete, class: 'btn btn-danger', data: {confirm: 'Ви впевнені?'}

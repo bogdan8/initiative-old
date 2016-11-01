@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-lg-12
+      h2
+        = "#{t('views.initiative.being_implemented.title')} :"
+      - @initiative_being_implemented.each do |initiative|
+        h4
+          = "#{t('views.initiative.fundraising_finished.name')} : #{initiative.title}"
+        h4
+          = "#{t('views.form.category')} :"
+          = show_initiative_categories initiative
+        p
+          = link_to t('views.link_to.show'), initiative_path(initiative), class: 'btn btn-default'

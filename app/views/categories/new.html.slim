@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-lg-12
+      h2 = t('views.category.new.title')
+      = form_for :category, url: '/categories', method: :post do |f|
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            = f.label t('views.form.name'), class: 'initiative-new-form-names'
+          .col-lg-7.col-md-7.col-xs-12
+            = f.text_field :name, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.name')
+        .row
+          .col-lg-offset-4.col-lg-8
+            = f.submit t('views.category.new.title'), class: 'initiative-button-submit'
+            = spinner_css

@@ -1,0 +1,81 @@
+.col-lg-offset-1.col-lg-11
+  p.initiative-new-title
+    = t('views.initiative.edit.title')
+  = form_for :initiative, url: initiative_path(@initiative), html: {multipart: true}, method: :put do |f|
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.main_picture'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        .initiative-new-file-block
+          .initiative-edit-file-title
+            |
+              Редагувати фото
+          input type="file" name="initiative[main_picture]" id="initiative_main_picture" size="1" class="initiative-edit-file-input"
+
+          = image_tag @initiative.main_picture.url, class: 'initiative-new-block-show-images'
+
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.category'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        .block-with-margin
+        = fields_for(@initiative_category) do
+          =.collection_select(:category, :id, @all_categories, :id, :name, {}, {multiple: true, class: 'category_select', style: 'width: 100%'})
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.name'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.text_field :title, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.name')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.short_description'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.text_field :short_description, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.short_description')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.long_description'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.text_area :long_description, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.long_description')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.sum'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.text_field :sum, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.sum')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.video'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.text_area :main_video, class: 'form-control initiative-new-form-input', placeholder: t('views.form.video')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.term_fundraiser'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.number_field :term_fundraiser, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_fundraiser')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.term_report'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = f.number_field :term_report, required: :required, class: 'form-control initiative-new-form-input', placeholder: t('views.form.term_report')
+    .row
+      .col-lg-4.col-md-4.col-sm-4.col-xs-12
+        = f.label t('views.form.add_photos'), class: 'initiative-new-form-names'
+      .col-lg-8.col-md-8.col-sm-8.col-xs-12
+        = file_field_tag 'initiative_images[]', type: :file, multiple: true, class: 'initiative-new-form-input'
+    .row
+      .col-lg-offset-4.col-lg-8.col-md-offset-4.col-md-8.col-sm-offset-4.col-sm-8.col-xs-offset-2.col-xs-8
+        = f.submit t('views.initiative.edit.title'), class: 'initiative-button-submit'
+        = spinner_css
+  .row
+    .col-lg-4.col-md-4.col-sm-4.col-xs-12
+      p.initiative-edit-form-names
+        = t('views.form.old_photos')
+    .col-lg-8.col-md-8.col-sm-8.col-xs-12
+      .row
+        - @initiative.initiative_images.each do |images|
+          .col-lg-3.col-md-3.col-sm-3.col-xs-6
+            .block-edit-small-images
+              = form_for :initiative_images, url: edit_delete_images_initiative_path(@initiative), method: :post, remote: true do
+                = hidden_field_tag :initiative_photo_id, images.id
+                button.show-delete-images type="submit"
+                  i.fa.fa-times.show-close aria-hidden="true"
+                  = image_tag images.initiative_images.url(:medium), class: 'edit-small-images'

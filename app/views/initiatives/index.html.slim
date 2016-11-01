@@ -1,0 +1,21 @@
+.container
+  .row
+    - @initiatives.each do |initiative|
+      .col-lg-4
+        .initiative-list-block
+          .block-list-images
+            a href="#{initiative_path(initiative)}"
+              = check_or_uploaded_picture_initiative initiative
+          .block-list-initiative-description
+            p.initiative-list-title
+              = initiative.title
+
+            p.initiative-list-short-description
+              = initiative.short_description
+
+            p.initiative-list-days-left
+            = t('views.home.index.remains')
+              b = "#{initiatives_days_left initiative} : днів"
+  .row
+    .list-down-block
+      i.fa.fa-sort-desc aria-hidden="true"
