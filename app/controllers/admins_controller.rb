@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
 
   def index
     @admins = User.with_role(:admin)
+    @users = User.all
   end
 
   def show
