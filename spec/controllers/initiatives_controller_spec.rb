@@ -37,7 +37,7 @@ describe InitiativesController, type: :controller do
   end
 
   context 'AASM state' do
-    describe '# GET for_confirmation # and returns http ' do
+    describe '# GET for_confirmation # and returns http' do
       it 'for_confirmation' do
         initiative.update(aasm_state: :draft)
         xhr :get, :for_confirmation, id: initiative.id

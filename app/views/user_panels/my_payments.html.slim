@@ -1,0 +1,30 @@
+.container
+  .row
+    .col-lg-12.col-xs-12
+      p.show-title-in-reports
+        = t('views.home.index.my_payments')
+  .row
+    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+      table.table.table-striped
+        thead
+        tr
+          th
+            |
+              Ініціатива
+          th
+            |
+              Кількість грошей
+          th
+            |
+              Який банкінг
+          th
+            |
+              Дата
+        - @donate.each do |donate|
+          tr
+            td
+              a href="#{initiative_path(donate.initiative.id)}"
+                = donate.initiative.title
+            td = donate.amount
+            td = donate.internet_banking
+            td = donate.created_at
