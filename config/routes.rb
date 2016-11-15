@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     post 'edit/delete_images', to: 'initiatives#delete_images', on: :member
     resources :timeline, only: [:create]
   end
-  resources :categories
+  resources :categories do
+    post :sort, on: :collection
+  end
   get 'search', to: 'search#index'
   get 'search/sort', to: 'search#sort'
 

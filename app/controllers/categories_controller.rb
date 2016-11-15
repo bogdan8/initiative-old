@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @categories = Category.all
+    @categories = Category.order(:position)
   end
 
   def show
@@ -42,6 +42,14 @@ class CategoriesController < ApplicationController
     else
       flash[:error] = @category.errors.full_messages.to_sentence
     end
+  end
+
+  def sort
+    params[:category].each_with_index do |id, index|
+      Category.find(id).update(position: index + 1)
+
+    end
+    render nothing: true
   end
 
   private

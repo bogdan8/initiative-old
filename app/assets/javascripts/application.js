@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap
 //= require adminlte
@@ -6,4 +7,5 @@
 //= require initiatives
 //= require application_layout
 //= require jquery.turbolinks
+//= require categories.js.coffee
 
