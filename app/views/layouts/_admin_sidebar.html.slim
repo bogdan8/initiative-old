@@ -21,45 +21,45 @@ section.sidebar
   /! sidebar menu: : style can be found in sidebar.less
   ul.sidebar-menu
     = nav_link root_path do
-      i.fa.fa-dashboard
-        span Головна
+      = fa_icon('dashboard')
+      span Головна
     = nav_link '/admins' do
-      i.fa.fa-angle-double-right
-        |
-          Список адміністраторів
+      = fa_icon('angle-double-right')
+      |
+        Список адміністраторів
     = nav_link '/admins/new' do
-      i.fa.fa-angle-double-right
-        |
-          Додати адміністратора
+      = fa_icon('angle-double-right')
+      |
+        Додати адміністратора
     = nav_link '/initiatives/all' do
-      i.fa.fa-angle-double-right
-        |
-          Список всіх ініціатив
+      = fa_icon('angle-double-right')
+      |
+        Список всіх ініціатив
     = nav_link '/initiatives/pending_approval' do
-      i.fa.fa-angle-double-right
-        |
-          Непідтверджені ініціативи
+      = fa_icon('angle-double-right')
+      |
+        Непідтверджені ініціативи
     = nav_link '/initiatives/fundraising_finished' do
-      i.fa.fa-angle-double-right
-        |
-          Завершили збір коштів
+      = fa_icon('angle-double-right')
+      |
+        Завершили збір коштів
     = nav_link '/initiatives/report' do
-      i.fa.fa-angle-double-right
-        |
-          Ініціативи з звітом
+      = fa_icon('angle-double-right')
+      |
+        Ініціативи з звітом
     = nav_link '/initiatives/audit_implemented' do
-      i.fa.fa-angle-double-right
-        |
-          Завершена ініціатива чи ні
+      = fa_icon('angle-double-right')
+      |
+        Завершена ініціатива чи ні
     = nav_link '/categories' do
-      i.fa.fa-angle-double-right
-        |
-          Список категорій
+      = fa_icon('angle-double-right')
+      |
+        Список категорій
     = nav_link '/categories/new' do
-      i.fa.fa-angle-double-right
-        |
-          Додати категорію
+      = fa_icon('angle-double-right')
+      |
+        Додати категорію
     = nav_link '/admins/payments' do
-      i.fa.fa-angle-double-right
-        |
-          Всі платежі користувачів
+      = fa_icon('angle-double-right')
+      |
+        Всі платежі користувачів
