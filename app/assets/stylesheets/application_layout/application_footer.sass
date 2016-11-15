@@ -1,0 +1,107 @@
+@import variables
+
+.footer-block
+  border: 1px solid $color-black
+  margin-top: 50px
+  width: 100%
+  height: auto
+  background-color: #4D4252
+
+.footer-left-line
+  position: absolute
+  margin-left: 90px
+  background-color: #9D979F
+  height: 200px
+  width: 5px
+  @media (max-width: $media-max-width-on-small-devise)
+    margin-left: 40px
+
+.footer-text-left-top
+  font-size: 30px
+  position: absolute
+  color: #9D979F
+  margin:
+    top: $header-text-left-margin-top
+    left: 120px
+
+  @media (max-width: $media-max-width-on-small-devise)
+    font-size: 15px
+    margin:
+      top: $header-text-left-margin-top
+      left: 50px
+
+.footer-text-left-middle
+  @extend .footer-text-left-top
+  margin:
+    top: $header-text-left-margin-top + 40
+
+.footer-text-left-bottom
+  @extend .footer-text-left-top
+  font-size: 25px
+  @media (max-width: $media-max-width-on-small-devise)
+    font-size: 15px
+
+  margin:
+    top: $header-text-left-margin-top + 90
+
+.footer-text-center
+  font-size: 30px
+  color: $color-white
+  margin-top: 45%
+
+.footer-block-center
+  width: 99%
+  display: flex
+  justify-content: center
+  align-items: end
+  height: 250px
+
+.footer-block-right
+  margin-right: 50px
+  height: 250px
+  display: flex
+  flex-direction: column
+  float: right
+  justify-content: center
+  @media (max-width: $media-max-width-on-small-devise)
+    margin-right: 10px
+
+.footer-text-right
+  font-size: 25px
+  i
+    background-color: $color-white
+    border-radius: 50%
+    width: 30px
+    height: 30px
+    font-size: 25px
+    color: #4D4252
+
+  @media (max-width: $media-max-width-on-small-devise)
+    font-size: 15px
+    i
+      background-color: $color-white
+      border-radius: 50%
+      width: 20px
+      height: 20px
+      font-size: 15px
+      color: #4D4252
+
+.footer-text-right-a
+  color: $color-white
+  &:hover
+    color: $color-white
+
+.fa-usd::before
+  justify-content: center
+  display: flex
+  margin-top: 2px
+
+.fa-question::before
+  justify-content: center
+  display: flex
+  margin-top: 2px
+
+.fa-info::before
+  justify-content: center
+  display: flex
+  margin-top: 2px

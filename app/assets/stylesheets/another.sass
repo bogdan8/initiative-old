@@ -1,0 +1,57 @@
+@import variables
+
+body
+  background-color: #EEEEEE
+
+p
+  font-family: 'Lato', serif
+  font-size: 48px
+
+/* bootstrap style begin */
+
+input
+  box-shadow: none
+  &:focus:hover
+    box-shadow: none
+    border-color: $color-black
+
+  &:active
+    box-shadow: none
+    border-color: $color-black
+
+  &:hover
+    box-shadow: none
+    border-color: $color-black
+
+textarea
+  @extend input
+
+input[type="file"]
+  cursor: pointer
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand
+  margin: 0
+  color: $color-white
+
+.radio-inline
+  margin-right: 20px
+
+/* bootstrap style end */
+
+/* select 2 style begin */
+.select2-container--default .select2-selection--multiple
+  border:
+    radius: 0
+    color: #4D4252
+
+.select2-container--default .select2-search--inline .select2-search__field
+  color: #555
+
+/* select 2 style end */
+
+/* admin */
+.my-admin-lte
+  .navbar-nav > .messages-menu > .dropdown-menu
+    width: 500px
+
+/* end admin */
