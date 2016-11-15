@@ -7,5 +7,5 @@
 //= require initiatives
 //= require application_layout
 //= require jquery.turbolinks
-//= require categories.js.coffee
+//= require categories
 
