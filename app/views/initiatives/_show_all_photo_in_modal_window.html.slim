@@ -6,10 +6,10 @@
           - @initiative.initiative_images.each do |images|
             .col-lg-3.col-md-3.col-sm-3.col-xs-3
               .block-show-small-images
-                a type="button" data-toggle="modal" data-target="#model #{images.id}"
+                a type="button" data-toggle="modal" data-target="#model#{images.id}"
                   = image_tag images.initiative_images.url(:thumb), class: 'show-small-images'
                 / Modal
-                .modal.fade.block-modal-images-size id="model #{images.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                .modal.fade.block-modal-images-size id="model#{images.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                   .modal-dialog role="document"
                     .modal-content
                       .modal-body
