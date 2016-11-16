@@ -90,13 +90,5 @@
   .row
     .col-lg-12
       .initiative-show-share
-        p
-          = t('views.initiative.show.share')
-          b.vk
-            i.fa.fa-vk aria-hidden="true"
-          b.facebook
-            i.fa.fa-facebook aria-hidden="true"
-          b.twitter
-            i.fa.fa-twitter aria-hidden="true"
-          b.google
-            i.fa.fa-google-plus aria-hidden="true"
+        = "#{t('views.initiative.show.share')}: "
+        = social_share_button_tag(@initiative.title, desc: @initiative.short_description, image: @initiative.main_picture.url )

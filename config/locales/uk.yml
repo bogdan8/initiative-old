@@ -154,7 +154,7 @@ uk:
         need_sum: 'потрібно'
         collected: 'зібрано'
         support: 'підтримати'
-        share: 'поділитись'
+        share: 'Поділитись'
         user_info: 'запропонував користувач'
       pending_approval:
         title: 'Непідтверджені ініціативи'
