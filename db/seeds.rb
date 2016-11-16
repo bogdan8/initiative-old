@@ -39,6 +39,7 @@ initiative.term_fundraiser = 30
 initiative.term_report = 15
 initiative.aasm_state = 'fundraiser'
 initiative.user_id = 2
+initiative.finished_day = DateTime.current.to_date + 30
 initiative.save
 initiative = Initiative.new
 initiative.title = 'Почистити острів'
@@ -50,6 +51,7 @@ initiative.term_fundraiser = 30
 initiative.term_report = 30
 initiative.aasm_state = 'fundraiser'
 initiative.user_id = 2
+initiative.finished_day = DateTime.current.to_date + 30
 initiative.save
 puts "Ініціативи додані"
 unless InitiativeCategory.first
