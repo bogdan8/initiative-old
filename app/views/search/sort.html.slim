@@ -16,4 +16,5 @@
 
               p class="initiative-list-days-left"
                 = t('views.home.index.remains')
-                b 10 днів
+                b
+                  = "#{initiatives_days_left initiative} днів"
