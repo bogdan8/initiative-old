@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title
+      |
+        Initiatives
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    = csrf_meta_tags
+  body
+    = render 'layouts/application_header'
+    = render 'layouts/application_nav'
+    = render 'layouts/application_errors'
+    #body-block
+      = yield
+    = render 'layouts/application_footer'

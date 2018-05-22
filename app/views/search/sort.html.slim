@@ -1,0 +1,20 @@
+.container id="container"
+  .row
+    - @array_initiative_categories.each do |initiative_categories|
+      - initiative_categories.each do |items|
+        .col-lg-4.col-md-6.col-sm-6.col-xs-12
+          .initiative-list-block
+            .block-list-images
+              a href="#{initiative_path(items.initiative)}"
+                = check_or_uploaded_picture_initiative items.initiative
+            .block-list-initiative-description
+              p.initiative-list-title
+                = items.initiative.title
+
+              p.initiative-list-short-description
+                = items.initiative.short_description
+
+              p class="initiative-list-days-left"
+                = t('views.home.index.remains')
+                b
+                  = "#{initiatives_days_left initiative} днів"

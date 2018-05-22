@@ -1,0 +1,94 @@
+.container
+  .row
+    .col-lg-6.col-md-6
+      .initiative-show-block
+        .block-show-big-images
+          = image_tag @initiative.main_picture.url, class: 'show-big-images'
+        .row.initiative-show-small-images-block
+          - @initiative.initiative_images.take(8).each do |images|
+            .col-lg-3.col-md-3.col-sm-3.col-xs-3
+              .block-show-small-images
+                a type="button" data-toggle="modal" data-target="#model#{images.id}"
+                  = image_tag images.initiative_images.url(:thumb), class: 'show-small-images'
+                /! Modal
+                .modal.fade.block-modal-images-size id="model#{images.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                  .modal-dialog role="document"
+                    .modal-content
+                      .modal-body
+                        = image_tag images.initiative_images.url, class: 'show-image-in-modal-window'
+        .row
+          .col-lg-12
+            a type="button" data-toggle="modal" data-target="#model-all-images"
+              p
+                i.fa.fa-angle-down aria-hidden="true"
+            /! Modal
+            = render 'initiatives/show_all_photo_in_modal_window', locals: {initiative: @initiative}
+    .col-lg-6.col-md-6.col-sm-12.col-xs-12
+      p
+        = @initiative.title
+
+      p.initiative-long-description
+        = @initiative.long_description
+
+      p.initiative-list-categories Категорія:
+        #{show_initiative_categories @initiative}
+
+      .row
+        .col-lg-12
+          p.initiative-need-sum
+            = "#{t('views.initiative.show.need_sum')} : "
+            b
+              = @initiative.sum
+              |
+                грн
+      .row
+        .col-lg-12
+          p.initiative-collected
+            = "#{t('views.initiative.show.collected')} : "
+            b
+              = @initiative.collected_amount
+              |
+                грн
+      .row
+        .col-lg-12
+          p.initiative-remains
+            = "#{t('views.initiative.show.remains')} : "
+            b
+              = initiatives_days_left @initiative
+              |
+                днів
+  .row
+    .col-lg-offset-2.col-lg-8.col-sm-12.col-xs-12
+      .initiative-show-video
+        - if @initiative.main_video.empty?
+          = image_tag @initiative.main_picture.url, class: 'show-big-images-instead'
+        - else
+          == @initiative.main_video
+  - if @initiative.being_implemented?
+  p.text-center
+    |
+      Звіт до ініціативи:
+  - @initiative.timelines.each do |timeline|
+    .container
+      .row
+        .col-lg-12
+          .row
+            .col-lg-12.col-md-12.col-xs-12
+              p.initiative-new-form-names
+                |
+                  Назва: #{timeline.title} ,
+                  Дата: #{timeline.date.to_date}
+          .row
+            .col-lg-12.col-md-12.col-xs-12
+              p.initiative-new-form-names
+                |
+                  Опис:
+
+              p.initiative-new-form-names
+                = timeline.description
+      = render 'user_panels/add_reports', locale: {initiative: @initiative}
+  .row
+    .col-lg-12
+      .initiative-show-share
+        = "#{t('views.initiative.show.share')}: "
+        = social_share_button_tag(@initiative.title, desc: @initiative.short_description, image: @initiative.main_picture.url )

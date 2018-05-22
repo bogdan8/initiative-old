@@ -1,0 +1,7 @@
+$("<%= escape_javascript render(render_page) %>").insertBefore('#show-initiatives-more');
+<% if last_page %>
+$('.next-page-pagination').remove();
+<% else %>
+var href = '<%= path %>' + '?page=' + '<%= current_page + 1 %>';
+$('.next-page-pagination').attr('href', href);
+<% end %>

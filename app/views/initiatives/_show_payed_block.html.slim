@@ -1,0 +1,66 @@
+.row
+  .col-lg-12
+    .block-pay
+      .radio
+        label.radio-inline
+          br
+          br
+          input type="radio" checked="checked" name="payed" id="payed" value="paypal"
+          = image_tag 'initiatives/PayPal.png', class: 'img-paypal'
+        label.radio-inline
+          input type="radio" name="payed" id="stripe" value="stripe"
+          = image_tag 'initiatives/stripe.png', class: 'img-stripe'
+      .paypal
+        form.form-horizontal action="/donations/#{@initiative.id}/paypal" method="post"
+          input name="utf8" value="✓" type="hidden"
+          input name="authenticity_token" value="2K2rr1o6shb4lNK0zZwEfCBnmjpBnj78CAGvS1RTi8m+mnVE5F0kBSvZ93J7VCFxbyuaAAbat66jP7xQbRUxGg==" type="hidden"
+
+          .form-group
+            .row
+              .col-lg-2
+                label.initiative-new-form-names
+                  |
+                    Сума:
+              .col-lg-4
+                .input-group
+                  input#amount type="text" class="form-control initiative-show-form-input" name="amount" placeholder="Сума"
+                  textarea#initiative_id name="initiative_id" class="hidden"
+                    = @initiative.id
+              .col-lg-4
+                .show-many-value
+                  select.initiative-show-form-input name="currency"
+                    / <option value="uahГрн</option>
+                    option value="usd$"
+                    / <option value="eur&euro;</option>
+          .col-lg-12.col-sm-12.col-xs-12
+            button.initiative-button-support id="form-button-stripe"
+              |
+                оплаптити
+      .stripe style="display: none"
+        form class="form-horizontal" action="#{donations_stripe_path}"
+          .form-group
+            .row
+              .col-lg-2
+                label.initiative-new-form-names Сума:
+              .col-lg-4
+                .input-group
+                  input type="text" class="form-control initiative-show-form-input" name="amount" id="amount" placeholder="Сума"
+                  textarea name="initiative_id" id="initiative_id" class="hidden"
+                    = @initiative.id
+              .col-lg-4
+                .show-many-value
+                  select name="currency" class="initiative-show-form-input"
+                    /<!-- <option value="uahГрн</option>-->
+                    option value="usd$"
+                    /<!-- <option value="eur&euro;</option>-->
+          .hidden
+            javascript:
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-amount="pay"
+              data-name="ifCity"
+              data-locale="auto
+          .col-lg-12.col-sm-12.col-xs-12
+            button.initiative-button-support id="form-button-stripe"
+              |
+                оплаптити

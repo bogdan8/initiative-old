@@ -1,0 +1,36 @@
+nav.navbar.navbar-default.navbar-block
+  .container-fluid
+    .navbar-header
+      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"
+        span class="sr-only"
+          |
+            Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      == if_user_signed_show_index_link_with_text_decoration
+
+    /! Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse id="bs-example-navbar-collapse-1"
+      ul.nav.navbar-nav.nav-block
+        == if_user_signed_show_chose_link_with_text_decoration
+      ul.nav.navbar-nav.navbar-right
+        form.navbar-form.navbar-left role="search" method="get" action="/search" data-remote="true"
+          .form-group
+            input type="text" name="search" id="search" class="form-search" placeholder="#{t('views.layout.application.nav.search')}"
+          button type="submit" class="hidden" id="form-search-button"
+            i.fa.fa-search aria-hidden="true"
+.container
+  .row
+    .col-lg-offset-8.col-lg-4.col-md-offset-8.col-md-4.col-sm-offset-8.col-sm-4.col-xs-12
+      form action="/search/sort" class="navbar-form navbar-right text-right form-category" method="get" data-remote="true"
+        select name="category[id]" id="category_id" class="select-sort"
+          option selected="disabled" value="" class="first-option"
+            p
+              = t('views.layout.application.nav.category')
+          - Category.all.each do |items|
+            option id="category_sort" value="#{items.id}"
+              p
+                = items.name
+        button type="submit" name="commit" class="hidden" id="button-sort"
+          = t('views.layout.application.nav.sort')

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  main_picture: MyText
+  main_video: MyText
+  short_description: MyString
+  long_description: MyText
+  sum: 1
+  term_fundraiser: 1
+  term_report: 1
+
+two:
+  title: MyString
+  main_picture: MyText
+  main_video: MyText
+  short_description: MyString
+  long_description: MyText
+  sum: 1
+  term_fundraiser: 1
+  term_report: 1

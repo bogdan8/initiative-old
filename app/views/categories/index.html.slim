@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-lg-12
+      h2
+        = "#{t('views.category.index.title')}:"
+        br
+      ul#categories class='list-group' data-update-url="#{sort_categories_path}"
+        - @categories.each do |items|
+          = content_tag_for :li, items, class: 'list-group-item' do
+            .categories-handle-fa
+              span
+                = fa_icon('arrows-v')
+            = link_to items.name, category_path(items)

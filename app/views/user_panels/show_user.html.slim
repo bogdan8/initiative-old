@@ -1,0 +1,60 @@
+.container
+  .row
+    .col-lg-offset-1.col-lg-11.col-xs-12
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          = link_to 'Мої платежі', my_payments_path, class: 'user-panel-button-edit-user'
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-title
+            = t('views.user_panel.show.title')
+        .col-lg-4.col-md-4.col-xs-12
+          = link_to 'Редагувати', edit_user_registration_path, class: 'user-panel-button-edit-user'
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            |
+              Фото:
+        .col-lg-8.col-md-8.col-xs-12
+          .user-panel-show-new-file-block
+            - if @user.avatar_file_name && @user.avatar_file_name[0..3] == 'http'
+              img src="#{@user.avatar_file_name}" class="user-panel-show-block-show-images"
+
+              - unless @user.avatar.url == '/images/original/missing.png'
+                = image_tag @user.avatar.url, class: 'user-panel-show-block-show-images'
+
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.name')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @user.name
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.post')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @user.post
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.phone')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @user.phone
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.email')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @user.email

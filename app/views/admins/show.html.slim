@@ -1,0 +1,62 @@
+.container
+  .row
+    .col-lg-11.col-xs-12
+      .row
+        .col-lg-12.col-md-12.col-xs-12
+          p.user-panel-show-title
+            |
+              Інформація про адміна
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            |
+              Фото:
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-new-file-block
+            - unless @admin.avatar.url == '/images/original/missing.png'
+              = image_tag @admin.avatar.url, class: 'user-panel-show-block-show-images'
+
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.name')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @admin.name
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.post')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @admin.post
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.phone')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @admin.phone
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            = t('views.user_panel.show.email')
+            |
+              :
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @admin.email
+      .row
+        .col-lg-4.col-md-4.col-xs-12
+          p.user-panel-show-names-user-information
+            |
+              Скільки разів заходив:
+        .col-lg-8.col-md-8.col-xs-12
+          p.user-panel-show-names-user-information
+            = @admin.sign_in_count

@@ -1,0 +1,404 @@
+uk:
+  recaptcha:
+    errors:
+      verification_failed: 'Ви не пройшли перевірку'
+      recaptcha_unreachable: 'Помилка'
+  unauthorized:
+    default: "За замовчуванням текст повідомлення про помилку."
+    manage:
+      all: "Ви не маєте доступу до цієї сторінки."
+      user: "Не дозволено керувати іншими обліковими записами користувачів."
+    update:
+      project: "Не дозволено оновлювати цей проект."
+  activerecord:
+    attributes:
+      user:
+        current_password: "Поточний пароль"
+        password_confirmation: "Повторіть пароль"
+        current_password: "Поточний пароль"
+        password: "Пароль:"
+      initiative:
+        sum: "Сума:"
+        term_fundraiser: "Термін збору:"
+        term_report: "Термін збору:"
+    errors:
+      messages:
+        record_invalid: 'Виникли помилки: %{errors}'
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'Неправильний формат електроної пошти'
+        initiative:
+          attributes:
+            sum:
+              correct_number: 'має бути більше чим 100 і менше чим 50000'
+            term_fundraiser: 'Ви вели невірне число, число має бути 30 або 60'
+            term_report: 'Ви вели невірне число, число має бути 15 або 30'
+            password:
+              blank: 'Ви неввели пароль'
+            short_description:
+              too_long: 'Задовгий опис'
+        donate:
+           attributes:
+              amount:
+                correct_number: 'Число має бути більше чим 1 і менше чим 9999'
+
+  controller:
+    admins:
+      save: 'Адміністратора додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Категорію видалено'
+    catrgory:
+      save: 'Категорію додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Категорію видалено'
+    initiative:
+      save: 'Ініціативу додано'
+      update: 'Дані успішно відредаговані'
+      destroy: 'Ініціативу видалено'
+      success_confirmation: 'Ініціативу підтверджено'
+      success_delete_photos_in_initiative: 'Фото видалено'
+      for_confirmation: 'Відправлено на підтвердження'
+      error_confirmation: 'Ініціативу відхилено'
+      insufficient_funds: 'Ініціативу відхилено бо недостатньо коштів'
+      locked: 'Ініціативу заблоковано'
+      implemented: 'Ініціативу успішно завершено'
+      unrealized: 'Ініціативу не успішно завершено'
+      started_implement_success: 'Ініціативу відправлено для надання звіту'
+      timeline:
+        save: 'Звіт додано'
+  views:
+    pagination:
+      previous: '&lt; Назад'
+      next: 'Вперед &gt;'
+      first: 'Перше'
+      last: 'Останє'
+    form:
+      name: 'Назва'
+      post: 'Пошта'
+      phone: 'Телефон'
+      avatar: 'Фото'
+      email: 'Email'
+      password: 'Пароль'
+      main_picture: 'Головне фото'
+      video: 'Посилання на відео'
+      short_description: 'Короткий опис'
+      long_description: 'Довгий опис'
+      sum: 'Потрібна сума'
+      term_fundraiser: 'Термін збору коштів(30 або 60) днів'
+      term_report: 'Термін подання звіту(15 або 30) днів'
+      category: 'Категорії'
+      add_photos: 'Додати фото'
+      old_photos: 'Фотографії які були додані, щоб видалити просто наведіть і нажміть на фото'
+    link_to:
+      sing_in: 'ВХІД'
+      sign_out: 'ВИХІД'
+      registration: 'РЕЄСТРАЦІЯ'
+      home: 'головна'
+      my_data: 'мої дані'
+      my_initiatives: 'мої ініціативи'
+      created: 'створити'
+      show: 'Показати'
+      edit: 'Редагувати'
+      delete: 'Видалити'
+      locked: 'Заблокувати'
+      success_confirmation: 'Підтвердити'
+      fundraising_finished: 'Розпочати звіт'
+      implemented: 'Успішно завершити ініціативу'
+      unrealized: 'Не успішно завершити ініціативу'
+      error_confirmation: 'Відхилити'
+      for_confirmation: 'Відправити для підтвердження'
+      being_implemented_link: 'Додати звіт'
+      reports: 'звіти'
+    admins:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список адміністраторів'
+      new:
+        title: 'Додати'
+    category:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список категорій'
+      new:
+        title: 'Додати'
+      show:
+        title_initiative: 'Список ініціатив які належать цій категорії'
+        title: 'Назва'
+    home:
+      index:
+        title: 'Назва'
+        date: 'Дата'
+        remains: 'залишилось'
+        report: 'Ініціативи з звітами'
+        fundraiser: 'Розпочаті ініціативи'
+        my_payments: 'Мої платежі'
+        payments: 'Всі платежі'
+    initiative:
+      edit:
+        title: 'Редагувати'
+      index:
+         title: 'Список ініціатив'
+         category: 'Категорії'
+         name: 'Назва'
+      new:
+        title: 'Нова ініціатива'
+        btn_title: 'створити'
+      show:
+        title_initiative: 'Список ініціатив які належать цій категорії'
+        title: 'Назва'
+        remains: 'залишилось'
+        need_sum: 'потрібно'
+        collected: 'зібрано'
+        support: 'підтримати'
+        share: 'Поділитись'
+        user_info: 'запропонував користувач'
+      pending_approval:
+        title: 'Непідтверджені ініціативи'
+        name: 'Назва'
+      fundraising_finished:
+        title: 'Завершені по даті або збір коштів'
+        name: 'Назва'
+      being_implemented:
+        title: 'Проходить додання звіту'
+      audit_implemented:
+        title: 'Завершені додвання звітів'
+    search:
+      title: 'Результат пошуку'
+      name: 'Назва'
+    user_panel:
+      show:
+        title: 'Мої дані'
+        name: "Ім'я"
+        post: 'Пошта'
+        phone: 'Телефон'
+        email: 'Емайл'
+      title: 'Мої ініціативи'
+      name: 'Назва'
+      category: 'Категорії'
+    devise:
+      registration:
+        edit:
+          title: 'Мої дані'
+          name: "Ім'я"
+          post: 'Пошта'
+          phone: 'Телефон'
+          email: 'Емайл'
+          password: 'Пароль'
+          repeat_password: 'Повторіть пароль'
+          current_password: 'Теперішній пароль'
+          update: 'Обновити'
+          cancel_my_account: 'Скасувати мій аккаунт'
+          delete_my_account: 'Видалити мій аккаунт'
+    layout:
+      application:
+        header:
+          initiative: 'ІНІЦІАТИВИ'
+          city: 'МІСТА'
+          name_city: 'ІВАНО-ФРАНКІВСЬКА'
+        nav:
+          category: 'категорія'
+          search: 'ПОШУК'
+          sort: 'Сортувати'
+  date:
+    abbr_day_names:
+    - нд.
+    - пн.
+    - вт.
+    - ср.
+    - чт.
+    - пт.
+    - сб.
+    abbr_month_names:
+    -
+    - січ.
+    - лют.
+    - бер.
+    - квіт.
+    - трав.
+    - черв.
+    - лип.
+    - серп.
+    - вер.
+    - жовт.
+    - лист.
+    - груд.
+    day_names:
+    - неділя
+    - понеділок
+    - вівторок
+    - середа
+    - четвер
+    - п'ятниця
+    - субота
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    -
+    - Січня
+    - Лютого
+    - Березня
+    - Квітня
+    - Травня
+    - Червня
+    - Липня
+    - Серпня
+    - Вересня
+    - Жовтня
+    - Листопада
+    - Грудня
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: близько %{count} години
+        many: близько %{count} годин
+        one: близько %{count} година
+        other: близько %{count} години
+      about_x_months:
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        one: близько %{count} місяця
+        other: близько %{count} місяця
+      about_x_years:
+        few: близько %{count} років
+        many: близько %{count} років
+        one: близько %{count} року
+        other: близько %{count} року
+      almost_x_years:
+        few: майже %{count} років
+        many: майже %{count} років
+        one: майже %{count} роки
+        other: майже %{count} років
+      half_a_minute: півхвилини
+      less_than_x_minutes:
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        one: менше %{count} хвилини
+        other: менше %{count} хвилини
+      less_than_x_seconds:
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        one: менше %{count} секунди
+        other: менше %{count} секунди
+      over_x_years:
+        few: більше %{count} років
+        many: більше %{count} років
+        one: більше %{count} року
+        other: більше %{count} року
+      x_days:
+        few: "%{count} дні"
+        many: "%{count} днів"
+        one: "%{count} день"
+        other: "%{count} дня"
+      x_minutes:
+        few: "%{count} хвилини"
+        many: "%{count} хвилин"
+        one: "%{count} хвилина"
+        other: "%{count} хвилини"
+      x_months:
+        few: "%{count} місяці"
+        many: "%{count} місяців"
+        one: "%{count} місяць"
+        other: "%{count} місяця"
+      x_seconds:
+        few: "%{count} секунди"
+        many: "%{count} секунд"
+        one: "%{count} секунда"
+        other: "%{count} секунди"
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунда
+      year: Рік
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            few: Мільярдів
+            many: Мільярдів
+            one: Мільярд
+            other: Мільярдів
+          million:
+            few: Мільйонів
+            many: Мільйонів
+            one: Мільйон
+            other: Мільйонів
+          quadrillion:
+            few: Квадрильйонів
+            many: Квадрильйонів
+            one: Кквадрильйон
+            other: Квадрильйонів
+          thousand:
+            few: Тисяч
+            many: Тисяч
+            one: Тисяча
+            other: Тисяч
+          trillion:
+            few: Трильйонів
+            many: Трильйонів
+            one: Трильйон
+            other: Трильйонів
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            few: байти
+            many: байтів
+            one: байт
+            other: байту
+          gb: ГБ
+          kb: кБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " та "
+      two_words_connector: " і "
+      words_connector: ", "
+  time:
+    am: до полудня
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: по полудні

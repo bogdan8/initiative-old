@@ -1,0 +1,65 @@
+section.sidebar
+  /! Sidebar user panel
+  .user-panel
+    .pull-left.image
+      = image_tag current_user.avatar.url(:thumb), class: 'img-circle'
+    .pull-left.info
+      = current_user.email
+
+      a href="#"
+        i.fa.fa-circle.text-success
+      |
+        Online
+  /! search form
+  form action="/search" method="get" class="sidebar-form"
+    .input-group
+      input type="text" name="search" id="search" placeholder="Пошук"
+      span.input-group-btn
+        button type='submit' id='form-search-button'class="btn btn-flat"
+          i.fa.fa-search
+  /! /.search form
+  /! sidebar menu: : style can be found in sidebar.less
+  ul.sidebar-menu
+    = nav_link root_path do
+      = fa_icon('dashboard')
+      span Головна
+    = nav_link '/admins' do
+      = fa_icon('angle-double-right')
+      |
+        Список адміністраторів
+    = nav_link '/admins/new' do
+      = fa_icon('angle-double-right')
+      |
+        Додати адміністратора
+    = nav_link '/initiatives/all' do
+      = fa_icon('angle-double-right')
+      |
+        Список всіх ініціатив
+    = nav_link '/initiatives/pending_approval' do
+      = fa_icon('angle-double-right')
+      |
+        Непідтверджені ініціативи
+    = nav_link '/initiatives/fundraising_finished' do
+      = fa_icon('angle-double-right')
+      |
+        Завершили збір коштів
+    = nav_link '/initiatives/report' do
+      = fa_icon('angle-double-right')
+      |
+        Ініціативи з звітом
+    = nav_link '/initiatives/audit_implemented' do
+      = fa_icon('angle-double-right')
+      |
+        Завершена ініціатива чи ні
+    = nav_link '/categories' do
+      = fa_icon('angle-double-right')
+      |
+        Список категорій
+    = nav_link '/categories/new' do
+      = fa_icon('angle-double-right')
+      |
+        Додати категорію
+    = nav_link '/admins/payments' do
+      = fa_icon('angle-double-right')
+      |
+        Всі платежі користувачів

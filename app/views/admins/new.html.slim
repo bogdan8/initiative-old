@@ -1,0 +1,62 @@
+.container
+  .row
+    .col-lg-11.col-xs-12
+      .row
+        .col-lg-offset-4.col-lg-4.col-md-offset-4.col-md-4.col-xs-12
+          .user-panel-show-title
+            |
+              Додати
+      = form_for :user, url: '/admins', method: :post do |f|
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Фото*
+          .col-lg-8.col-md-8.col-sm-8.col-xs-12
+            .devise-registration-edit-file-block
+              .devise-registration-edit-file-title
+                |
+                  Додати фото
+              = f.file_field :avatar, class: 'devise-registration-edit-file-input'
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Імя*
+          .col-lg-8.col-md-8.col-xs-12
+            .user-panel-show-names-user-information
+              = f.text_field :name, required: :required, class: 'form-control initiative-new-form-input'
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Пошта*
+          .col-lg-8.col-md-8.col-xs-12
+            .user-panel-show-names-user-information
+              = f.text_field :post, required: :required, class: 'form-control initiative-new-form-input'
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Телефон*
+          .col-lg-8.col-md-8.col-xs-12
+            .user-panel-show-names-user-information
+              = f.text_field :phone, required: :required, class: 'form-control initiative-new-form-input'
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Емайл*
+          .col-lg-8.col-md-8.col-xs-12
+            .user-panel-show-names-user-information
+              = f.email_field :email, required: :required, autofocus: true, class: 'form-control initiative-new-form-input'
+        .row
+          .col-lg-4.col-md-4.col-xs-12
+            .user-panel-show-names-user-information
+              |
+                Пароль*
+          .col-lg-8.col-md-8.col-xs-12
+            .user-panel-show-names-user-information
+              = f.password_field :password, required: :required, autocomplete: "off", class: 'form-control initiative-new-form-input'
+        .col-lg-offset-4.col-md-8.col-xs-12
+          = f.submit t('views.admins.new.title'), class: 'devise-registration-edit-button-submit'
